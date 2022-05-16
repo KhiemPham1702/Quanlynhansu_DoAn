@@ -57,7 +57,7 @@ namespace ban_2.Form_selection
             dataGridViewNV.DataSource = dt;
         }
 
-        private void ketnoicsdl2()
+        public void ketnoicsdl2()
         {
             con.Open();
             string sql = "select COUNT(MANV) as MEMBER , PHONGBAN.MAPB, TENPHONGBAN from NHANVIEN right join PHONGBAN on NHANVIEN.MAPB = PHONGBAN.MAPB group by PHONGBAN.MAPB, TENPHONGBAN";
@@ -89,7 +89,7 @@ namespace ban_2.Form_selection
 
         private void btAdd_Click(object sender, EventArgs e)
         {
-            Form add = new Add_PB_form();
+            Form add = new Add_PB_form(this);
             add.Show();
         }
 
@@ -117,9 +117,15 @@ namespace ban_2.Form_selection
         {
             if(dataGridViewNV.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
             {
-                Form form = new NV_info_form(dataGridViewNV.Rows[e.RowIndex].Cells[0].Value.ToString());
+                NV_info_form form = new NV_info_form(dataGridViewNV.Rows[e.RowIndex].Cells[0].Value.ToString());
+                form.FormClosing += new FormClosingEventHandler(this.Form_Closing);              
                 form.Show();
             }
+        }
+
+        private void Form_Closing(object sender, FormClosingEventArgs e)
+        {
+            ketnoicsdl2();
         }
 
         private void cbbDP_SelectedIndexChanged(object sender, EventArgs e)

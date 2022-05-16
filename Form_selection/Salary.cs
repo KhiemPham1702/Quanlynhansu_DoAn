@@ -22,7 +22,7 @@ namespace ban_2.Form_selection
         SqlCommand cmd = new SqlCommand();
         SqlDataAdapter da = new SqlDataAdapter();
 
-        private void ketnoicsdl()
+        public void ketnoicsdl()
         {
             con.Open();
             string sql = "select NHANVIEN.MANV, HOTEN, TENCV, MALUONG, LUONGCOBAN,LUONGPHEP,HESOLUONG  from CHUCVU inner join NHANVIEN on CHUCVU.MACV = NHANVIEN.MACV inner join BANGLUONG on NHANVIEN.MANV = BANGLUONG.MANV";
@@ -62,9 +62,15 @@ namespace ban_2.Form_selection
         {
             if (dataGridViewNV.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
             {
-                Form form = new NV_info_form(dataGridViewNV.Rows[e.RowIndex].Cells[0].Value.ToString());
+                NV_info_form form = new NV_info_form(dataGridViewNV.Rows[e.RowIndex].Cells[0].Value.ToString());
+                form.FormClosing += new FormClosingEventHandler(this.Form_Closing);
                 form.Show();
             }
+        }
+
+        private void Form_Closing(object sender, FormClosingEventArgs e)
+        {
+            ketnoicsdl();
         }
     }
 }

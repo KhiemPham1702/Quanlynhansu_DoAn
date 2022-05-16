@@ -8,14 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using ban_2.Form_selection;
 
 namespace ban_2
 {
     public partial class Add_PB_form : Form
     {
-        public Add_PB_form()
+        Departments departments = new Departments();
+        public Add_PB_form(Departments a)
         {
             InitializeComponent();
+            departments = a;
         }
 
         SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-MJVETF2\SQLEXPRESS;Initial Catalog=Quanlynhansu;Integrated Security=True;");
@@ -48,6 +51,7 @@ namespace ban_2
                 con.Close();
                 MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 tbAddID.Text = tbAddName.Text = "";
+                departments.ketnoicsdl2();
                 this.Close();
             }
         }

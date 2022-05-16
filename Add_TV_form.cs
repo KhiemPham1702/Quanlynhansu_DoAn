@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ban_2.Form_selection;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,10 +14,12 @@ namespace ban_2
 {
     public partial class Add_TV_form : Form
     {
-        public Add_TV_form()
+        Employee employee = new Employee();
+
+        public Add_TV_form(Employee a)
         {
             InitializeComponent();
-
+            employee = a;
         }
 
         SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-MJVETF2\SQLEXPRESS;Initial Catalog=Quanlynhansu;Integrated Security=True;");
@@ -118,7 +121,9 @@ namespace ban_2
                 MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 tbAddID.Text = tbAddName.Text = tbAddEmail.Text = tbAddIDC.Text = tbAddPhone.Text = tbAddDress.Text = tbAddEducation.Text = "";
                 radioButton1.Checked = radioButton2.Checked = false;
+                employee.ketnoicsdl();
                 this.Close();
+                
             }
 
         }

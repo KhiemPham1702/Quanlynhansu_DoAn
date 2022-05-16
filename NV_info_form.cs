@@ -18,6 +18,7 @@ namespace ban_2
         SqlCommand cmd = new SqlCommand();
         SqlDataAdapter da = new SqlDataAdapter();
 
+
         public NV_info_form(String a)
         {
             InitializeComponent();
@@ -125,7 +126,7 @@ namespace ban_2
                     con.Close();
                     MessageBox.Show("Update thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     tbName.Text = tbEmail.Text = tbIDC.Text = tbPhone.Text = tbDiaChi.Text = tbChuyenNganh.Text = "";
-                    radioButton1.Checked = radioButton2.Checked = false;
+                    radioButton1.Checked = radioButton2.Checked = false;                    
                     this.Close();
                 }
             }
@@ -144,6 +145,7 @@ namespace ban_2
                     cmd.ExecuteNonQuery();
                     con.Close();
                     MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    
                     this.Close();
                 }
                 catch

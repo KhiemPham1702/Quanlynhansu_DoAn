@@ -39,7 +39,7 @@ namespace ban_2.Form_selection
 
         private void btAddNew_Click(object sender, EventArgs e)
         {
-            Form add = new Add_TV_form();
+            Form add = new Add_TV_form(this);
             add.Show();
         }
 
@@ -69,9 +69,15 @@ namespace ban_2.Form_selection
         {
             if (dataGridViewNV.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
             {
-                Form form = new NV_info_form(dataGridViewNV.Rows[e.RowIndex].Cells[0].Value.ToString());
+                NV_info_form form = new NV_info_form(dataGridViewNV.Rows[e.RowIndex].Cells[0].Value.ToString());
+                form.FormClosing += new FormClosingEventHandler(this.Form_Closing);
                 form.Show();
             }      
+        }
+
+        private void Form_Closing(object sender, FormClosingEventArgs e)
+        {
+            ketnoicsdl();
         }
     }
 }
