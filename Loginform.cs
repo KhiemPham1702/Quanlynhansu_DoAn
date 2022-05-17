@@ -86,20 +86,9 @@ namespace ban_2
             {
                 con.Open();
                 SqlDataReader dr;
-                try
-                {
-                    string login = "SELECT * FROM ACC_USER WHERE USERNAME= '" + textLoginUserName.Text.Trim() + "' and USERPASS= '" + textLoginUserPass.Text.Trim() + "'";
-                    cmd = new SqlCommand(login, con);
-                    dr = cmd.ExecuteReader();
-                }
-                catch
-                {
-                    string login = "SELECT * FROM ACC_ADMIN WHERE ADNAME= '" + textLoginUserName.Text.Trim() + "' and ADPASS= '" + textLoginUserPass.Text.Trim() + "'";
-                    cmd = new SqlCommand(login, con);
-                    dr = cmd.ExecuteReader();
-                } 
-                
-
+                string login = "SELECT * FROM ACC_USER WHERE USERNAME= '" + textLoginUserName.Text.Trim() + "' and USERPASS= '" + textLoginUserPass.Text.Trim() + "'";
+                cmd = new SqlCommand(login, con);
+                dr = cmd.ExecuteReader();               
                 if (dr.Read() == true)
                 {
 
@@ -111,34 +100,77 @@ namespace ban_2
                 }
                 else
                 {
-                    MessageBox.Show("Tài khoản hoặc mật khẩu bị sai, mời nhập lại", "Đăng nhập thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    textLoginUserName.Text = "";
-                    textLoginUserPass.Text = "";
-                    textLoginUserName.Focus();
+                    con.Close();
+                    con.Open();
+                    SqlDataReader drr;
+                    string loginAD = "SELECT * FROM ACC_ADMIN WHERE ADNAME= '" + textLoginUserName.Text.Trim() + "' and ADPASS= '" + textLoginUserPass.Text.Trim() + "'";
+                    cmd = new SqlCommand(loginAD, con);
+                    drr = cmd.ExecuteReader();
+                    if (drr.Read() == true)
+                    {
+                        Mainform fmain = new Mainform();
+                        fmain.Show();
+                        this.Hide();
+                        textLoginUserName.Text = "";
+                        textLoginUserPass.Text = "";
+                    }
+                    else
+                    {
+                        MessageBox.Show("Tài khoản hoặc mật khẩu bị sai, mời nhập lại", "Đăng nhập thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        textLoginUserName.Text = "";
+                        textLoginUserPass.Text = "";
+                        textLoginUserName.Focus();
+                    }
                 }
+                con.Close();
             }
-            con.Close();
+            
+        }
+
+        bool KT_NV()
+        {
+            con.Open();
+            SqlDataReader dr;
+            string sql = "SELECT * FROM ACC_USER WHERE EMAIL = '" + tbEmail.Text + "'";
+            cmd = new SqlCommand(sql, con);
+            dr = cmd.ExecuteReader();
+            if (dr.Read() == true)
+            {
+                con.Close();
+                return true;
+            } else
+            {
+                con.Close();
+                return false;
+            }
+                
+
+            
         }
 
         private void buttonSignUp_Click(object sender, EventArgs e)
         {
             if (textSignUpUserName.Text == "" || textSignUpUserPass.Text == "" || textConfirmPass.Text == "" || tbEmail.Text == "" || tbPhone.Text == "")
             {
-                MessageBox.Show("Tài khoản hoặc mật khẩu bị bỏ trống", "Đăng ký thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Hãy nhập đầy đủ thông tin", "Đăng ký thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (textSignUpUserPass.Text == textConfirmPass.Text)
             {
-                con.Open();
-                string regester = "INSERT INTO ACC_USER VALUES ('" + textSignUpUserName.Text + "','" + textSignUpUserPass.Text + "','" + kt() + "')";
-                cmd = new SqlCommand(regester, con);
-                cmd.ExecuteNonQuery();
-                con.Close();
+                if (KT_NV() == true)
+                {
+                    con.Open();
+                    string regester = "INSERT INTO ACC_USER VALUES ('" + textSignUpUserName.Text + "','" + textSignUpUserPass.Text + "','" + tbEmail.Text + "','" + tbPhone.Text + "','" + kt() + "','null')";
+                    cmd = new SqlCommand(regester, con);
+                    cmd.ExecuteNonQuery();
+                    con.Close();
 
-                textSignUpUserName.Text = textSignUpUserPass.Text = textConfirmPass.Text = "";
+                    textSignUpUserName.Text = textSignUpUserPass.Text = textConfirmPass.Text = "";
 
-                MessageBox.Show("Tài khoản của bạn đã được tạo", "Đăng ký thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                panelLogin.Visible = true;
-                panelSignUp.Visible = false;
+                    MessageBox.Show("Tài khoản của bạn đã được tạo", "Đăng ký thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    panelLogin.Visible = true;
+                    panelSignUp.Visible = false;
+                }
+                else MessageBox.Show("Nhân viên đăng kí không có trong danh sách nhân viên !", "Đăng kí thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);    
             }
             else
             {
@@ -146,6 +178,11 @@ namespace ban_2
                 textSignUpUserPass.Text = textConfirmPass.Text = "";
                 textSignUpUserPass.Focus();
             }
+        }
+
+        private void Loginform_Load(object sender, EventArgs e)
+        {
+            cbP.SelectedIndex = 0;
         }
     }
 }

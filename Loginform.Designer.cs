@@ -48,6 +48,7 @@ namespace ban_2
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panelSignUp = new Guna.UI2.WinForms.Guna2Panel();
+            this.cbP = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.tgShowPassSU = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             this.textSignUpUserPass = new Guna.UI2.WinForms.Guna2TextBox();
@@ -63,7 +64,6 @@ namespace ban_2
             this.label10 = new System.Windows.Forms.Label();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.ptbExit = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.cbP = new Guna.UI2.WinForms.Guna2ComboBox();
             this.panelLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.panelSignUp.SuspendLayout();
@@ -327,12 +327,33 @@ namespace ban_2
             this.panelSignUp.TabIndex = 14;
             this.panelSignUp.Visible = false;
             // 
+            // cbP
+            // 
+            this.cbP.BackColor = System.Drawing.Color.Transparent;
+            this.cbP.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
+            this.cbP.BorderRadius = 10;
+            this.cbP.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbP.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(9)))), ((int)(((byte)(50)))));
+            this.cbP.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbP.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbP.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbP.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.cbP.ItemHeight = 30;
+            this.cbP.Items.AddRange(new object[] {
+            "Nhân viên",
+            "Quản lý"});
+            this.cbP.Location = new System.Drawing.Point(217, 391);
+            this.cbP.Name = "cbP";
+            this.cbP.Size = new System.Drawing.Size(124, 36);
+            this.cbP.TabIndex = 27;
+            // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label12.Location = new System.Drawing.Point(92, 397);
+            this.label12.Location = new System.Drawing.Point(92, 407);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(119, 17);
             this.label12.TabIndex = 26;
@@ -344,7 +365,7 @@ namespace ban_2
             this.tgShowPassSU.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(84)))), ((int)(((byte)(122)))));
             this.tgShowPassSU.CheckedState.InnerBorderColor = System.Drawing.Color.White;
             this.tgShowPassSU.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.tgShowPassSU.Location = new System.Drawing.Point(31, 391);
+            this.tgShowPassSU.Location = new System.Drawing.Point(31, 401);
             this.tgShowPassSU.Name = "tgShowPassSU";
             this.tgShowPassSU.Size = new System.Drawing.Size(55, 23);
             this.tgShowPassSU.TabIndex = 25;
@@ -404,7 +425,7 @@ namespace ban_2
             this.lbLoginChange.BackColor = System.Drawing.Color.Transparent;
             this.lbLoginChange.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbLoginChange.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(84)))), ((int)(((byte)(122)))));
-            this.lbLoginChange.Location = new System.Drawing.Point(238, 501);
+            this.lbLoginChange.Location = new System.Drawing.Point(238, 511);
             this.lbLoginChange.Name = "lbLoginChange";
             this.lbLoginChange.Size = new System.Drawing.Size(48, 20);
             this.lbLoginChange.TabIndex = 22;
@@ -418,7 +439,7 @@ namespace ban_2
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DarkGray;
-            this.label5.Location = new System.Drawing.Point(33, 501);
+            this.label5.Location = new System.Drawing.Point(33, 511);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(196, 20);
             this.label5.TabIndex = 21;
@@ -467,11 +488,12 @@ namespace ban_2
             this.buttonSignUp.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(84)))), ((int)(((byte)(122)))));
             this.buttonSignUp.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSignUp.ForeColor = System.Drawing.Color.White;
-            this.buttonSignUp.Location = new System.Drawing.Point(30, 438);
+            this.buttonSignUp.Location = new System.Drawing.Point(30, 448);
             this.buttonSignUp.Name = "buttonSignUp";
             this.buttonSignUp.Size = new System.Drawing.Size(310, 46);
             this.buttonSignUp.TabIndex = 17;
             this.buttonSignUp.Text = "Sign Up";
+            this.buttonSignUp.Click += new System.EventHandler(this.buttonSignUp_Click);
             // 
             // tbEmail
             // 
@@ -566,27 +588,6 @@ namespace ban_2
             this.ptbExit.TabIndex = 0;
             this.ptbExit.TabStop = false;
             // 
-            // cbP
-            // 
-            this.cbP.BackColor = System.Drawing.Color.Transparent;
-            this.cbP.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
-            this.cbP.BorderRadius = 10;
-            this.cbP.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbP.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(9)))), ((int)(((byte)(50)))));
-            this.cbP.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbP.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbP.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.cbP.ItemHeight = 30;
-            this.cbP.Items.AddRange(new object[] {
-            "Nhân viên",
-            "Quản lý"});
-            this.cbP.Location = new System.Drawing.Point(217, 389);
-            this.cbP.Name = "cbP";
-            this.cbP.Size = new System.Drawing.Size(124, 36);
-            this.cbP.TabIndex = 27;
-            // 
             // Loginform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -603,6 +604,7 @@ namespace ban_2
             this.Name = "Loginform";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Loginform";
+            this.Load += new System.EventHandler(this.Loginform_Load);
             this.panelLogin.ResumeLayout(false);
             this.panelLogin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
