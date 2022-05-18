@@ -22,6 +22,7 @@ namespace ban_2
         {
             InitializeComponent();
         }
+       
 
         int kt()
         {
@@ -32,7 +33,7 @@ namespace ban_2
 
         private void guna2PictureBox2_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void lbSignUpChange_Click(object sender, EventArgs e)
@@ -84,6 +85,7 @@ namespace ban_2
             }
             else
             {
+                string email = find_NV();
                 con.Open();
                 SqlDataReader dr;
                 string login = "SELECT * FROM ACC_USER WHERE USERNAME= '" + textLoginUserName.Text.Trim() + "' and USERPASS= '" + textLoginUserPass.Text.Trim() + "'";
@@ -92,7 +94,7 @@ namespace ban_2
                 if (dr.Read() == true)
                 {
 
-                    Mainform fmain = new Mainform();
+                    Mainform fmain = new Mainform(email, textLoginUserName.Text);
                     fmain.Show();
                     this.Hide();
                     textLoginUserName.Text = "";
@@ -107,8 +109,8 @@ namespace ban_2
                     cmd = new SqlCommand(loginAD, con);
                     drr = cmd.ExecuteReader();
                     if (drr.Read() == true)
-                    {
-                        Mainform fmain = new Mainform();
+                    {                       
+                        Mainform fmain = new Mainform(email,textLoginUserName.Text);
                         fmain.Show();
                         this.Hide();
                         textLoginUserName.Text = "";
@@ -127,6 +129,34 @@ namespace ban_2
             
         }
 
+        string find_NV()
+        {
+            string s = "SELECT EMAIL FROM ACC_USER WHERE USERNAME = '" + textLoginUserName.Text + "'";
+            if (con.State != ConnectionState.Open)
+            {
+                con.Open();
+            }
+            cmd = new SqlCommand(s, con);
+            cmd.CommandType = CommandType.Text;
+            da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            con.Close();
+
+            con.Open();
+            SqlDataReader drr;
+            cmd = new SqlCommand(s, con);
+            cmd.CommandType = CommandType.Text;
+            drr = cmd.ExecuteReader();
+            if (drr.Read() == true)
+            {
+                con.Close();
+                return dt.Rows[0][0].ToString();
+            }
+            con.Close();
+            return "";
+        }
+
         bool KT_NV()
         {
             con.Open();
@@ -142,10 +172,7 @@ namespace ban_2
             {
                 con.Close();
                 return false;
-            }
-                
-
-            
+            }  
         }
 
         private void buttonSignUp_Click(object sender, EventArgs e)

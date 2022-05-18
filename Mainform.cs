@@ -14,10 +14,20 @@ namespace ban_2
     public partial class Mainform : Form
     {
         private UserControl currentChildForm;
+        string email;
+        string user_name;
+        Loginform loginform = new Loginform();
+
         public Mainform()
         {
+            InitializeComponent();       
+        }
+
+        public Mainform(string a, string b)
+        {
             InitializeComponent();
-            
+            email = a;
+            user_name = b;
         }
 
         void OpenChildForm(UserControl form)
@@ -74,14 +84,15 @@ namespace ban_2
 
         private void profilleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Profile());
+            OpenChildForm(new Profile(email, user_name));
         }
 
         private void loginOutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Do you want to sign out?", "Notification", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                
+                this.Close();                
+                loginform.Show();
             }
         }
     }

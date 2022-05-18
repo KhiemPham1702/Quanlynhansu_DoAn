@@ -68,7 +68,7 @@ namespace ban_2
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label1.Location = new System.Drawing.Point(122, 20);
+            this.label1.Location = new System.Drawing.Point(145, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(245, 38);
             this.label1.TabIndex = 6;
@@ -131,7 +131,7 @@ namespace ban_2
             this.btCancel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(84)))), ((int)(((byte)(122)))));
             this.btCancel.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btCancel.ForeColor = System.Drawing.Color.White;
-            this.btCancel.Location = new System.Drawing.Point(129, 411);
+            this.btCancel.Location = new System.Drawing.Point(137, 411);
             this.btCancel.Name = "btCancel";
             this.btCancel.Size = new System.Drawing.Size(229, 50);
             this.btCancel.TabIndex = 18;
@@ -149,7 +149,7 @@ namespace ban_2
             this.btChange.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(84)))), ((int)(((byte)(122)))));
             this.btChange.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btChange.ForeColor = System.Drawing.Color.White;
-            this.btChange.Location = new System.Drawing.Point(129, 349);
+            this.btChange.Location = new System.Drawing.Point(137, 349);
             this.btChange.Name = "btChange";
             this.btChange.Size = new System.Drawing.Size(229, 50);
             this.btChange.TabIndex = 17;
