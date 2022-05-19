@@ -84,8 +84,15 @@ namespace ban_2.Form_selection
 
         private void btChangePass_Click(object sender, EventArgs e)
         {
-            Form change = new Change_Pass_form();
+            Form change = new Change_Pass_form(user_name);
+            change.FormClosing += new FormClosingEventHandler(this.Form_Closing);
             change.Show();
+        }
+
+        private void Form_Closing(object sender, FormClosingEventArgs e)
+        {
+            ketnoicsdl2();
+            ketnoicsdl();
         }
 
         private void Profile_Load(object sender, EventArgs e)

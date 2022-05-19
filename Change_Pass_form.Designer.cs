@@ -30,38 +30,38 @@ namespace ban_2
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.tbPassOld = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2TextBox3 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.tbNewPass = new Guna.UI2.WinForms.Guna2TextBox();
+            this.tbConfirmPass = new Guna.UI2.WinForms.Guna2TextBox();
             this.btCancel = new Guna.UI2.WinForms.Guna2Button();
             this.btChange = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.SuspendLayout();
             // 
-            // guna2TextBox1
+            // tbPassOld
             // 
-            this.guna2TextBox1.BorderRadius = 15;
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.IconLeft = global::ban_2.Properties.Resources._111039_key_icon;
-            this.guna2TextBox1.Location = new System.Drawing.Point(52, 95);
-            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PasswordChar = '\0';
-            this.guna2TextBox1.PlaceholderForeColor = System.Drawing.Color.Gray;
-            this.guna2TextBox1.PlaceholderText = "Your Password";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.Size = new System.Drawing.Size(400, 52);
-            this.guna2TextBox1.TabIndex = 0;
+            this.tbPassOld.BorderRadius = 15;
+            this.tbPassOld.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbPassOld.DefaultText = "";
+            this.tbPassOld.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbPassOld.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbPassOld.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbPassOld.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbPassOld.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbPassOld.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPassOld.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbPassOld.IconLeft = global::ban_2.Properties.Resources._111039_key_icon;
+            this.tbPassOld.Location = new System.Drawing.Point(52, 95);
+            this.tbPassOld.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.tbPassOld.Name = "tbPassOld";
+            this.tbPassOld.PasswordChar = '\0';
+            this.tbPassOld.PlaceholderForeColor = System.Drawing.Color.Gray;
+            this.tbPassOld.PlaceholderText = "Your Password";
+            this.tbPassOld.SelectedText = "";
+            this.tbPassOld.Size = new System.Drawing.Size(400, 52);
+            this.tbPassOld.TabIndex = 0;
             // 
             // label1
             // 
@@ -74,51 +74,51 @@ namespace ban_2
             this.label1.TabIndex = 6;
             this.label1.Text = "Change Password";
             // 
-            // guna2TextBox2
+            // tbNewPass
             // 
-            this.guna2TextBox2.BorderRadius = 15;
-            this.guna2TextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox2.DefaultText = "";
-            this.guna2TextBox2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox2.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2TextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox2.IconLeft = global::ban_2.Properties.Resources._111039_key_icon;
-            this.guna2TextBox2.Location = new System.Drawing.Point(52, 178);
-            this.guna2TextBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.guna2TextBox2.Name = "guna2TextBox2";
-            this.guna2TextBox2.PasswordChar = '\0';
-            this.guna2TextBox2.PlaceholderForeColor = System.Drawing.Color.Gray;
-            this.guna2TextBox2.PlaceholderText = "New Password";
-            this.guna2TextBox2.SelectedText = "";
-            this.guna2TextBox2.Size = new System.Drawing.Size(400, 52);
-            this.guna2TextBox2.TabIndex = 7;
+            this.tbNewPass.BorderRadius = 15;
+            this.tbNewPass.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbNewPass.DefaultText = "";
+            this.tbNewPass.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbNewPass.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbNewPass.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbNewPass.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbNewPass.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbNewPass.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbNewPass.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbNewPass.IconLeft = global::ban_2.Properties.Resources._111039_key_icon;
+            this.tbNewPass.Location = new System.Drawing.Point(52, 178);
+            this.tbNewPass.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.tbNewPass.Name = "tbNewPass";
+            this.tbNewPass.PasswordChar = '\0';
+            this.tbNewPass.PlaceholderForeColor = System.Drawing.Color.Gray;
+            this.tbNewPass.PlaceholderText = "New Password";
+            this.tbNewPass.SelectedText = "";
+            this.tbNewPass.Size = new System.Drawing.Size(400, 52);
+            this.tbNewPass.TabIndex = 7;
             // 
-            // guna2TextBox3
+            // tbConfirmPass
             // 
-            this.guna2TextBox3.BorderRadius = 15;
-            this.guna2TextBox3.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox3.DefaultText = "";
-            this.guna2TextBox3.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox3.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox3.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox3.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2TextBox3.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox3.IconLeft = global::ban_2.Properties.Resources._111039_key_icon;
-            this.guna2TextBox3.Location = new System.Drawing.Point(52, 263);
-            this.guna2TextBox3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.guna2TextBox3.Name = "guna2TextBox3";
-            this.guna2TextBox3.PasswordChar = '\0';
-            this.guna2TextBox3.PlaceholderForeColor = System.Drawing.Color.Gray;
-            this.guna2TextBox3.PlaceholderText = "Confirm New Password";
-            this.guna2TextBox3.SelectedText = "";
-            this.guna2TextBox3.Size = new System.Drawing.Size(400, 52);
-            this.guna2TextBox3.TabIndex = 8;
+            this.tbConfirmPass.BorderRadius = 15;
+            this.tbConfirmPass.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbConfirmPass.DefaultText = "";
+            this.tbConfirmPass.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbConfirmPass.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbConfirmPass.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbConfirmPass.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbConfirmPass.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbConfirmPass.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbConfirmPass.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbConfirmPass.IconLeft = global::ban_2.Properties.Resources._111039_key_icon;
+            this.tbConfirmPass.Location = new System.Drawing.Point(52, 263);
+            this.tbConfirmPass.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.tbConfirmPass.Name = "tbConfirmPass";
+            this.tbConfirmPass.PasswordChar = '\0';
+            this.tbConfirmPass.PlaceholderForeColor = System.Drawing.Color.Gray;
+            this.tbConfirmPass.PlaceholderText = "Confirm New Password";
+            this.tbConfirmPass.SelectedText = "";
+            this.tbConfirmPass.Size = new System.Drawing.Size(400, 52);
+            this.tbConfirmPass.TabIndex = 8;
             // 
             // btCancel
             // 
@@ -154,6 +154,7 @@ namespace ban_2
             this.btChange.Size = new System.Drawing.Size(229, 50);
             this.btChange.TabIndex = 17;
             this.btChange.Text = "Change";
+            this.btChange.Click += new System.EventHandler(this.btChange_Click);
             // 
             // guna2Elipse1
             // 
@@ -167,10 +168,10 @@ namespace ban_2
             this.ClientSize = new System.Drawing.Size(500, 492);
             this.Controls.Add(this.btCancel);
             this.Controls.Add(this.btChange);
-            this.Controls.Add(this.guna2TextBox3);
-            this.Controls.Add(this.guna2TextBox2);
+            this.Controls.Add(this.tbConfirmPass);
+            this.Controls.Add(this.tbNewPass);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.guna2TextBox1);
+            this.Controls.Add(this.tbPassOld);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Change_Pass_form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -182,10 +183,10 @@ namespace ban_2
 
         #endregion
 
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+        private Guna.UI2.WinForms.Guna2TextBox tbPassOld;
         private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox3;
+        private Guna.UI2.WinForms.Guna2TextBox tbNewPass;
+        private Guna.UI2.WinForms.Guna2TextBox tbConfirmPass;
         private Guna.UI2.WinForms.Guna2Button btCancel;
         private Guna.UI2.WinForms.Guna2Button btChange;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;

@@ -24,7 +24,7 @@ namespace ban_2.Form_selection
 
         private void Chart_Load(object sender, EventArgs e)
         {
-            
+            cbbStyle.SelectedIndex = 0;
         }
 
         private void cbbStyle_SelectedIndexChanged(object sender, EventArgs e)
@@ -53,7 +53,28 @@ namespace ban_2.Form_selection
 
         private void cbbStatic_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if(cbbStatic.SelectedItem.ToString() == "Department")
+            {
+                con.Open();
+                string sql = "select COUNT(MANV) as MEMBER , PHONGBAN.MAPB, TENPHONGBAN from NHANVIEN right join PHONGBAN on NHANVIEN.MAPB = PHONGBAN.MAPB group by PHONGBAN.MAPB, TENPHONGBAN";
+                cmd = new SqlCommand(sql, con);
+                cmd.CommandType = CommandType.Text;
+                da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                con.Close();
 
+                chartView.DataSource = dt;
+                chartView.ChartAreas["ChartArea1"].AxisX.Title = "Departments";
+                chartView.ChartAreas["ChartArea1"].AxisY.Title = "Number of employees";
+
+                chartView.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.BrightPastel;
+                chartView.Series[0].Name = "Employee";
+
+                chartView.Series["Employee"].XValueMember = "TENPHONGBAN";
+                chartView.Series["Employee"].YValueMembers = "MEMBER";
+                con.Close();
+            }
         }
     }
 }

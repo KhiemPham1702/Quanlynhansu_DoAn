@@ -56,12 +56,10 @@
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MEMBER = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btAdd = new Guna.UI2.WinForms.Guna2Button();
-            this.btChangePicture = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.picturboxAvatar = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btChangePicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picturboxAvatar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -273,7 +271,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(52)))), ((int)(((byte)(88)))));
-            this.label2.Location = new System.Drawing.Point(354, 9);
+            this.label2.Location = new System.Drawing.Point(369, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(376, 45);
             this.label2.TabIndex = 20;
@@ -377,20 +375,6 @@
             this.btAdd.Text = "Add new";
             this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
             // 
-            // btChangePicture
-            // 
-            this.btChangePicture.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(84)))), ((int)(((byte)(122)))));
-            this.btChangePicture.FillColor = System.Drawing.Color.Transparent;
-            this.btChangePicture.Image = global::ban_2.Properties.Resources.transparent_interface_icon_assets_icon_edit_icon_interface_ico_5dc7c968ad3b18_3328065815733743127096;
-            this.btChangePicture.ImageRotate = 0F;
-            this.btChangePicture.Location = new System.Drawing.Point(136, 195);
-            this.btChangePicture.Name = "btChangePicture";
-            this.btChangePicture.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.btChangePicture.Size = new System.Drawing.Size(38, 38);
-            this.btChangePicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btChangePicture.TabIndex = 17;
-            this.btChangePicture.TabStop = false;
-            // 
             // picturboxAvatar
             // 
             this.picturboxAvatar.BackColor = System.Drawing.Color.Transparent;
@@ -426,7 +410,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lbChucVu);
             this.Controls.Add(this.lbTen);
-            this.Controls.Add(this.btChangePicture);
             this.Controls.Add(this.picturboxAvatar);
             this.Controls.Add(this.cbbDP);
             this.Controls.Add(this.label1);
@@ -439,7 +422,6 @@
             this.Load += new System.EventHandler(this.Departments_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btChangePicture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picturboxAvatar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -457,7 +439,6 @@
         private Guna.UI2.WinForms.Guna2ComboBox cbbDP;
         private System.Windows.Forms.Label lbChucVu;
         private System.Windows.Forms.Label lbTen;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox btChangePicture;
         private Guna.UI2.WinForms.Guna2CirclePictureBox picturboxAvatar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
