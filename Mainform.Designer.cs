@@ -31,6 +31,7 @@ namespace ban_2
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btChart = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btAbout = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btAccount = new Guna.UI2.WinForms.Guna2GradientButton();
             this.label2 = new System.Windows.Forms.Label();
@@ -73,6 +74,7 @@ namespace ban_2
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.btChart);
             this.panel3.Controls.Add(this.btAbout);
             this.panel3.Controls.Add(this.btAccount);
             this.panel3.Controls.Add(this.label2);
@@ -84,6 +86,34 @@ namespace ban_2
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(256, 589);
             this.panel3.TabIndex = 10;
+            // 
+            // btChart
+            // 
+            this.btChart.Animated = true;
+            this.btChart.AutoRoundedCorners = true;
+            this.btChart.BorderRadius = 25;
+            this.btChart.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btChart.CustomizableEdges.BottomRight = false;
+            this.btChart.CustomizableEdges.TopRight = false;
+            this.btChart.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btChart.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btChart.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btChart.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btChart.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btChart.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btChart.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(52)))), ((int)(((byte)(88)))));
+            this.btChart.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(52)))), ((int)(((byte)(88)))));
+            this.btChart.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btChart.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btChart.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(84)))), ((int)(((byte)(122)))));
+            this.btChart.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(52)))), ((int)(((byte)(88)))));
+            this.btChart.HoverState.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btChart.Location = new System.Drawing.Point(0, 212);
+            this.btChart.Name = "btChart";
+            this.btChart.Size = new System.Drawing.Size(256, 53);
+            this.btChart.TabIndex = 15;
+            this.btChart.Text = "Statistics";
+            this.btChart.Click += new System.EventHandler(this.btChart_Click);
             // 
             // btAbout
             // 
@@ -448,6 +478,7 @@ namespace ban_2
         private Guna.UI2.WinForms.Guna2ContextMenuStrip menuSetting;
         private System.Windows.Forms.ToolStripMenuItem profilleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem loginOutToolStripMenuItem;
+        private Guna.UI2.WinForms.Guna2GradientButton btChart;
     }
 }
 

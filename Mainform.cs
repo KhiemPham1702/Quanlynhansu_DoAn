@@ -95,5 +95,10 @@ namespace ban_2
                 loginform.Show();
             }
         }
+
+        private void btChart_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Chart());
+        }
     }
 }

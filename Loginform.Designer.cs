@@ -34,7 +34,6 @@ namespace ban_2
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.panelLogin = new Guna.UI2.WinForms.Guna2Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2ProgressBar1 = new Guna.UI2.WinForms.Guna2ProgressBar();
             this.label9 = new System.Windows.Forms.Label();
             this.lbSignUpChange = new System.Windows.Forms.Label();
@@ -42,8 +41,6 @@ namespace ban_2
             this.buttonLogin = new Guna.UI2.WinForms.Guna2Button();
             this.label6 = new System.Windows.Forms.Label();
             this.tgShowPass = new Guna.UI2.WinForms.Guna2ToggleSwitch();
-            this.textLoginUserPass = new Guna.UI2.WinForms.Guna2TextBox();
-            this.textLoginUserName = new Guna.UI2.WinForms.Guna2TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -51,24 +48,27 @@ namespace ban_2
             this.cbP = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.tgShowPassSU = new Guna.UI2.WinForms.Guna2ToggleSwitch();
-            this.textSignUpUserPass = new Guna.UI2.WinForms.Guna2TextBox();
-            this.textConfirmPass = new Guna.UI2.WinForms.Guna2TextBox();
             this.lbLoginChange = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.tbPhone = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2ProgressBar2 = new Guna.UI2.WinForms.Guna2ProgressBar();
             this.buttonSignUp = new Guna.UI2.WinForms.Guna2Button();
-            this.tbEmail = new Guna.UI2.WinForms.Guna2TextBox();
-            this.textSignUpUserName = new Guna.UI2.WinForms.Guna2TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.textSignUpUserPass = new Guna.UI2.WinForms.Guna2TextBox();
+            this.textConfirmPass = new Guna.UI2.WinForms.Guna2TextBox();
+            this.tbPhone = new Guna.UI2.WinForms.Guna2TextBox();
+            this.tbEmail = new Guna.UI2.WinForms.Guna2TextBox();
+            this.textSignUpUserName = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.ptbExit = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.textLoginUserPass = new Guna.UI2.WinForms.Guna2TextBox();
+            this.textLoginUserName = new Guna.UI2.WinForms.Guna2TextBox();
             this.panelLogin.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.panelSignUp.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbExit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Elipse1
@@ -112,18 +112,6 @@ namespace ban_2
             this.label3.Size = new System.Drawing.Size(138, 30);
             this.label3.TabIndex = 0;
             this.label3.Text = "Get started.";
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox1.Image = global::ban_2.Properties.Resources.logo_02;
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(83, 24);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(196, 116);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox1.TabIndex = 13;
-            this.guna2PictureBox1.TabStop = false;
             // 
             // guna2ProgressBar1
             // 
@@ -219,51 +207,6 @@ namespace ban_2
             this.tgShowPass.UncheckedState.InnerColor = System.Drawing.Color.White;
             this.tgShowPass.CheckedChanged += new System.EventHandler(this.tgShowPass_CheckedChanged);
             // 
-            // textLoginUserPass
-            // 
-            this.textLoginUserPass.BorderRadius = 10;
-            this.textLoginUserPass.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textLoginUserPass.DefaultText = "";
-            this.textLoginUserPass.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.textLoginUserPass.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.textLoginUserPass.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.textLoginUserPass.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.textLoginUserPass.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(9)))), ((int)(((byte)(50)))));
-            this.textLoginUserPass.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textLoginUserPass.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textLoginUserPass.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textLoginUserPass.IconLeft = global::ban_2.Properties.Resources.pngaaa_com_2613466;
-            this.textLoginUserPass.Location = new System.Drawing.Point(33, 325);
-            this.textLoginUserPass.Name = "textLoginUserPass";
-            this.textLoginUserPass.PasswordChar = '•';
-            this.textLoginUserPass.PlaceholderText = "Password";
-            this.textLoginUserPass.SelectedText = "";
-            this.textLoginUserPass.Size = new System.Drawing.Size(285, 36);
-            this.textLoginUserPass.TabIndex = 6;
-            // 
-            // textLoginUserName
-            // 
-            this.textLoginUserName.BorderRadius = 10;
-            this.textLoginUserName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textLoginUserName.DefaultText = "";
-            this.textLoginUserName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.textLoginUserName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.textLoginUserName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.textLoginUserName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.textLoginUserName.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(9)))), ((int)(((byte)(50)))));
-            this.textLoginUserName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textLoginUserName.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textLoginUserName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textLoginUserName.IconLeft = global::ban_2.Properties.Resources.nd2m6os0tmc9env4gc8jh3er0j;
-            this.textLoginUserName.Location = new System.Drawing.Point(33, 273);
-            this.textLoginUserName.Name = "textLoginUserName";
-            this.textLoginUserName.PasswordChar = '\0';
-            this.textLoginUserName.PlaceholderText = "Username";
-            this.textLoginUserName.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textLoginUserName.SelectedText = "";
-            this.textLoginUserName.Size = new System.Drawing.Size(285, 36);
-            this.textLoginUserName.TabIndex = 5;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -337,7 +280,7 @@ namespace ban_2
             this.cbP.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(9)))), ((int)(((byte)(50)))));
             this.cbP.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbP.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbP.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbP.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbP.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.cbP.ItemHeight = 30;
             this.cbP.Items.AddRange(new object[] {
@@ -374,6 +317,84 @@ namespace ban_2
             this.tgShowPassSU.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
             this.tgShowPassSU.UncheckedState.InnerColor = System.Drawing.Color.White;
             this.tgShowPassSU.CheckedChanged += new System.EventHandler(this.tgShowPassSU_CheckedChanged);
+            // 
+            // lbLoginChange
+            // 
+            this.lbLoginChange.AutoSize = true;
+            this.lbLoginChange.BackColor = System.Drawing.Color.Transparent;
+            this.lbLoginChange.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbLoginChange.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(84)))), ((int)(((byte)(122)))));
+            this.lbLoginChange.Location = new System.Drawing.Point(238, 511);
+            this.lbLoginChange.Name = "lbLoginChange";
+            this.lbLoginChange.Size = new System.Drawing.Size(48, 20);
+            this.lbLoginChange.TabIndex = 22;
+            this.lbLoginChange.Text = "Login";
+            this.lbLoginChange.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbLoginChange.Click += new System.EventHandler(this.lbLoginChange_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.DarkGray;
+            this.label5.Location = new System.Drawing.Point(33, 511);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(196, 20);
+            this.label5.TabIndex = 21;
+            this.label5.Text = "Already have an account ?";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // guna2ProgressBar2
+            // 
+            this.guna2ProgressBar2.FillColor = System.Drawing.Color.Gainsboro;
+            this.guna2ProgressBar2.Location = new System.Drawing.Point(24, 100);
+            this.guna2ProgressBar2.Name = "guna2ProgressBar2";
+            this.guna2ProgressBar2.Size = new System.Drawing.Size(300, 3);
+            this.guna2ProgressBar2.TabIndex = 12;
+            this.guna2ProgressBar2.Text = "guna2ProgressBar2";
+            this.guna2ProgressBar2.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            // 
+            // buttonSignUp
+            // 
+            this.buttonSignUp.BorderRadius = 10;
+            this.buttonSignUp.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.buttonSignUp.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.buttonSignUp.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.buttonSignUp.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.buttonSignUp.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(84)))), ((int)(((byte)(122)))));
+            this.buttonSignUp.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSignUp.ForeColor = System.Drawing.Color.White;
+            this.buttonSignUp.Location = new System.Drawing.Point(30, 448);
+            this.buttonSignUp.Name = "buttonSignUp";
+            this.buttonSignUp.Size = new System.Drawing.Size(310, 46);
+            this.buttonSignUp.TabIndex = 17;
+            this.buttonSignUp.Text = "Sign Up";
+            this.buttonSignUp.Click += new System.EventHandler(this.buttonSignUp_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.DarkGray;
+            this.label8.Location = new System.Drawing.Point(20, 53);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(348, 40);
+            this.label8.TabIndex = 11;
+            this.label8.Text = "Let\'s get you all set up so you can verify  your \r\npersonal account and begin set" +
+    "ting up your job.\r\n";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label10.Location = new System.Drawing.Point(19, 12);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(273, 30);
+            this.label10.TabIndex = 10;
+            this.label10.Text = "Manage your employees.\r\n";
             // 
             // textSignUpUserPass
             // 
@@ -419,33 +440,6 @@ namespace ban_2
             this.textConfirmPass.Size = new System.Drawing.Size(311, 36);
             this.textConfirmPass.TabIndex = 23;
             // 
-            // lbLoginChange
-            // 
-            this.lbLoginChange.AutoSize = true;
-            this.lbLoginChange.BackColor = System.Drawing.Color.Transparent;
-            this.lbLoginChange.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbLoginChange.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(84)))), ((int)(((byte)(122)))));
-            this.lbLoginChange.Location = new System.Drawing.Point(238, 511);
-            this.lbLoginChange.Name = "lbLoginChange";
-            this.lbLoginChange.Size = new System.Drawing.Size(48, 20);
-            this.lbLoginChange.TabIndex = 22;
-            this.lbLoginChange.Text = "Login";
-            this.lbLoginChange.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbLoginChange.Click += new System.EventHandler(this.lbLoginChange_Click);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.DarkGray;
-            this.label5.Location = new System.Drawing.Point(33, 511);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(196, 20);
-            this.label5.TabIndex = 21;
-            this.label5.Text = "Already have an account ?";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // tbPhone
             // 
             this.tbPhone.BorderRadius = 10;
@@ -467,33 +461,6 @@ namespace ban_2
             this.tbPhone.SelectedText = "";
             this.tbPhone.Size = new System.Drawing.Size(311, 36);
             this.tbPhone.TabIndex = 19;
-            // 
-            // guna2ProgressBar2
-            // 
-            this.guna2ProgressBar2.FillColor = System.Drawing.Color.Gainsboro;
-            this.guna2ProgressBar2.Location = new System.Drawing.Point(24, 100);
-            this.guna2ProgressBar2.Name = "guna2ProgressBar2";
-            this.guna2ProgressBar2.Size = new System.Drawing.Size(300, 3);
-            this.guna2ProgressBar2.TabIndex = 12;
-            this.guna2ProgressBar2.Text = "guna2ProgressBar2";
-            this.guna2ProgressBar2.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
-            // 
-            // buttonSignUp
-            // 
-            this.buttonSignUp.BorderRadius = 10;
-            this.buttonSignUp.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.buttonSignUp.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.buttonSignUp.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.buttonSignUp.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.buttonSignUp.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(84)))), ((int)(((byte)(122)))));
-            this.buttonSignUp.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSignUp.ForeColor = System.Drawing.Color.White;
-            this.buttonSignUp.Location = new System.Drawing.Point(30, 448);
-            this.buttonSignUp.Name = "buttonSignUp";
-            this.buttonSignUp.Size = new System.Drawing.Size(310, 46);
-            this.buttonSignUp.TabIndex = 17;
-            this.buttonSignUp.Text = "Sign Up";
-            this.buttonSignUp.Click += new System.EventHandler(this.buttonSignUp_Click);
             // 
             // tbEmail
             // 
@@ -540,30 +507,6 @@ namespace ban_2
             this.textSignUpUserName.Size = new System.Drawing.Size(311, 36);
             this.textSignUpUserName.TabIndex = 13;
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.DarkGray;
-            this.label8.Location = new System.Drawing.Point(20, 53);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(348, 40);
-            this.label8.TabIndex = 11;
-            this.label8.Text = "Let\'s get you all set up so you can verify  your \r\npersonal account and begin set" +
-    "ting up your job.\r\n";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label10.Location = new System.Drawing.Point(19, 12);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(273, 30);
-            this.label10.TabIndex = 10;
-            this.label10.Text = "Manage your employees.\r\n";
-            // 
             // guna2PictureBox2
             // 
             this.guna2PictureBox2.Image = global::ban_2.Properties.Resources.SeekPng_com_power_button_png_413813__1_;
@@ -588,6 +531,63 @@ namespace ban_2
             this.ptbExit.TabIndex = 0;
             this.ptbExit.TabStop = false;
             // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox1.Image = global::ban_2.Properties.Resources.logo_02;
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(83, 24);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(196, 116);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox1.TabIndex = 13;
+            this.guna2PictureBox1.TabStop = false;
+            // 
+            // textLoginUserPass
+            // 
+            this.textLoginUserPass.BorderRadius = 10;
+            this.textLoginUserPass.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textLoginUserPass.DefaultText = "";
+            this.textLoginUserPass.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.textLoginUserPass.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.textLoginUserPass.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textLoginUserPass.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textLoginUserPass.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(9)))), ((int)(((byte)(50)))));
+            this.textLoginUserPass.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textLoginUserPass.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textLoginUserPass.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textLoginUserPass.IconLeft = global::ban_2.Properties.Resources.pngaaa_com_2613466;
+            this.textLoginUserPass.Location = new System.Drawing.Point(33, 325);
+            this.textLoginUserPass.Name = "textLoginUserPass";
+            this.textLoginUserPass.PasswordChar = '•';
+            this.textLoginUserPass.PlaceholderText = "Password";
+            this.textLoginUserPass.SelectedText = "";
+            this.textLoginUserPass.Size = new System.Drawing.Size(285, 36);
+            this.textLoginUserPass.TabIndex = 6;
+            // 
+            // textLoginUserName
+            // 
+            this.textLoginUserName.BorderRadius = 10;
+            this.textLoginUserName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textLoginUserName.DefaultText = "";
+            this.textLoginUserName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.textLoginUserName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.textLoginUserName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textLoginUserName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textLoginUserName.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(9)))), ((int)(((byte)(50)))));
+            this.textLoginUserName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textLoginUserName.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textLoginUserName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textLoginUserName.IconLeft = global::ban_2.Properties.Resources.nd2m6os0tmc9env4gc8jh3er0j;
+            this.textLoginUserName.Location = new System.Drawing.Point(33, 273);
+            this.textLoginUserName.Name = "textLoginUserName";
+            this.textLoginUserName.PasswordChar = '\0';
+            this.textLoginUserName.PlaceholderText = "Username";
+            this.textLoginUserName.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.textLoginUserName.SelectedText = "";
+            this.textLoginUserName.Size = new System.Drawing.Size(285, 36);
+            this.textLoginUserName.TabIndex = 5;
+            // 
             // Loginform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -607,11 +607,11 @@ namespace ban_2
             this.Load += new System.EventHandler(this.Loginform_Load);
             this.panelLogin.ResumeLayout(false);
             this.panelLogin.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.panelSignUp.ResumeLayout(false);
             this.panelSignUp.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbExit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
