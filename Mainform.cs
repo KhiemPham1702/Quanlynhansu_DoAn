@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +18,7 @@ namespace ban_2
         private UserControl currentChildForm;
         string email;
         string user_name;
+        int permission;
         Loginform loginform = new Loginform();
 
         SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-MJVETF2\SQLEXPRESS;Initial Catalog=Quanlynhansu;Integrated Security=True;");
@@ -25,21 +27,41 @@ namespace ban_2
 
         void find_NV()
         {
+            if (permission == 0) lbNameProfile.Text = "ADMIN";
+            else
+            {
+                con.Open();
+                string sql = "select HOTEN from CHUCVU inner join NHANVIEN on CHUCVU.MACV = NHANVIEN.MACV inner join PHONGBAN on NHANVIEN.MAPB = PHONGBAN.MAPB WHERE EMAIL = '" + email + "'";
+                cmd = new SqlCommand(sql, con);
+                cmd.CommandType = CommandType.Text;
+                da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                con.Close();
+
+                lbNameProfile.Text = dt.Rows[0][0].ToString();
+            }
+        }
+
+        Image ByteArrayToImage(byte[] b)
+        {
+            MemoryStream m = new MemoryStream(b);
+            return Image.FromStream(m);
+        }
+
+        void add_avartar()
+        {
             con.Open();
-            string sql = "select HOTEN from CHUCVU inner join NHANVIEN on CHUCVU.MACV = NHANVIEN.MACV inner join PHONGBAN on NHANVIEN.MAPB = PHONGBAN.MAPB WHERE EMAIL = '" + email + "'";
+            string sql = "select AVATAR FROM ACC_USER WHERE USERNAME = '" + user_name + "'";
             cmd = new SqlCommand(sql, con);
             cmd.CommandType = CommandType.Text;
             da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
             con.Close();
-
-            lbNameProfile.Text = dt.Rows[0][0].ToString();
-        }
-
-        void Phan_quyen()
-        {
-
+           
+            byte[] b = (byte[])dt.Rows[0][0];
+            pictureBoxAvatar.Image = ByteArrayToImage(b);
         }
 
         public Mainform()
@@ -47,11 +69,12 @@ namespace ban_2
             InitializeComponent();       
         }
 
-        public Mainform(string a, string b)
+        public Mainform(string a, string b, int c)
         {
             InitializeComponent();
             email = a;
             user_name = b;
+            permission = c;
         }
 
         void OpenChildForm(UserControl form)
@@ -68,9 +91,15 @@ namespace ban_2
 
         private void Mainform_Load(object sender, EventArgs e)
         {
+            if (permission == 0) profilleToolStripMenuItem.Visible = false;
+            else if(permission == 2)
+            {
+                btChart.Visible = false;
+            }
             OpenChildForm(new Home());
             lbNameProfile.Text = "";
             find_NV();
+            add_avartar();
         }
 
         private void btHome_Click(object sender, EventArgs e)
@@ -110,7 +139,7 @@ namespace ban_2
 
         private void profilleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Profile(email, user_name));
+            OpenChildForm(new Profile(email, user_name, permission));
         }
 
         private void loginOutToolStripMenuItem_Click(object sender, EventArgs e)

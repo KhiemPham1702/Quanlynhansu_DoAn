@@ -30,7 +30,6 @@ namespace ban_2
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btChart = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btAbout = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -43,21 +42,22 @@ namespace ban_2
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.guna2VSeparator1 = new Guna.UI2.WinForms.Guna2VSeparator();
-            this.btSetting = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.lbNameProfile = new System.Windows.Forms.Label();
-            this.pictureBoxAvatar = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.lbTitle = new System.Windows.Forms.Label();
             this.panelMain = new Guna.UI2.WinForms.Guna2Panel();
             this.menuSetting = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
+            this.btSetting = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.pictureBoxAvatar = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.profilleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loginOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.menuSetting.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btSetting)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAvatar)).BeginInit();
-            this.menuSetting.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -71,17 +71,6 @@ namespace ban_2
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(268, 794);
             this.panel1.TabIndex = 0;
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.Image = global::ban_2.Properties.Resources.logo_02;
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(39, 15);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(189, 123);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox1.TabIndex = 11;
-            this.guna2PictureBox1.TabStop = false;
             // 
             // panel3
             // 
@@ -338,19 +327,6 @@ namespace ban_2
             this.guna2VSeparator1.Size = new System.Drawing.Size(15, 40);
             this.guna2VSeparator1.TabIndex = 5;
             // 
-            // btSetting
-            // 
-            this.btSetting.Image = global::ban_2.Properties.Resources.PikPng_com_settings_icon_png_859703;
-            this.btSetting.ImageRotate = 0F;
-            this.btSetting.Location = new System.Drawing.Point(972, 15);
-            this.btSetting.Name = "btSetting";
-            this.btSetting.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.btSetting.Size = new System.Drawing.Size(40, 40);
-            this.btSetting.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btSetting.TabIndex = 4;
-            this.btSetting.TabStop = false;
-            this.btSetting.Click += new System.EventHandler(this.btSetting_Click);
-            // 
             // lbNameProfile
             // 
             this.lbNameProfile.AutoSize = true;
@@ -361,16 +337,6 @@ namespace ban_2
             this.lbNameProfile.Size = new System.Drawing.Size(151, 32);
             this.lbNameProfile.TabIndex = 3;
             this.lbNameProfile.Text = "Your Profile";
-            // 
-            // pictureBoxAvatar
-            // 
-            this.pictureBoxAvatar.ImageRotate = 0F;
-            this.pictureBoxAvatar.Location = new System.Drawing.Point(618, 13);
-            this.pictureBoxAvatar.Name = "pictureBoxAvatar";
-            this.pictureBoxAvatar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.pictureBoxAvatar.Size = new System.Drawing.Size(55, 50);
-            this.pictureBoxAvatar.TabIndex = 2;
-            this.pictureBoxAvatar.TabStop = false;
             // 
             // lbTitle
             // 
@@ -410,6 +376,43 @@ namespace ban_2
             this.menuSetting.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.menuSetting.Size = new System.Drawing.Size(144, 60);
             // 
+            // btSetting
+            // 
+            this.btSetting.Image = global::ban_2.Properties.Resources.PikPng_com_settings_icon_png_859703;
+            this.btSetting.ImageRotate = 0F;
+            this.btSetting.Location = new System.Drawing.Point(972, 15);
+            this.btSetting.Name = "btSetting";
+            this.btSetting.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.btSetting.Size = new System.Drawing.Size(40, 40);
+            this.btSetting.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btSetting.TabIndex = 4;
+            this.btSetting.TabStop = false;
+            this.btSetting.Click += new System.EventHandler(this.btSetting_Click);
+            // 
+            // pictureBoxAvatar
+            // 
+            this.pictureBoxAvatar.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxAvatar.Image = global::ban_2.Properties.Resources.jing_fm_account_clipart_1952632;
+            this.pictureBoxAvatar.ImageRotate = 0F;
+            this.pictureBoxAvatar.Location = new System.Drawing.Point(618, 13);
+            this.pictureBoxAvatar.Name = "pictureBoxAvatar";
+            this.pictureBoxAvatar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.pictureBoxAvatar.Size = new System.Drawing.Size(55, 50);
+            this.pictureBoxAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxAvatar.TabIndex = 2;
+            this.pictureBoxAvatar.TabStop = false;
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.Image = global::ban_2.Properties.Resources.logo_02;
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(39, 15);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(189, 123);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox1.TabIndex = 11;
+            this.guna2PictureBox1.TabStop = false;
+            // 
             // profilleToolStripMenuItem
             // 
             this.profilleToolStripMenuItem.Image = global::ban_2.Properties.Resources.jing_fm_account_clipart_1952632;
@@ -443,14 +446,14 @@ namespace ban_2
             this.Load += new System.EventHandler(this.Mainform_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.menuSetting.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btSetting)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAvatar)).EndInit();
-            this.menuSetting.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

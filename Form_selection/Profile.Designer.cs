@@ -499,27 +499,30 @@
             // 
             // btChangePicture
             // 
-            this.btChangePicture.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(84)))), ((int)(((byte)(122)))));
+            this.btChangePicture.BackColor = System.Drawing.Color.Transparent;
             this.btChangePicture.FillColor = System.Drawing.Color.Transparent;
-            this.btChangePicture.Image = global::ban_2.Properties.Resources.transparent_interface_icon_assets_icon_edit_icon_interface_ico_5dc7c968ad3b18_3328065815733743127096;
+            this.btChangePicture.Image = global::ban_2.Properties.Resources.Education_Pencil_1_copy_21;
             this.btChangePicture.ImageRotate = 0F;
-            this.btChangePicture.Location = new System.Drawing.Point(125, 153);
+            this.btChangePicture.Location = new System.Drawing.Point(226, 3);
             this.btChangePicture.Name = "btChangePicture";
             this.btChangePicture.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.btChangePicture.Size = new System.Drawing.Size(35, 35);
+            this.btChangePicture.Size = new System.Drawing.Size(49, 47);
             this.btChangePicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btChangePicture.TabIndex = 1;
             this.btChangePicture.TabStop = false;
+            this.btChangePicture.Click += new System.EventHandler(this.btChangePicture_Click);
             // 
             // picturboxAvatar
             // 
             this.picturboxAvatar.BackColor = System.Drawing.Color.Transparent;
             this.picturboxAvatar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(84)))), ((int)(((byte)(122)))));
+            this.picturboxAvatar.Image = global::ban_2.Properties.Resources.jing_fm_account_clipart_1952632;
             this.picturboxAvatar.ImageRotate = 0F;
             this.picturboxAvatar.Location = new System.Drawing.Point(41, 10);
             this.picturboxAvatar.Name = "picturboxAvatar";
             this.picturboxAvatar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.picturboxAvatar.Size = new System.Drawing.Size(200, 185);
+            this.picturboxAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picturboxAvatar.TabIndex = 0;
             this.picturboxAvatar.TabStop = false;
             // 

@@ -93,8 +93,10 @@ namespace ban_2
                 dr = cmd.ExecuteReader();               
                 if (dr.Read() == true)
                 {
-
-                    Mainform fmain = new Mainform(email, textLoginUserName.Text);
+                    int per;
+                    if (textLoginUserName.Text == "admin") per = 0;
+                    else per = kt();
+                    Mainform fmain = new Mainform(email, textLoginUserName.Text, per);
                     fmain.Show();
                     this.Hide();
                     textLoginUserName.Text = "";
@@ -102,27 +104,10 @@ namespace ban_2
                 }
                 else
                 {
-                    con.Close();
-                    con.Open();
-                    SqlDataReader drr;
-                    string loginAD = "SELECT * FROM ACC_ADMIN WHERE ADNAME= '" + textLoginUserName.Text.Trim() + "' and ADPASS= '" + textLoginUserPass.Text.Trim() + "'";
-                    cmd = new SqlCommand(loginAD, con);
-                    drr = cmd.ExecuteReader();
-                    if (drr.Read() == true)
-                    {                       
-                        Mainform fmain = new Mainform(email,textLoginUserName.Text);
-                        fmain.Show();
-                        this.Hide();
-                        textLoginUserName.Text = "";
-                        textLoginUserPass.Text = "";
-                    }
-                    else
-                    {
-                        MessageBox.Show("Tài khoản hoặc mật khẩu bị sai, mời nhập lại", "Đăng nhập thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        textLoginUserName.Text = "";
-                        textLoginUserPass.Text = "";
-                        textLoginUserName.Focus();
-                    }
+                    MessageBox.Show("Tài khoản hoặc mật khẩu bị sai, mời nhập lại", "Đăng nhập thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    textLoginUserName.Text = "";
+                    textLoginUserPass.Text = "";
+                    textLoginUserName.Focus();
                 }
                 con.Close();
             }

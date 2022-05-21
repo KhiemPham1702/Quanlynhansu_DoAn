@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,7 @@ namespace ban_2
     public partial class NV_info_form : Form
     {
         String maNV;
+        string email;
         SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-MJVETF2\SQLEXPRESS;Initial Catalog=Quanlynhansu;Integrated Security=True;");
         SqlCommand cmd = new SqlCommand();
         SqlDataAdapter da = new SqlDataAdapter();
@@ -23,6 +25,17 @@ namespace ban_2
         {
             InitializeComponent();
             maNV = a;
+        }
+
+        Image ByteArrayToImage(byte[] b)
+        {
+            MemoryStream m = new MemoryStream(b);
+            return Image.FromStream(m);
+        }
+
+        void add_avatar()
+        {
+            
         }
 
         void lay_NV()
@@ -63,6 +76,7 @@ namespace ban_2
         private void NV_info_form_Load(object sender, EventArgs e)
         {
             lay_NV();
+            add_avatar();
         }
 
         private bool kt()

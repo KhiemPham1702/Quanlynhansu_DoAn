@@ -163,6 +163,26 @@ namespace ban_2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Education_Pencil_1_copy_2 {
+            get {
+                object obj = ResourceManager.GetObject("Education_Pencil_1 copy 2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Education_Pencil_1_copy_21 {
+            get {
+                object obj = ResourceManager.GetObject("Education_Pencil_1 copy 21", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap eye_120221 {
             get {
                 object obj = ResourceManager.GetObject("eye_120221", resourceCulture);

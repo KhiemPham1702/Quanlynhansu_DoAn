@@ -63,14 +63,14 @@ namespace ban_2
             this.tbName = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.btCancel = new Guna.UI2.WinForms.Guna2Panel();
+            this.btUpdateSalary = new Guna.UI2.WinForms.Guna2Button();
             this.btDelete = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.btChangePicture = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.picturboxAvatar = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.btUpdateSalary = new Guna.UI2.WinForms.Guna2Button();
+            this.btChangePicture = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.btCancel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btChangePicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picturboxAvatar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btChangePicture)).BeginInit();
             this.SuspendLayout();
             // 
             // lbTen
@@ -398,6 +398,19 @@ namespace ban_2
             resources.ApplyResources(this.btCancel, "btCancel");
             this.btCancel.Name = "btCancel";
             // 
+            // btUpdateSalary
+            // 
+            this.btUpdateSalary.BorderRadius = 20;
+            this.btUpdateSalary.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btUpdateSalary.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btUpdateSalary.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btUpdateSalary.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btUpdateSalary.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(52)))), ((int)(((byte)(88)))));
+            resources.ApplyResources(this.btUpdateSalary, "btUpdateSalary");
+            this.btUpdateSalary.ForeColor = System.Drawing.Color.White;
+            this.btUpdateSalary.Name = "btUpdateSalary";
+            this.btUpdateSalary.Click += new System.EventHandler(this.guna2Button2_Click);
+            // 
             // btDelete
             // 
             this.btDelete.BorderRadius = 20;
@@ -424,39 +437,27 @@ namespace ban_2
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
-            // btChangePicture
-            // 
-            this.btChangePicture.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(84)))), ((int)(((byte)(122)))));
-            this.btChangePicture.FillColor = System.Drawing.Color.Transparent;
-            this.btChangePicture.Image = global::ban_2.Properties.Resources.transparent_interface_icon_assets_icon_edit_icon_interface_ico_5dc7c968ad3b18_3328065815733743127096;
-            this.btChangePicture.ImageRotate = 0F;
-            resources.ApplyResources(this.btChangePicture, "btChangePicture");
-            this.btChangePicture.Name = "btChangePicture";
-            this.btChangePicture.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.btChangePicture.TabStop = false;
-            // 
             // picturboxAvatar
             // 
             this.picturboxAvatar.BackColor = System.Drawing.Color.Transparent;
             this.picturboxAvatar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(84)))), ((int)(((byte)(122)))));
+            this.picturboxAvatar.Image = global::ban_2.Properties.Resources.jing_fm_account_clipart_1952632;
             this.picturboxAvatar.ImageRotate = 0F;
             resources.ApplyResources(this.picturboxAvatar, "picturboxAvatar");
             this.picturboxAvatar.Name = "picturboxAvatar";
             this.picturboxAvatar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.picturboxAvatar.TabStop = false;
             // 
-            // btUpdateSalary
+            // btChangePicture
             // 
-            this.btUpdateSalary.BorderRadius = 20;
-            this.btUpdateSalary.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btUpdateSalary.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btUpdateSalary.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btUpdateSalary.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btUpdateSalary.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(52)))), ((int)(((byte)(88)))));
-            resources.ApplyResources(this.btUpdateSalary, "btUpdateSalary");
-            this.btUpdateSalary.ForeColor = System.Drawing.Color.White;
-            this.btUpdateSalary.Name = "btUpdateSalary";
-            this.btUpdateSalary.Click += new System.EventHandler(this.guna2Button2_Click);
+            this.btChangePicture.BackColor = System.Drawing.Color.Transparent;
+            this.btChangePicture.FillColor = System.Drawing.Color.Transparent;
+            this.btChangePicture.Image = global::ban_2.Properties.Resources.Education_Pencil_1_copy_21;
+            this.btChangePicture.ImageRotate = 0F;
+            resources.ApplyResources(this.btChangePicture, "btChangePicture");
+            this.btChangePicture.Name = "btChangePicture";
+            this.btChangePicture.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.btChangePicture.TabStop = false;
             // 
             // NV_info_form
             // 
@@ -478,8 +479,8 @@ namespace ban_2
             this.Load += new System.EventHandler(this.NV_info_form_Load);
             this.btCancel.ResumeLayout(false);
             this.btCancel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btChangePicture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picturboxAvatar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btChangePicture)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -520,9 +521,9 @@ namespace ban_2
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI2.WinForms.Guna2Panel btCancel;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox btChangePicture;
         private Guna.UI2.WinForms.Guna2CirclePictureBox picturboxAvatar;
         private Guna.UI2.WinForms.Guna2Button btDelete;
         private Guna.UI2.WinForms.Guna2Button btUpdateSalary;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox btChangePicture;
     }
 }

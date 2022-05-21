@@ -327,6 +327,12 @@
   <ItemGroup>
     <None Include="Resources\111039_key_icon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Education_Pencil_1 copy 2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Education_Pencil_1 copy 2.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

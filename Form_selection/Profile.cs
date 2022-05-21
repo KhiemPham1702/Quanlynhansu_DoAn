@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,17 +16,20 @@ namespace ban_2.Form_selection
     {
         string email;
         string user_name;
+        int per;
+        string path;
 
         public Profile()
         {
             InitializeComponent();
         }
 
-        public Profile(string a, string b)
+        public Profile(string a, string b, int c)
         {
             InitializeComponent();
             email = a;
             user_name = b;
+            per = c;
         }
 
         SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-MJVETF2\SQLEXPRESS;Initial Catalog=Quanlynhansu;Integrated Security=True;");
@@ -59,7 +63,7 @@ namespace ban_2.Form_selection
         void ketnoicsdl2()
         {
             con.Open();
-            string sql = "select USERNAME, USERPASS FROM ACC_USER WHERE USERNAME = '" + user_name +"'";
+            string sql = "select USERNAME, USERPASS, AVATAR FROM ACC_USER WHERE USERNAME = '" + user_name +"'";
             cmd = new SqlCommand(sql, con);
             cmd.CommandType = CommandType.Text;
             da = new SqlDataAdapter(cmd);
@@ -69,6 +73,8 @@ namespace ban_2.Form_selection
 
             tbUserName.Text = dt.Rows[0][0].ToString();
             tbPass.Text = dt.Rows[0][1].ToString();
+            byte[] b = (byte[])dt.Rows[0][2];
+            picturboxAvatar.Image = ByteArrayToImage(b);
         }      
 
         private void btChange_Click(object sender, EventArgs e)
@@ -99,6 +105,37 @@ namespace ban_2.Form_selection
         {
             ketnoicsdl();
             ketnoicsdl2();
+        }
+
+        private void btChangePicture_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog();
+            if(open.ShowDialog() == DialogResult.OK)
+            {
+                picturboxAvatar.Image = Image.FromFile(open.FileName);
+                path = open.FileName;
+            }
+
+            byte[] b = ImageToByteArray(picturboxAvatar.Image);
+            con.Open();
+            cmd = new SqlCommand("UPDATE ACC_USER SET AVATAR = @HINH WHERE USERNAME = @TEN", con);
+            cmd.Parameters.Add(new SqlParameter("@TEN", user_name));
+            cmd.Parameters.Add(new SqlParameter("@HINH", b));
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+
+        byte[] ImageToByteArray(Image image)
+        {
+            MemoryStream m = new MemoryStream();
+            image.Save(m, System.Drawing.Imaging.ImageFormat.Png);
+            return m.ToArray();
+        }
+
+        Image ByteArrayToImage(byte[] b)
+        {
+            MemoryStream m = new MemoryStream(b);
+            return Image.FromStream(m);
         }
     }
 }
