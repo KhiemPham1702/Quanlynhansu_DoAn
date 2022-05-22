@@ -50,20 +50,25 @@ namespace ban_2
             return Image.FromStream(m);
         }
 
-        //void add_avartar()
-        //{
-        //    con.Open();
-        //    string sql = "select AVATAR FROM ACC_USER WHERE USERNAME = '" + user_name + "'";
-        //    cmd = new SqlCommand(sql, con);
-        //    cmd.CommandType = CommandType.Text;
-        //    da = new SqlDataAdapter(cmd);
-        //    DataTable dt = new DataTable();
-        //    da.Fill(dt);
-        //    con.Close();
+        public void reset(Image a)
+        {
+            pictureBoxAvatarMain.Image = a;
+        }
 
-        //    byte[] b = (byte[])dt.Rows[0][0];
-        //    pictureBoxAvatar.Image = ByteArrayToImage(b);
-        //}
+        void add_avartar()
+        {
+            con.Open();
+            string sql = "select AVATAR FROM ACC_USER WHERE USERNAME = '" + user_name + "'";
+            cmd = new SqlCommand(sql, con);
+            cmd.CommandType = CommandType.Text;
+            da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            con.Close();
+
+            byte[] b = (byte[])dt.Rows[0][0];
+            pictureBoxAvatarMain.Image = ByteArrayToImage(b);
+        }
 
         public Mainform()
         {
@@ -108,7 +113,14 @@ namespace ban_2
             OpenChildForm(new Home());
             lbNameProfile.Text = "";
             find_NV();
-            //add_avartar();
+            try
+            {
+                add_avartar();
+            }
+            catch
+            {
+
+            }
         }
 
         private void btHome_Click(object sender, EventArgs e)
@@ -148,7 +160,7 @@ namespace ban_2
 
         private void profilleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Profile(email, user_name, permission));
+            OpenChildForm(new Profile(email, user_name, permission, this));
         }
 
         void add_TT_user()

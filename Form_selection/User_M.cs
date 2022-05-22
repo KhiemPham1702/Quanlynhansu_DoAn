@@ -22,6 +22,8 @@ namespace ban_2.Form_selection
         SqlCommand cmd = new SqlCommand();
         SqlDataAdapter da = new SqlDataAdapter();
 
+        
+
         public void ketnoicsdl()
         {
             con.Open();

@@ -46,7 +46,7 @@ namespace ban_2
             this.guna2VSeparator1 = new Guna.UI2.WinForms.Guna2VSeparator();
             this.btSetting = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.lbNameProfile = new System.Windows.Forms.Label();
-            this.pictureBoxAvatar = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.pictureBoxAvatarMain = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.lbTitle = new System.Windows.Forms.Label();
             this.panelMain = new Guna.UI2.WinForms.Guna2Panel();
             this.menuSetting = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
@@ -57,7 +57,7 @@ namespace ban_2
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btSetting)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAvatar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAvatarMain)).BeginInit();
             this.menuSetting.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -353,7 +353,7 @@ namespace ban_2
             this.panel2.Controls.Add(this.guna2VSeparator1);
             this.panel2.Controls.Add(this.btSetting);
             this.panel2.Controls.Add(this.lbNameProfile);
-            this.panel2.Controls.Add(this.pictureBoxAvatar);
+            this.panel2.Controls.Add(this.pictureBoxAvatarMain);
             this.panel2.Controls.Add(this.lbTitle);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(268, 0);
@@ -392,18 +392,18 @@ namespace ban_2
             this.lbNameProfile.TabIndex = 3;
             this.lbNameProfile.Text = "Your Profile";
             // 
-            // pictureBoxAvatar
+            // pictureBoxAvatarMain
             // 
-            this.pictureBoxAvatar.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxAvatar.Image = global::ban_2.Properties.Resources.jing_fm_account_clipart_1952632;
-            this.pictureBoxAvatar.ImageRotate = 0F;
-            this.pictureBoxAvatar.Location = new System.Drawing.Point(618, 13);
-            this.pictureBoxAvatar.Name = "pictureBoxAvatar";
-            this.pictureBoxAvatar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.pictureBoxAvatar.Size = new System.Drawing.Size(55, 50);
-            this.pictureBoxAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxAvatar.TabIndex = 2;
-            this.pictureBoxAvatar.TabStop = false;
+            this.pictureBoxAvatarMain.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxAvatarMain.Image = global::ban_2.Properties.Resources.jing_fm_account_clipart_1952632;
+            this.pictureBoxAvatarMain.ImageRotate = 0F;
+            this.pictureBoxAvatarMain.Location = new System.Drawing.Point(618, 13);
+            this.pictureBoxAvatarMain.Name = "pictureBoxAvatarMain";
+            this.pictureBoxAvatarMain.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.pictureBoxAvatarMain.Size = new System.Drawing.Size(55, 50);
+            this.pictureBoxAvatarMain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxAvatarMain.TabIndex = 2;
+            this.pictureBoxAvatarMain.TabStop = false;
             // 
             // lbTitle
             // 
@@ -482,7 +482,7 @@ namespace ban_2
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btSetting)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAvatar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAvatarMain)).EndInit();
             this.menuSetting.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -496,7 +496,6 @@ namespace ban_2
         private System.Windows.Forms.Label lbTitle;
         private Guna.UI2.WinForms.Guna2CirclePictureBox btSetting;
         private System.Windows.Forms.Label lbNameProfile;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox pictureBoxAvatar;
         private Guna.UI2.WinForms.Guna2VSeparator guna2VSeparator1;
         private Guna.UI2.WinForms.Guna2Panel panelMain;
         private System.Windows.Forms.Panel panel3;
@@ -513,6 +512,7 @@ namespace ban_2
         private System.Windows.Forms.ToolStripMenuItem loginOutToolStripMenuItem;
         private Guna.UI2.WinForms.Guna2GradientButton btChart;
         private Guna.UI2.WinForms.Guna2GradientButton btUser_Mana;
+        public Guna.UI2.WinForms.Guna2CirclePictureBox pictureBoxAvatarMain;
     }
 }
 

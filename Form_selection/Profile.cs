@@ -18,18 +18,21 @@ namespace ban_2.Form_selection
         string user_name;
         int per;
         string path;
+        Mainform mainform;
+
 
         public Profile()
         {
             InitializeComponent();
         }
 
-        public Profile(string a, string b, int c)
+        public Profile(string a, string b, int c, Mainform main)
         {
             InitializeComponent();
             email = a;
             user_name = b;
             per = c;
+            this.mainform = main;
         }
 
         SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-MJVETF2\SQLEXPRESS;Initial Catalog=Quanlynhansu;Integrated Security=True;");
@@ -73,9 +76,18 @@ namespace ban_2.Form_selection
 
             tbUserName.Text = dt.Rows[0][0].ToString();
             tbPass.Text = dt.Rows[0][1].ToString();
-            byte[] b = (byte[])dt.Rows[0][2];
-            picturboxAvatar.Image = ByteArrayToImage(b);
-        }      
+
+            try
+            {
+                byte[] b = (byte[])dt.Rows[0][2];
+                picturboxAvatar.Image = ByteArrayToImage(b);
+            }
+            catch
+            {
+
+            }
+        }   
+        
 
         private void btChange_Click(object sender, EventArgs e)
         {
@@ -123,6 +135,8 @@ namespace ban_2.Form_selection
             cmd.Parameters.Add(new SqlParameter("@HINH", b));
             cmd.ExecuteNonQuery();
             con.Close();
+
+            mainform.reset(picturboxAvatar.Image);
         }
 
         byte[] ImageToByteArray(Image image)
