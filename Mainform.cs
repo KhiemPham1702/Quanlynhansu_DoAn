@@ -19,6 +19,7 @@ namespace ban_2
         string email;
         string user_name;
         int permission;
+        string now;
         Loginform loginform = new Loginform();
 
         SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-MJVETF2\SQLEXPRESS;Initial Catalog=Quanlynhansu;Integrated Security=True;");
@@ -49,32 +50,33 @@ namespace ban_2
             return Image.FromStream(m);
         }
 
-        void add_avartar()
-        {
-            con.Open();
-            string sql = "select AVATAR FROM ACC_USER WHERE USERNAME = '" + user_name + "'";
-            cmd = new SqlCommand(sql, con);
-            cmd.CommandType = CommandType.Text;
-            da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            con.Close();
-           
-            byte[] b = (byte[])dt.Rows[0][0];
-            pictureBoxAvatar.Image = ByteArrayToImage(b);
-        }
+        //void add_avartar()
+        //{
+        //    con.Open();
+        //    string sql = "select AVATAR FROM ACC_USER WHERE USERNAME = '" + user_name + "'";
+        //    cmd = new SqlCommand(sql, con);
+        //    cmd.CommandType = CommandType.Text;
+        //    da = new SqlDataAdapter(cmd);
+        //    DataTable dt = new DataTable();
+        //    da.Fill(dt);
+        //    con.Close();
+
+        //    byte[] b = (byte[])dt.Rows[0][0];
+        //    pictureBoxAvatar.Image = ByteArrayToImage(b);
+        //}
 
         public Mainform()
         {
             InitializeComponent();       
         }
 
-        public Mainform(string a, string b, int c)
+        public Mainform(string a, string b, int c, string d)
         {
             InitializeComponent();
             email = a;
             user_name = b;
             permission = c;
+            now = d;
         }
 
         void OpenChildForm(UserControl form)
@@ -95,11 +97,18 @@ namespace ban_2
             else if(permission == 2)
             {
                 btChart.Visible = false;
+                btUser_Mana.Visible = false;
+                btDepartment.Visible = false;
+                btEmployee.Visible = false;
+                btSalary.Visible = false;
+            } else if(permission == 1)
+            {
+                btUser_Mana.Visible = false;
             }
             OpenChildForm(new Home());
             lbNameProfile.Text = "";
             find_NV();
-            add_avartar();
+            //add_avartar();
         }
 
         private void btHome_Click(object sender, EventArgs e)
@@ -142,10 +151,20 @@ namespace ban_2
             OpenChildForm(new Profile(email, user_name, permission));
         }
 
+        void add_TT_user()
+        {
+            con.Open();
+            string sql = "INSERT INTO QL_USER VALUES('" + user_name + "', '" + now + "', '" + DateTime.Now.ToString() + "')";
+            cmd = new SqlCommand(sql, con);
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+
         private void loginOutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Do you want to sign out?", "Notification", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question) == DialogResult.Yes)
             {
+                add_TT_user();
                 this.Close();                
                 loginform.Show();
             }
@@ -154,6 +173,11 @@ namespace ban_2
         private void btChart_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Chart());
+        }
+
+        private void btUser_Mana_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new User_M());
         }
     }
 }

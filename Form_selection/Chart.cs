@@ -74,7 +74,7 @@ namespace ban_2.Form_selection
                 chartView.Series["Employee"].XValueMember = "TENPHONGBAN";
                 chartView.Series["Employee"].YValueMembers = "MEMBER";
                 con.Close();
-            }
+            } 
         }
     }
 }

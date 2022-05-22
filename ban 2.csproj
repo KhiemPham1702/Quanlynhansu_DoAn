@@ -119,6 +119,12 @@
     <Compile Include="Form_selection\Departments.Designer.cs">
       <DependentUpon>Departments.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_selection\User_M.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Form_selection\User_M.Designer.cs">
+      <DependentUpon>User_M.cs</DependentUpon>
+    </Compile>
     <Compile Include="Loginform.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,6 +181,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_selection\Salary.resx">
       <DependentUpon>Salary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_selection\User_M.resx">
+      <DependentUpon>User_M.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Loginform.resx">
       <DependentUpon>Loginform.cs</DependentUpon>

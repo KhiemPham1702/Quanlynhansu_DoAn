@@ -17,7 +17,7 @@ namespace ban_2
         SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-MJVETF2\SQLEXPRESS;Initial Catalog=Quanlynhansu;Integrated Security=True;");
         SqlCommand cmd = new SqlCommand();
         SqlDataAdapter da = new SqlDataAdapter();
-
+        string now = DateTime.Now.ToString();
         public Loginform()
         {
             InitializeComponent();
@@ -77,6 +77,8 @@ namespace ban_2
             }
         }
 
+        
+
         private void buttonLogin_Click(object sender, EventArgs e)
         {
             if (textLoginUserName.Text == "" || textLoginUserPass.Text == "")
@@ -93,10 +95,11 @@ namespace ban_2
                 dr = cmd.ExecuteReader();               
                 if (dr.Read() == true)
                 {
+                    con.Close();
                     int per;
                     if (textLoginUserName.Text == "admin") per = 0;
                     else per = kt();
-                    Mainform fmain = new Mainform(email, textLoginUserName.Text, per);
+                    Mainform fmain = new Mainform(email, textLoginUserName.Text, per, now);
                     fmain.Show();
                     this.Hide();
                     textLoginUserName.Text = "";
@@ -104,12 +107,13 @@ namespace ban_2
                 }
                 else
                 {
+                    con.Close();
                     MessageBox.Show("Tài khoản hoặc mật khẩu bị sai, mời nhập lại", "Đăng nhập thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     textLoginUserName.Text = "";
                     textLoginUserPass.Text = "";
                     textLoginUserName.Focus();
                 }
-                con.Close();
+                
             }
             
         }
@@ -146,7 +150,7 @@ namespace ban_2
         {
             con.Open();
             SqlDataReader dr;
-            string sql = "SELECT * FROM ACC_USER WHERE EMAIL = '" + tbEmail.Text + "'";
+            string sql = "SELECT * FROM NHANVIEN WHERE EMAIL = '" + tbEmail.Text + "'";
             cmd = new SqlCommand(sql, con);
             dr = cmd.ExecuteReader();
             if (dr.Read() == true)

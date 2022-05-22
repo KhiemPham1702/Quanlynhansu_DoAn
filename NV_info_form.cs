@@ -15,7 +15,6 @@ namespace ban_2
     public partial class NV_info_form : Form
     {
         String maNV;
-        string email;
         SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-MJVETF2\SQLEXPRESS;Initial Catalog=Quanlynhansu;Integrated Security=True;");
         SqlCommand cmd = new SqlCommand();
         SqlDataAdapter da = new SqlDataAdapter();
