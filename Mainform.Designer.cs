@@ -35,7 +35,6 @@ namespace ban_2
             this.btUser_Mana = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btChart = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btAbout = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.btAccount = new Guna.UI2.WinForms.Guna2GradientButton();
             this.label2 = new System.Windows.Forms.Label();
             this.btDepartment = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btSalary = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -90,7 +89,6 @@ namespace ban_2
             this.panel3.Controls.Add(this.btUser_Mana);
             this.panel3.Controls.Add(this.btChart);
             this.panel3.Controls.Add(this.btAbout);
-            this.panel3.Controls.Add(this.btAccount);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.btDepartment);
             this.panel3.Controls.Add(this.btSalary);
@@ -183,33 +181,6 @@ namespace ban_2
             this.btAbout.TabIndex = 14;
             this.btAbout.Text = "About us";
             this.btAbout.Click += new System.EventHandler(this.btAbout_Click);
-            // 
-            // btAccount
-            // 
-            this.btAccount.Animated = true;
-            this.btAccount.AutoRoundedCorners = true;
-            this.btAccount.BorderRadius = 25;
-            this.btAccount.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.btAccount.CustomizableEdges.BottomRight = false;
-            this.btAccount.CustomizableEdges.TopRight = false;
-            this.btAccount.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btAccount.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btAccount.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btAccount.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btAccount.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btAccount.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(52)))), ((int)(((byte)(88)))));
-            this.btAccount.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(52)))), ((int)(((byte)(88)))));
-            this.btAccount.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btAccount.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btAccount.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(84)))), ((int)(((byte)(122)))));
-            this.btAccount.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(52)))), ((int)(((byte)(88)))));
-            this.btAccount.HoverState.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btAccount.Location = new System.Drawing.Point(43, 423);
-            this.btAccount.Name = "btAccount";
-            this.btAccount.Size = new System.Drawing.Size(208, 53);
-            this.btAccount.TabIndex = 13;
-            this.btAccount.Text = "Account";
-            this.btAccount.Click += new System.EventHandler(this.btAccount_Click);
             // 
             // label2
             // 
@@ -517,7 +488,6 @@ namespace ban_2
         private Guna.UI2.WinForms.Guna2GradientButton btEmployee;
         private Guna.UI2.WinForms.Guna2GradientButton btHome;
         private Guna.UI2.WinForms.Guna2GradientButton btAbout;
-        private Guna.UI2.WinForms.Guna2GradientButton btAccount;
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2ContextMenuStrip menuSetting;
