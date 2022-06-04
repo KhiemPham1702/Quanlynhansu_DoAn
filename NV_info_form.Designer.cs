@@ -458,6 +458,7 @@ namespace ban_2
             this.btChangePicture.Name = "btChangePicture";
             this.btChangePicture.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.btChangePicture.TabStop = false;
+            this.btChangePicture.Click += new System.EventHandler(this.btChangePicture_Click);
             // 
             // NV_info_form
             // 

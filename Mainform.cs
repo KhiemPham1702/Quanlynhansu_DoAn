@@ -99,20 +99,23 @@ namespace ban_2
         private void Mainform_Load(object sender, EventArgs e)
         {
             if (permission == 0) profilleToolStripMenuItem.Visible = false;
-            else if(permission == 2)
+            else if(permission == 1)
+            {
+                btUser_Mana.Visible = false;
+            }
+            else if (permission == 2)
             {
                 btChart.Visible = false;
                 btUser_Mana.Visible = false;
                 btDepartment.Visible = false;
                 btEmployee.Visible = false;
                 btSalary.Visible = false;
-            } else if(permission == 1)
-            {
-                btUser_Mana.Visible = false;
             }
+
             OpenChildForm(new Home());
             lbNameProfile.Text = "";
             find_NV();
+
             try
             {
                 add_avartar();

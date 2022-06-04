@@ -17,7 +17,10 @@ namespace ban_2
         SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-MJVETF2\SQLEXPRESS;Initial Catalog=Quanlynhansu;Integrated Security=True;");
         SqlCommand cmd = new SqlCommand();
         SqlDataAdapter da = new SqlDataAdapter();
+
         string now = DateTime.Now.ToString();
+        int permisstion = 0;
+
         public Loginform()
         {
             InitializeComponent();
@@ -96,10 +99,8 @@ namespace ban_2
                 if (dr.Read() == true)
                 {
                     con.Close();
-                    int per;
-                    if (textLoginUserName.Text == "admin") per = 0;
-                    else per = kt();
-                    Mainform fmain = new Mainform(email, textLoginUserName.Text, per, now);
+                    
+                    Mainform fmain = new Mainform(email, textLoginUserName.Text, permisstion, now);
                     fmain.Show();
                     this.Hide();
                     textLoginUserName.Text = "";
@@ -120,7 +121,7 @@ namespace ban_2
 
         string find_NV()
         {
-            string s = "SELECT EMAIL FROM ACC_USER WHERE USERNAME = '" + textLoginUserName.Text + "'";
+            string s = "SELECT EMAIL, PERMISSION FROM ACC_USER WHERE USERNAME = '" + textLoginUserName.Text + "'";
             if (con.State != ConnectionState.Open)
             {
                 con.Open();
@@ -140,6 +141,7 @@ namespace ban_2
             if (drr.Read() == true)
             {
                 con.Close();
+                permisstion = int.Parse(dt.Rows[0][1].ToString());
                 return dt.Rows[0][0].ToString();
             }
             con.Close();

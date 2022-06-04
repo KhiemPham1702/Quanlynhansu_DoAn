@@ -43,6 +43,7 @@ namespace ban_2
             this.btHome = new Guna.UI2.WinForms.Guna2GradientButton();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.guna2VSeparator1 = new Guna.UI2.WinForms.Guna2VSeparator();
             this.btSetting = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.lbNameProfile = new System.Windows.Forms.Label();
@@ -349,7 +350,8 @@ namespace ban_2
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.guna2VSeparator1);
             this.panel2.Controls.Add(this.btSetting);
             this.panel2.Controls.Add(this.lbNameProfile);
@@ -360,6 +362,17 @@ namespace ban_2
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1032, 74);
             this.panel2.TabIndex = 1;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Gray;
+            this.label3.Location = new System.Drawing.Point(32, 21);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(176, 32);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Your Profile  /";
             // 
             // guna2VSeparator1
             // 
@@ -410,7 +423,7 @@ namespace ban_2
             this.lbTitle.AutoSize = true;
             this.lbTitle.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(84)))), ((int)(((byte)(122)))));
-            this.lbTitle.Location = new System.Drawing.Point(63, 21);
+            this.lbTitle.Location = new System.Drawing.Point(208, 21);
             this.lbTitle.Name = "lbTitle";
             this.lbTitle.Size = new System.Drawing.Size(83, 32);
             this.lbTitle.TabIndex = 0;
@@ -513,6 +526,7 @@ namespace ban_2
         private Guna.UI2.WinForms.Guna2GradientButton btChart;
         private Guna.UI2.WinForms.Guna2GradientButton btUser_Mana;
         public Guna.UI2.WinForms.Guna2CirclePictureBox pictureBoxAvatarMain;
+        private System.Windows.Forms.Label label3;
     }
 }
 

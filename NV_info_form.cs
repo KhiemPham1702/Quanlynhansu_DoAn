@@ -19,17 +19,13 @@ namespace ban_2
         SqlCommand cmd = new SqlCommand();
         SqlDataAdapter da = new SqlDataAdapter();
 
+        string path;
+
 
         public NV_info_form(String a)
         {
             InitializeComponent();
             maNV = a;
-        }
-
-        Image ByteArrayToImage(byte[] b)
-        {
-            MemoryStream m = new MemoryStream(b);
-            return Image.FromStream(m);
         }
 
         void add_avatar()
@@ -40,7 +36,7 @@ namespace ban_2
         void lay_NV()
         {
             con.Open();
-            String sql = "select HOTEN, GIOITINH, NGAYSINH, CCCD, EMAIL, DIACHI, TENCV, SDT, TENPHONGBAN, HOCVAN, isnull(LUONGCOBAN,0) , isnull(LUONGPHEP,0) from CHUCVU full join NHANVIEN on CHUCVU.MACV = NHANVIEN.MACV  full join	PHONGBAN on NHANVIEN.MAPB = PHONGBAN.MAPB  full join BANGLUONG on NHANVIEN.MANV = BANGLUONG.MANV WHERE NHANVIEN.MANV ='" + maNV + "'";
+            String sql = "select HOTEN, GIOITINH, NGAYSINH, CCCD, EMAIL, DIACHI, TENCV, SDT, TENPHONGBAN, HOCVAN, isnull(LUONGCOBAN,0) , isnull(LUONGPHEP,0), AVATAR from CHUCVU full join NHANVIEN on CHUCVU.MACV = NHANVIEN.MACV  full join	PHONGBAN on NHANVIEN.MAPB = PHONGBAN.MAPB  full join BANGLUONG on NHANVIEN.MANV = BANGLUONG.MANV WHERE NHANVIEN.MANV ='" + maNV + "'";
             cmd = new SqlCommand(sql, con);
             cmd.CommandType = CommandType.Text;
             da = new SqlDataAdapter(cmd);
@@ -63,8 +59,24 @@ namespace ban_2
 
             lbTen.Text = dt.Rows[0][0].ToString();
             lbChucVu.Text = dt.Rows[0][6].ToString();
-            lbSalary.Text = dt.Rows[0][10].ToString() + " VND";
-            lbBonus.Text = dt.Rows[0][11].ToString() + " VND";
+
+            string s = dt.Rows[0][10].ToString();
+            string[] arrListStr = s.Split('.');
+            lbSalary.Text = arrListStr[0] + " VND";
+
+            string s1 = dt.Rows[0][11].ToString();
+            string[] arrListStr1 = s.Split('.');
+            lbBonus.Text = arrListStr1[0] + " VND";
+
+            try
+            {
+                byte[] b = (byte[])dt.Rows[0][12];
+                picturboxAvatar.Image = ByteArrayToImage(b);
+            }
+            catch
+            {
+
+            }
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)
@@ -171,6 +183,38 @@ namespace ban_2
         private void guna2Button2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btChangePicture_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog();
+            if (open.ShowDialog() == DialogResult.OK)
+            {
+                picturboxAvatar.Image = Image.FromFile(open.FileName);
+                path = open.FileName;
+            }
+
+            byte[] b = ImageToByteArray(picturboxAvatar.Image);
+            con.Open();
+            cmd = new SqlCommand("UPDATE NHANVIEN SET AVATAR = @HINH WHERE MANV = @TEN", con);
+            cmd.Parameters.Add(new SqlParameter("@TEN", maNV));
+            cmd.Parameters.Add(new SqlParameter("@HINH", b));
+            cmd.ExecuteNonQuery();
+            con.Close();
+
+        }
+
+        byte[] ImageToByteArray(Image image)
+        {
+            MemoryStream m = new MemoryStream();
+            image.Save(m, System.Drawing.Imaging.ImageFormat.Png);
+            return m.ToArray();
+        }
+
+        Image ByteArrayToImage(byte[] b)
+        {
+            MemoryStream m = new MemoryStream(b);
+            return Image.FromStream(m);
         }
     }
 }
