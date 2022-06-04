@@ -66,8 +66,15 @@ namespace ban_2
             da.Fill(dt);
             con.Close();
 
-            byte[] b = (byte[])dt.Rows[0][0];
-            pictureBoxAvatarMain.Image = ByteArrayToImage(b);
+            try
+            {
+                byte[] b = (byte[])dt.Rows[0][0];
+                pictureBoxAvatarMain.Image = ByteArrayToImage(b);
+            }
+            catch
+            {
+
+            }
         }
 
         public Mainform()
