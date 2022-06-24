@@ -14,7 +14,7 @@ namespace ban_2
     public partial class Loginform : Form
     {
 
-        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-MJVETF2\SQLEXPRESS;Initial Catalog=Quanlynhansu;Integrated Security=True;");
+        SqlConnection con = new SqlConnection(@"Data Source=NguyenTin;Initial Catalog=Quanlynhansu;Integrated Security=True;");
         SqlCommand cmd = new SqlCommand();
         SqlDataAdapter da = new SqlDataAdapter();
 
@@ -86,7 +86,7 @@ namespace ban_2
         {
             if (textLoginUserName.Text == "" || textLoginUserPass.Text == "")
             {
-                MessageBox.Show("Tài khoản hoặc mật khẩu bị bỏ trống", "Đăng nhập thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Account or password is empty", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -109,7 +109,7 @@ namespace ban_2
                 else
                 {
                     con.Close();
-                    MessageBox.Show("Tài khoản hoặc mật khẩu bị sai, mời nhập lại", "Đăng nhập thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Invalid account or password, please re-enter", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     textLoginUserName.Text = "";
                     textLoginUserPass.Text = "";
                     textLoginUserName.Focus();
@@ -170,7 +170,7 @@ namespace ban_2
         {
             if (textSignUpUserName.Text == "" || textSignUpUserPass.Text == "" || textConfirmPass.Text == "" || tbEmail.Text == "" || tbPhone.Text == "")
             {
-                MessageBox.Show("Hãy nhập đầy đủ thông tin", "Đăng ký thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please enter the full information", "Registration Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (textSignUpUserPass.Text == textConfirmPass.Text)
             {
@@ -184,15 +184,15 @@ namespace ban_2
 
                     textSignUpUserName.Text = textSignUpUserPass.Text = textConfirmPass.Text = "";
 
-                    MessageBox.Show("Tài khoản của bạn đã được tạo", "Đăng ký thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Your account has been created", "Successfully registered", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     panelLogin.Visible = true;
                     panelSignUp.Visible = false;
                 }
-                else MessageBox.Show("Nhân viên đăng kí không có trong danh sách nhân viên !", "Đăng kí thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);    
+                else MessageBox.Show("Registered employees are not on the employee list!", "Registration Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);    
             }
             else
             {
-                MessageBox.Show("Mật khẩu không trùng khớp, mời nhập lại", "Đăng ký thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Password does not match, please re-enter", "Registration Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 textSignUpUserPass.Text = textConfirmPass.Text = "";
                 textSignUpUserPass.Focus();
             }

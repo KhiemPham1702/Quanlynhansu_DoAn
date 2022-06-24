@@ -56,7 +56,7 @@ namespace ban_2
             this.tbPassOld.Location = new System.Drawing.Point(52, 95);
             this.tbPassOld.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tbPassOld.Name = "tbPassOld";
-            this.tbPassOld.PasswordChar = '\0';
+            this.tbPassOld.PasswordChar = '●';
             this.tbPassOld.PlaceholderForeColor = System.Drawing.Color.Gray;
             this.tbPassOld.PlaceholderText = "Your Password";
             this.tbPassOld.SelectedText = "";
@@ -90,7 +90,7 @@ namespace ban_2
             this.tbNewPass.Location = new System.Drawing.Point(52, 178);
             this.tbNewPass.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tbNewPass.Name = "tbNewPass";
-            this.tbNewPass.PasswordChar = '\0';
+            this.tbNewPass.PasswordChar = '●';
             this.tbNewPass.PlaceholderForeColor = System.Drawing.Color.Gray;
             this.tbNewPass.PlaceholderText = "New Password";
             this.tbNewPass.SelectedText = "";
@@ -113,7 +113,7 @@ namespace ban_2
             this.tbConfirmPass.Location = new System.Drawing.Point(52, 263);
             this.tbConfirmPass.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tbConfirmPass.Name = "tbConfirmPass";
-            this.tbConfirmPass.PasswordChar = '\0';
+            this.tbConfirmPass.PasswordChar = '●';
             this.tbConfirmPass.PlaceholderForeColor = System.Drawing.Color.Gray;
             this.tbConfirmPass.PlaceholderText = "Confirm New Password";
             this.tbConfirmPass.SelectedText = "";

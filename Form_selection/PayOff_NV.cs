@@ -11,52 +11,55 @@ using System.Windows.Forms;
 
 namespace ban_2.Form_selection
 {
-    public partial class User_M : UserControl
+    public partial class PayOff_NV : UserControl
     {
-        public User_M()
-        {
-            InitializeComponent();
-        }
-
         SqlConnection con = new SqlConnection(@"Data Source=NguyenTin;Initial Catalog=Quanlynhansu;Integrated Security=True;");
         SqlCommand cmd = new SqlCommand();
         SqlDataAdapter da = new SqlDataAdapter();
 
-        
+        string email;
 
         public void ketnoicsdl()
         {
             con.Open();
-            string sql = "select * from QL_USER";
+            string sql = "select MATP, THUONGPHAT, THOIGIAN, MOTA from THUONGPHAT inner join NHANVIEN ON NHANVIEN.MANV = THUONGPHAT.MANV WHERE NHANVIEN.EMAIL = '" + email + "'";
             cmd = new SqlCommand(sql, con);
             cmd.CommandType = CommandType.Text;
             da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
             con.Close();
-            dataGridViewUser.DataSource = dt;
+            dataGridViewPONV.DataSource = dt;
+        }
+        public PayOff_NV()
+        {
+            InitializeComponent();
         }
 
-        private void User_M_Load(object sender, EventArgs e)
+        public PayOff_NV(string a)
+        {
+            InitializeComponent();
+            email = a;
+        }
+
+        private void PayOff_NV_Load(object sender, EventArgs e)
         {
             ketnoicsdl();
         }
 
-        private void tbTimUser_TextChanged(object sender, EventArgs e)
+        private void label2_Click(object sender, EventArgs e)
         {
-            if (tbTimUser.Text != "")
-            {
-                con.Open();
-                String sql = "select * from QL_USER WHERE QLNAME like '%" + tbTimUser.Text + "%'";
-                cmd = new SqlCommand(sql, con);
-                cmd.CommandType = CommandType.Text;
-                da = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                con.Close();
-                dataGridViewUser.DataSource = dt;
-            }
-            else ketnoicsdl();
+
+        }
+
+        private void dataGridViewNV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void guna2ProgressBar1_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

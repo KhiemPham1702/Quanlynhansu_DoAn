@@ -65,7 +65,7 @@ namespace ban_2.Form_selection
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(52)))), ((int)(((byte)(88)))));
             this.label1.Location = new System.Drawing.Point(398, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(232, 65);
+            this.label1.Size = new System.Drawing.Size(226, 62);
             this.label1.TabIndex = 6;
             this.label1.Text = "About us";
             // 
@@ -87,7 +87,7 @@ namespace ban_2.Form_selection
             this.lbChucVu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(52)))), ((int)(((byte)(88)))));
             this.lbChucVu.Location = new System.Drawing.Point(125, 572);
             this.lbChucVu.Name = "lbChucVu";
-            this.lbChucVu.Size = new System.Drawing.Size(127, 32);
+            this.lbChucVu.Size = new System.Drawing.Size(118, 31);
             this.lbChucVu.TabIndex = 23;
             this.lbChucVu.Text = "20522015";
             // 
@@ -109,7 +109,7 @@ namespace ban_2.Form_selection
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(52)))), ((int)(((byte)(88)))));
             this.label3.Location = new System.Drawing.Point(460, 572);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(127, 32);
+            this.label3.Size = new System.Drawing.Size(118, 31);
             this.label3.TabIndex = 26;
             this.label3.Text = "20521459";
             // 
@@ -131,7 +131,7 @@ namespace ban_2.Form_selection
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(52)))), ((int)(((byte)(88)))));
             this.label5.Location = new System.Drawing.Point(810, 572);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(127, 32);
+            this.label5.Size = new System.Drawing.Size(118, 31);
             this.label5.TabIndex = 29;
             this.label5.Text = "20521976";
             // 

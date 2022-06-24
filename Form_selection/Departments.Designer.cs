@@ -58,6 +58,7 @@
             this.btAdd = new Guna.UI2.WinForms.Guna2Button();
             this.picturboxAvatar = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.btDeleteDP = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picturboxAvatar)).BeginInit();
@@ -162,7 +163,7 @@
             this.MANV.MinimumWidth = 6;
             this.MANV.Name = "MANV";
             this.MANV.ReadOnly = true;
-            this.MANV.Width = 59;
+            this.MANV.Width = 57;
             // 
             // HOTEN
             // 
@@ -331,6 +332,7 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(642, 252);
             this.dataGridView1.TabIndex = 23;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -341,7 +343,7 @@
             this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 59;
+            this.dataGridViewTextBoxColumn1.Width = 57;
             // 
             // dataGridViewTextBoxColumn7
             // 
@@ -353,6 +355,7 @@
             // 
             // MEMBER
             // 
+            this.MEMBER.DataPropertyName = "MEMBER";
             this.MEMBER.HeaderText = "Members";
             this.MEMBER.MinimumWidth = 6;
             this.MEMBER.Name = "MEMBER";
@@ -384,6 +387,7 @@
             this.picturboxAvatar.Name = "picturboxAvatar";
             this.picturboxAvatar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.picturboxAvatar.Size = new System.Drawing.Size(220, 200);
+            this.picturboxAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picturboxAvatar.TabIndex = 16;
             this.picturboxAvatar.TabStop = false;
             // 
@@ -400,10 +404,28 @@
             this.guna2CirclePictureBox1.TabIndex = 10;
             this.guna2CirclePictureBox1.TabStop = false;
             // 
+            // btDeleteDP
+            // 
+            this.btDeleteDP.BorderRadius = 20;
+            this.btDeleteDP.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btDeleteDP.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btDeleteDP.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btDeleteDP.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btDeleteDP.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(84)))), ((int)(((byte)(122)))));
+            this.btDeleteDP.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btDeleteDP.ForeColor = System.Drawing.Color.White;
+            this.btDeleteDP.Location = new System.Drawing.Point(686, 331);
+            this.btDeleteDP.Name = "btDeleteDP";
+            this.btDeleteDP.Size = new System.Drawing.Size(150, 45);
+            this.btDeleteDP.TabIndex = 27;
+            this.btDeleteDP.Text = "Delete";
+            this.btDeleteDP.Click += new System.EventHandler(this.btDeleteDP_Click);
+            // 
             // Departments
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btDeleteDP);
             this.Controls.Add(this.btAdd);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label3);
@@ -450,9 +472,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn SDT;
         private System.Windows.Forms.DataGridViewTextBoxColumn EMAIL;
         private System.Windows.Forms.DataGridViewTextBoxColumn DIACHI;
+        public System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn MEMBER;
-        public System.Windows.Forms.DataGridView dataGridView1;
+        private Guna.UI2.WinForms.Guna2Button btDeleteDP;
     }
 }

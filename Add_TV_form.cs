@@ -22,7 +22,7 @@ namespace ban_2
             employee = a;
         }
 
-        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-MJVETF2\SQLEXPRESS;Initial Catalog=Quanlynhansu;Integrated Security=True;");
+        SqlConnection con = new SqlConnection(@"Data Source=NguyenTin;Initial Catalog=Quanlynhansu;Integrated Security=True;");
         SqlCommand cmd = new SqlCommand();
         SqlDataAdapter da = new SqlDataAdapter();
 
@@ -30,7 +30,7 @@ namespace ban_2
         {
             if (tbAddID.Text == "" || tbAddName.Text == "" || tbAddIDC.Text == "" || tbAddPhone.Text == "" || tbAddDress.Text == "" || tbAddEducation.Text == "" || tbAddEmail.Text == "" || (radioButton1.Checked == false && radioButton2.Checked == false))
             {
-                MessageBox.Show("Hãy điền đầy đủ thông tin!!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Hãy điền đầy đủ thông tin!!!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             return true;
@@ -110,20 +110,27 @@ namespace ban_2
         {
             if (kt())
             {
-                string gt = gioitinh();
-                string MAPB = Get_MAPB();
-                string MACV = Get_MACV();
-                con.Open();
-                cmd = con.CreateCommand();
-                cmd.CommandText = "INSERT INTO NHANVIEN (MANV, MAPB, MACV, HOTEN, CCCD, GIOITINH, NGAYSINH, SDT, EMAIL, DIACHI, HOCVAN)  VALUES ('" + tbAddID.Text + "', '" + MAPB + "', '" + MACV + "', N'" + tbAddName.Text + "','" + tbAddIDC.Text + "', N'" + gt + "','" + pickerBirthday.Value.ToString("yyyy-MM-dd") + "','" + tbAddPhone.Text + "', '" + tbAddEmail.Text + "', N'" + tbAddDress.Text + "', N'" + tbAddEducation.Text + "')";
-                cmd.ExecuteNonQuery();
-                con.Close();
-                MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                tbAddID.Text = tbAddName.Text = tbAddEmail.Text = tbAddIDC.Text = tbAddPhone.Text = tbAddDress.Text = tbAddEducation.Text = "";
-                radioButton1.Checked = radioButton2.Checked = false;
-                employee.ketnoicsdl();
-                this.Close();
-                
+                try
+                {
+                    string gt = gioitinh();
+                    string MAPB = Get_MAPB();
+                    string MACV = Get_MACV();
+                    con.Open();
+                    cmd = con.CreateCommand();
+                    cmd.CommandText = "INSERT INTO NHANVIEN (MANV, MAPB, MACV, HOTEN, CCCD, GIOITINH, NGAYSINH, SDT, EMAIL, DIACHI, HOCVAN)  VALUES ('" + tbAddID.Text + "', '" + MAPB + "', '" + MACV + "', N'" + tbAddName.Text + "','" + tbAddIDC.Text + "', N'" + gt + "','" + pickerBirthday.Value.ToString("yyyy-MM-dd") + "','" + tbAddPhone.Text + "', '" + tbAddEmail.Text + "', N'" + tbAddDress.Text + "', N'" + tbAddEducation.Text + "')";
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                    MessageBox.Show("Successfully added", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    tbAddID.Text = tbAddName.Text = tbAddEmail.Text = tbAddIDC.Text = tbAddPhone.Text = tbAddDress.Text = tbAddEducation.Text = "";
+                    radioButton1.Checked = radioButton2.Checked = false;
+                    employee.ketnoicsdl();
+                    this.Close();
+                }
+                catch
+                {
+                    MessageBox.Show("ID employee already exists", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
             }
 
         }

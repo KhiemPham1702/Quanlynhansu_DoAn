@@ -22,7 +22,7 @@ namespace ban_2
         string now;
         Loginform loginform = new Loginform();
 
-        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-MJVETF2\SQLEXPRESS;Initial Catalog=Quanlynhansu;Integrated Security=True;");
+        SqlConnection con = new SqlConnection(@"Data Source=NguyenTin;Initial Catalog=Quanlynhansu;Integrated Security=True;");
         SqlCommand cmd = new SqlCommand();
         SqlDataAdapter da = new SqlDataAdapter();
 
@@ -117,6 +117,7 @@ namespace ban_2
                 btDepartment.Visible = false;
                 btEmployee.Visible = false;
                 btSalary.Visible = false;
+                guna2GradientButton2.Visible = true;
             }
 
             OpenChildForm(new Home());
@@ -200,6 +201,25 @@ namespace ban_2
         private void btUser_Mana_Click(object sender, EventArgs e)
         {
             OpenChildForm(new User_M());
+        }
+
+        private void guna2GradientButton1_Click(object sender, EventArgs e)
+        {
+            if(permission == 2)
+            {
+                OpenChildForm(new Furlough_Employee(email));
+            }
+            else OpenChildForm(new Furlough());
+        }
+
+        private void btInfo_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Introduce());
+        }
+
+        private void guna2GradientButton2_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new PayOff_NV(email));
         }
     }
 }

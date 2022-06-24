@@ -21,7 +21,7 @@ namespace ban_2
             departments = a;
         }
 
-        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-MJVETF2\SQLEXPRESS;Initial Catalog=Quanlynhansu;Integrated Security=True;");
+        SqlConnection con = new SqlConnection(@"Data Source=NguyenTin;Initial Catalog=Quanlynhansu;Integrated Security=True;");
         SqlCommand cmd = new SqlCommand();
         SqlDataAdapter da = new SqlDataAdapter();
 
@@ -29,7 +29,7 @@ namespace ban_2
         {
             if (tbAddID.Text == "" || tbAddName.Text == "")
             {
-                MessageBox.Show("Hãy điền đầy đủ thông tin!!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please fill out all the information!!!", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             return true;
@@ -42,18 +42,30 @@ namespace ban_2
 
         private void tbAddID_Click(object sender, EventArgs e)
         {
+          
             if (kt())
             {
-                con.Open();
-                cmd = con.CreateCommand();
-                cmd.CommandText = "INSERT INTO PHONGBAN (MAPB, TENPHONGBAN)  VALUES ('" + tbAddID.Text + "', N'" + tbAddName.Text + "')";
-                cmd.ExecuteNonQuery();
-                con.Close();
-                MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                tbAddID.Text = tbAddName.Text = "";
-                departments.ketnoicsdl2();
-                this.Close();
+                try
+                {
+                    con.Open();
+                    cmd = con.CreateCommand();
+                    cmd.CommandText = "INSERT INTO PHONGBAN (MAPB, TENPHONGBAN)  VALUES ('" + tbAddID.Text + "', N'" + tbAddName.Text + "')";
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                    MessageBox.Show("Successfully added", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    tbAddID.Text = tbAddName.Text = "";
+                    departments.ketnoicsdl2();
+                    this.Close();
+                }
+                catch {
+                    MessageBox.Show("ID department already exists", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }   
             }
+        }
+
+        private void btCancel_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

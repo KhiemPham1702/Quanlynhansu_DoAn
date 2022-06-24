@@ -18,14 +18,14 @@ namespace ban_2.Form_selection
             InitializeComponent();
         }
 
-        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-MJVETF2\SQLEXPRESS;Initial Catalog=Quanlynhansu;Integrated Security=True;");
+        SqlConnection con = new SqlConnection(@"Data Source=NguyenTin;Initial Catalog=Quanlynhansu;Integrated Security=True;");
         SqlCommand cmd = new SqlCommand();
         SqlDataAdapter da = new SqlDataAdapter();
 
         public void ketnoicsdl()
         {
             con.Open();
-            string sql = "select NHANVIEN.MANV, HOTEN, TENCV, MALUONG, LUONGCOBAN,LUONGPHEP,HESOLUONG  from CHUCVU inner join NHANVIEN on CHUCVU.MACV = NHANVIEN.MACV inner join BANGLUONG on NHANVIEN.MANV = BANGLUONG.MANV";
+            string sql = "select NHANVIEN.MANV, HOTEN, TENCV, MALUONG, LUONGCOBAN,LUONGPHEP,HESOLUONG  from CHUCVU inner join NHANVIEN on CHUCVU.MACV = NHANVIEN.MACV inner join BANGLUONG on NHANVIEN.MANV = BANGLUONG.MANV WHERE THANG = '"+ picker.Value.Month +"'AND NAM = '" + picker.Value.Year +"'";
             cmd = new SqlCommand(sql, con);
             cmd.CommandType = CommandType.Text;
             da = new SqlDataAdapter(cmd);
@@ -33,6 +33,8 @@ namespace ban_2.Form_selection
             da.Fill(dt);
             con.Close();
             dataGridViewNV.DataSource = dt;
+
+            
         }
 
         private void tbTimL_TextChanged(object sender, EventArgs e)
@@ -55,20 +57,31 @@ namespace ban_2.Form_selection
 
         private void Salary_Load(object sender, EventArgs e)
         {
+            picker.Format = DateTimePickerFormat.Custom;
+            picker.CustomFormat = "MMM yyyy";
             ketnoicsdl();
         }
 
         private void dataGridViewNV_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dataGridViewNV.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+            try
             {
-                NV_info_form form = new NV_info_form(dataGridViewNV.Rows[e.RowIndex].Cells[0].Value.ToString());
-                form.FormClosing += new FormClosingEventHandler(this.Form_Closing);
-                form.Show();
+                if (dataGridViewNV.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+                {
+                    NV_info_form form = new NV_info_form(dataGridViewNV.Rows[e.RowIndex].Cells[0].Value.ToString());
+                    form.FormClosing += new FormClosingEventHandler(this.Form_Closing);
+                    form.Show();
+                }
             }
+            catch { }
         }
 
         private void Form_Closing(object sender, FormClosingEventArgs e)
+        {
+            ketnoicsdl();
+        }
+
+        private void picker_ValueChanged(object sender, EventArgs e)
         {
             ketnoicsdl();
         }

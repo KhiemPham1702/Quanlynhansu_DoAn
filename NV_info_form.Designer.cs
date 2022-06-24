@@ -42,8 +42,6 @@ namespace ban_2
             this.label8 = new System.Windows.Forms.Label();
             this.tbEmail = new Guna.UI2.WinForms.Guna2TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.lbBonus = new System.Windows.Forms.Label();
-            this.lbSalary = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -63,14 +61,20 @@ namespace ban_2
             this.tbName = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.btCancel = new Guna.UI2.WinForms.Guna2Panel();
-            this.btUpdateSalary = new Guna.UI2.WinForms.Guna2Button();
+            this.btPrintSalary = new Guna.UI2.WinForms.Guna2Button();
             this.btDelete = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.picturboxAvatar = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.lbBonus = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lbSalary = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btUpSalary = new Guna.UI2.WinForms.Guna2Button();
             this.btChangePicture = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.picturboxAvatar = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.btDetail = new Guna.UI2.WinForms.Guna2Button();
+            this.label14 = new System.Windows.Forms.Label();
             this.btCancel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picturboxAvatar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btChangePicture)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picturboxAvatar)).BeginInit();
             this.SuspendLayout();
             // 
             // lbTen
@@ -189,18 +193,6 @@ namespace ban_2
             resources.ApplyResources(this.label7, "label7");
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(52)))), ((int)(((byte)(88)))));
             this.label7.Name = "label7";
-            // 
-            // lbBonus
-            // 
-            resources.ApplyResources(this.lbBonus, "lbBonus");
-            this.lbBonus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(84)))), ((int)(((byte)(122)))));
-            this.lbBonus.Name = "lbBonus";
-            // 
-            // lbSalary
-            // 
-            resources.ApplyResources(this.lbSalary, "lbSalary");
-            this.lbSalary.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(84)))), ((int)(((byte)(122)))));
-            this.lbSalary.Name = "lbSalary";
             // 
             // label12
             // 
@@ -370,7 +362,7 @@ namespace ban_2
             // 
             this.btCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(84)))), ((int)(((byte)(122)))));
             this.btCancel.BorderRadius = 30;
-            this.btCancel.Controls.Add(this.btUpdateSalary);
+            this.btCancel.Controls.Add(this.btPrintSalary);
             this.btCancel.Controls.Add(this.btDelete);
             this.btCancel.Controls.Add(this.guna2Button1);
             this.btCancel.Controls.Add(this.label16);
@@ -398,18 +390,18 @@ namespace ban_2
             resources.ApplyResources(this.btCancel, "btCancel");
             this.btCancel.Name = "btCancel";
             // 
-            // btUpdateSalary
+            // btPrintSalary
             // 
-            this.btUpdateSalary.BorderRadius = 20;
-            this.btUpdateSalary.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btUpdateSalary.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btUpdateSalary.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btUpdateSalary.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btUpdateSalary.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(52)))), ((int)(((byte)(88)))));
-            resources.ApplyResources(this.btUpdateSalary, "btUpdateSalary");
-            this.btUpdateSalary.ForeColor = System.Drawing.Color.White;
-            this.btUpdateSalary.Name = "btUpdateSalary";
-            this.btUpdateSalary.Click += new System.EventHandler(this.guna2Button2_Click);
+            this.btPrintSalary.BorderRadius = 20;
+            this.btPrintSalary.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btPrintSalary.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btPrintSalary.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btPrintSalary.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btPrintSalary.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(52)))), ((int)(((byte)(88)))));
+            resources.ApplyResources(this.btPrintSalary, "btPrintSalary");
+            this.btPrintSalary.ForeColor = System.Drawing.Color.White;
+            this.btPrintSalary.Name = "btPrintSalary";
+            this.btPrintSalary.Click += new System.EventHandler(this.btPrintSalary_Click_1);
             // 
             // btDelete
             // 
@@ -437,16 +429,62 @@ namespace ban_2
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
-            // picturboxAvatar
+            // lbBonus
             // 
-            this.picturboxAvatar.BackColor = System.Drawing.Color.Transparent;
-            this.picturboxAvatar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(84)))), ((int)(((byte)(122)))));
-            this.picturboxAvatar.Image = global::ban_2.Properties.Resources.jing_fm_account_clipart_1952632;
-            this.picturboxAvatar.ImageRotate = 0F;
-            resources.ApplyResources(this.picturboxAvatar, "picturboxAvatar");
-            this.picturboxAvatar.Name = "picturboxAvatar";
-            this.picturboxAvatar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.picturboxAvatar.TabStop = false;
+            this.lbBonus.BackColor = System.Drawing.SystemColors.Control;
+            this.lbBonus.BorderRadius = 15;
+            this.lbBonus.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.lbBonus.DefaultText = "";
+            this.lbBonus.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.lbBonus.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.lbBonus.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.lbBonus.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.lbBonus.FillColor = System.Drawing.SystemColors.Control;
+            this.lbBonus.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            resources.ApplyResources(this.lbBonus, "lbBonus");
+            this.lbBonus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(84)))), ((int)(((byte)(122)))));
+            this.lbBonus.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.lbBonus.Name = "lbBonus";
+            this.lbBonus.PasswordChar = '\0';
+            this.lbBonus.PlaceholderForeColor = System.Drawing.SystemColors.Control;
+            this.lbBonus.PlaceholderText = "";
+            this.lbBonus.ReadOnly = true;
+            this.lbBonus.SelectedText = "";
+            // 
+            // lbSalary
+            // 
+            this.lbSalary.BackColor = System.Drawing.SystemColors.Control;
+            this.lbSalary.BorderRadius = 15;
+            this.lbSalary.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.lbSalary.DefaultText = "";
+            this.lbSalary.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.lbSalary.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.lbSalary.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.lbSalary.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.lbSalary.FillColor = System.Drawing.SystemColors.Control;
+            this.lbSalary.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            resources.ApplyResources(this.lbSalary, "lbSalary");
+            this.lbSalary.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(84)))), ((int)(((byte)(122)))));
+            this.lbSalary.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.lbSalary.Name = "lbSalary";
+            this.lbSalary.PasswordChar = '\0';
+            this.lbSalary.PlaceholderForeColor = System.Drawing.SystemColors.Control;
+            this.lbSalary.PlaceholderText = "";
+            this.lbSalary.SelectedText = "";
+            this.lbSalary.TextChanged += new System.EventHandler(this.lbSalary_TextChanged);
+            // 
+            // btUpSalary
+            // 
+            this.btUpSalary.BorderRadius = 20;
+            this.btUpSalary.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btUpSalary.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btUpSalary.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btUpSalary.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btUpSalary.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(52)))), ((int)(((byte)(88)))));
+            resources.ApplyResources(this.btUpSalary, "btUpSalary");
+            this.btUpSalary.ForeColor = System.Drawing.Color.White;
+            this.btUpSalary.Name = "btUpSalary";
+            this.btUpSalary.Click += new System.EventHandler(this.btUpSalary_Click);
             // 
             // btChangePicture
             // 
@@ -460,15 +498,55 @@ namespace ban_2
             this.btChangePicture.TabStop = false;
             this.btChangePicture.Click += new System.EventHandler(this.btChangePicture_Click);
             // 
+            // picturboxAvatar
+            // 
+            this.picturboxAvatar.BackColor = System.Drawing.Color.Transparent;
+            this.picturboxAvatar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(84)))), ((int)(((byte)(122)))));
+            this.picturboxAvatar.Image = global::ban_2.Properties.Resources.jing_fm_account_clipart_1952632;
+            this.picturboxAvatar.ImageRotate = 0F;
+            resources.ApplyResources(this.picturboxAvatar, "picturboxAvatar");
+            this.picturboxAvatar.Name = "picturboxAvatar";
+            this.picturboxAvatar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.picturboxAvatar.TabStop = false;
+            // 
+            // label13
+            // 
+            resources.ApplyResources(this.label13, "label13");
+            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(52)))), ((int)(((byte)(88)))));
+            this.label13.Name = "label13";
+            // 
+            // btDetail
+            // 
+            this.btDetail.BorderRadius = 20;
+            this.btDetail.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btDetail.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btDetail.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btDetail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btDetail.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(52)))), ((int)(((byte)(88)))));
+            resources.ApplyResources(this.btDetail, "btDetail");
+            this.btDetail.ForeColor = System.Drawing.Color.White;
+            this.btDetail.Name = "btDetail";
+            this.btDetail.Click += new System.EventHandler(this.btDetail_Click);
+            // 
+            // label14
+            // 
+            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(52)))), ((int)(((byte)(88)))));
+            resources.ApplyResources(this.label14, "label14");
+            this.label14.Name = "label14";
+            // 
             // NV_info_form
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             resources.ApplyResources(this, "$this");
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.btDetail);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.btUpSalary);
+            this.Controls.Add(this.lbSalary);
+            this.Controls.Add(this.lbBonus);
             this.Controls.Add(this.btChangePicture);
             this.Controls.Add(this.picturboxAvatar);
             this.Controls.Add(this.lbTen);
-            this.Controls.Add(this.lbBonus);
-            this.Controls.Add(this.lbSalary);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label1);
@@ -480,8 +558,8 @@ namespace ban_2
             this.Load += new System.EventHandler(this.NV_info_form_Load);
             this.btCancel.ResumeLayout(false);
             this.btCancel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picturboxAvatar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btChangePicture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picturboxAvatar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -500,8 +578,6 @@ namespace ban_2
         private System.Windows.Forms.Label label8;
         private Guna.UI2.WinForms.Guna2TextBox tbEmail;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label lbBonus;
-        private System.Windows.Forms.Label lbSalary;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label1;
@@ -524,7 +600,13 @@ namespace ban_2
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2CirclePictureBox picturboxAvatar;
         private Guna.UI2.WinForms.Guna2Button btDelete;
-        private Guna.UI2.WinForms.Guna2Button btUpdateSalary;
+        private Guna.UI2.WinForms.Guna2Button btPrintSalary;
         private Guna.UI2.WinForms.Guna2CirclePictureBox btChangePicture;
+        private Guna.UI2.WinForms.Guna2TextBox lbBonus;
+        private Guna.UI2.WinForms.Guna2TextBox lbSalary;
+        private Guna.UI2.WinForms.Guna2Button btUpSalary;
+        private System.Windows.Forms.Label label13;
+        private Guna.UI2.WinForms.Guna2Button btDetail;
+        private System.Windows.Forms.Label label14;
     }
 }
