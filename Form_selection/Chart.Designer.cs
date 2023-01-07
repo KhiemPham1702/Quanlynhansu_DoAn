@@ -29,9 +29,9 @@ namespace ban_2.Form_selection
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cbbStyle = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -100,7 +100,9 @@ namespace ban_2.Form_selection
             this.cbbStatic.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cbbStatic.ItemHeight = 30;
             this.cbbStatic.Items.AddRange(new object[] {
-            "Department"});
+            "Department",
+            "Gender",
+            "Position"});
             this.cbbStatic.Location = new System.Drawing.Point(243, 30);
             this.cbbStatic.Name = "cbbStatic";
             this.cbbStatic.Size = new System.Drawing.Size(296, 36);
@@ -120,20 +122,21 @@ namespace ban_2.Form_selection
             // 
             // chartView
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chartView.ChartAreas.Add(chartArea1);
+            chartArea2.Name = "ChartArea1";
+            this.chartView.ChartAreas.Add(chartArea2);
             this.chartView.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend1.Name = "Legend1";
-            this.chartView.Legends.Add(legend1);
+            legend2.Name = "Legend1";
+            this.chartView.Legends.Add(legend2);
             this.chartView.Location = new System.Drawing.Point(0, 93);
             this.chartView.Name = "chartView";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chartView.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chartView.Series.Add(series2);
             this.chartView.Size = new System.Drawing.Size(1032, 627);
             this.chartView.TabIndex = 1;
             this.chartView.Text = "chart1";
+            this.chartView.Click += new System.EventHandler(this.chartView_Click);
             // 
             // Chart
             // 

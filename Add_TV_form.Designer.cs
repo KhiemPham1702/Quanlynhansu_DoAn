@@ -152,6 +152,7 @@ namespace ban_2
             this.cbPosition.Name = "cbPosition";
             this.cbPosition.Size = new System.Drawing.Size(222, 36);
             this.cbPosition.TabIndex = 33;
+            this.cbPosition.SelectedIndexChanged += new System.EventHandler(this.cbPosition_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -190,6 +191,7 @@ namespace ban_2
             this.cbDepartment.Name = "cbDepartment";
             this.cbDepartment.Size = new System.Drawing.Size(222, 36);
             this.cbDepartment.TabIndex = 30;
+            this.cbDepartment.SelectedIndexChanged += new System.EventHandler(this.cbDepartment_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -332,6 +334,7 @@ namespace ban_2
             this.tbAddPhone.SelectedText = "";
             this.tbAddPhone.Size = new System.Drawing.Size(376, 45);
             this.tbAddPhone.TabIndex = 21;
+            this.tbAddPhone.TextChanged += new System.EventHandler(this.tbAddPhone_TextChanged);
             // 
             // tbAddIDC
             // 
@@ -354,6 +357,7 @@ namespace ban_2
             this.tbAddIDC.SelectedText = "";
             this.tbAddIDC.Size = new System.Drawing.Size(376, 45);
             this.tbAddIDC.TabIndex = 20;
+            this.tbAddIDC.TextChanged += new System.EventHandler(this.tbAddIDC_TextChanged);
             // 
             // tbAddName
             // 

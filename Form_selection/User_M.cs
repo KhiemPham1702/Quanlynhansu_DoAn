@@ -18,11 +18,11 @@ namespace ban_2.Form_selection
             InitializeComponent();
         }
 
-        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-MJVETF2\SQLEXPRESS;Initial Catalog=Quanlynhansu;Integrated Security=True;");
+        SqlConnection con = new connect().Con;
         SqlCommand cmd = new SqlCommand();
         SqlDataAdapter da = new SqlDataAdapter();
 
-        
+
 
         public void ketnoicsdl()
         {
@@ -47,7 +47,7 @@ namespace ban_2.Form_selection
             if (tbTimUser.Text != "")
             {
                 con.Open();
-                String sql = "select * from QL_USER WHERE QLNAME like '%" + tbTimUser.Text + "%'";
+                String sql = "select * from QL_USER WHERE Email like '%" + tbTimUser.Text + "%'";
                 cmd = new SqlCommand(sql, con);
                 cmd.CommandType = CommandType.Text;
                 da = new SqlDataAdapter(cmd);

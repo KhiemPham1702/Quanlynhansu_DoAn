@@ -22,7 +22,7 @@ namespace ban_2
         string now;
         Loginform loginform = new Loginform();
 
-        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-MJVETF2\SQLEXPRESS;Initial Catalog=Quanlynhansu;Integrated Security=True;");
+        SqlConnection con = new connect().Con;
         SqlCommand cmd = new SqlCommand();
         SqlDataAdapter da = new SqlDataAdapter();
 
@@ -79,7 +79,7 @@ namespace ban_2
 
         public Mainform()
         {
-            InitializeComponent();       
+            InitializeComponent();
         }
 
         public Mainform(string a, string b, int c, string d)
@@ -93,7 +93,7 @@ namespace ban_2
 
         void OpenChildForm(UserControl form)
         {
-            if(currentChildForm != null)
+            if (currentChildForm != null)
             {
                 panelMain.Controls.Clear();
             }
@@ -106,7 +106,7 @@ namespace ban_2
         private void Mainform_Load(object sender, EventArgs e)
         {
             if (permission == 0) profilleToolStripMenuItem.Visible = false;
-            else if(permission == 1)
+            else if (permission == 1)
             {
                 btUser_Mana.Visible = false;
             }
@@ -117,6 +117,7 @@ namespace ban_2
                 btDepartment.Visible = false;
                 btEmployee.Visible = false;
                 btSalary.Visible = false;
+                guna2GradientButton2.Visible = true;
             }
 
             OpenChildForm(new Home());
@@ -155,7 +156,7 @@ namespace ban_2
 
         private void btAccount_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void btAbout_Click(object sender, EventArgs e)
@@ -175,7 +176,7 @@ namespace ban_2
 
         void add_TT_user()
         {
-            con.Open();
+           
             string sql = "INSERT INTO QL_USER VALUES('" + user_name + "', '" + now + "', '" + DateTime.Now.ToString() + "')";
             cmd = new SqlCommand(sql, con);
             cmd.ExecuteNonQuery();
@@ -187,7 +188,7 @@ namespace ban_2
             if (MessageBox.Show("Do you want to sign out?", "Notification", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 add_TT_user();
-                this.Close();                
+                this.Close();
                 loginform.Show();
             }
         }
@@ -200,6 +201,30 @@ namespace ban_2
         private void btUser_Mana_Click(object sender, EventArgs e)
         {
             OpenChildForm(new User_M());
+        }
+
+        private void guna2GradientButton1_Click(object sender, EventArgs e)
+        {
+            if (permission == 2)
+            {
+                OpenChildForm(new Furlough_Employee(email));
+            }
+            else OpenChildForm(new Furlough());
+        }
+
+        private void btInfo_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Introduce());
+        }
+
+        private void guna2GradientButton2_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new PayOff_NV(email));
+        }
+
+        private void btnChat_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Chat(email));
         }
     }
 }

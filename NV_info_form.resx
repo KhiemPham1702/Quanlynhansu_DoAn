@@ -151,7 +151,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lbTen.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>9</value>
   </data>
   <data name="label16.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -184,7 +184,7 @@
     <value>btCancel</value>
   </data>
   <data name="&gt;&gt;label16.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="tbIDC.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Semibold, 10.2pt, style=Bold</value>
@@ -211,7 +211,7 @@
     <value>btCancel</value>
   </data>
   <data name="&gt;&gt;tbIDC.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="btUpdate.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Semibold, 12pt, style=Bold</value>
@@ -238,7 +238,7 @@
     <value>btCancel</value>
   </data>
   <data name="&gt;&gt;btUpdate.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="label10.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -271,7 +271,7 @@
     <value>btCancel</value>
   </data>
   <data name="&gt;&gt;label10.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="label9.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -304,7 +304,7 @@
     <value>btCancel</value>
   </data>
   <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="tbPhongBan.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Semibold, 10.2pt, style=Bold</value>
@@ -331,7 +331,7 @@
     <value>btCancel</value>
   </data>
   <data name="&gt;&gt;tbPhongBan.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="tbDiaChi.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Semibold, 10.2pt, style=Bold</value>
@@ -358,7 +358,7 @@
     <value>btCancel</value>
   </data>
   <data name="&gt;&gt;tbDiaChi.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="label8.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -391,7 +391,7 @@
     <value>btCancel</value>
   </data>
   <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="tbEmail.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Semibold, 10.2pt, style=Bold</value>
@@ -418,7 +418,7 @@
     <value>btCancel</value>
   </data>
   <data name="&gt;&gt;tbEmail.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="label7.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -451,73 +451,7 @@
     <value>btCancel</value>
   </data>
   <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="lbBonus.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lbBonus.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 16.2pt, style=Bold</value>
-  </data>
-  <data name="lbBonus.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lbBonus.Location" type="System.Drawing.Point, System.Drawing">
-    <value>132, 488</value>
-  </data>
-  <data name="lbBonus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>83, 38</value>
-  </data>
-  <data name="lbBonus.TabIndex" type="System.Int32, mscorlib">
-    <value>21</value>
-  </data>
-  <data name="lbBonus.Text" xml:space="preserve">
-    <value>500K</value>
-  </data>
-  <data name="&gt;&gt;lbBonus.Name" xml:space="preserve">
-    <value>lbBonus</value>
-  </data>
-  <data name="&gt;&gt;lbBonus.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lbBonus.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;lbBonus.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="lbSalary.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lbSalary.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 16.2pt, style=Bold</value>
-  </data>
-  <data name="lbSalary.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lbSalary.Location" type="System.Drawing.Point, System.Drawing">
-    <value>132, 571</value>
-  </data>
-  <data name="lbSalary.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 38</value>
-  </data>
-  <data name="lbSalary.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
-  </data>
-  <data name="lbSalary.Text" xml:space="preserve">
-    <value>20M </value>
-  </data>
-  <data name="&gt;&gt;lbSalary.Name" xml:space="preserve">
-    <value>lbSalary</value>
-  </data>
-  <data name="&gt;&gt;lbSalary.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lbSalary.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;lbSalary.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>13</value>
   </data>
   <data name="label12.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -529,7 +463,7 @@
     <value>NoControl</value>
   </data>
   <data name="label12.Location" type="System.Drawing.Point, System.Drawing">
-    <value>26, 490</value>
+    <value>13, 402</value>
   </data>
   <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
     <value>97, 28</value>
@@ -550,7 +484,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label12.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>10</value>
   </data>
   <data name="label11.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -562,7 +496,7 @@
     <value>NoControl</value>
   </data>
   <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
-    <value>25, 409</value>
+    <value>12, 348</value>
   </data>
   <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
     <value>181, 32</value>
@@ -583,7 +517,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label11.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>11</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -616,7 +550,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>12</value>
   </data>
   <data name="tbPhone.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Semibold, 10.2pt, style=Bold</value>
@@ -643,7 +577,7 @@
     <value>btCancel</value>
   </data>
   <data name="&gt;&gt;tbPhone.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
   <data name="label6.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -676,7 +610,7 @@
     <value>btCancel</value>
   </data>
   <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>15</value>
   </data>
   <data name="tbChucvu.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Semibold, 10.2pt, style=Bold</value>
@@ -703,7 +637,7 @@
     <value>btCancel</value>
   </data>
   <data name="&gt;&gt;tbChucvu.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>16</value>
   </data>
   <data name="label5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -736,7 +670,7 @@
     <value>btCancel</value>
   </data>
   <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>17</value>
   </data>
   <data name="tbChuyenNganh.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Semibold, 10.2pt, style=Bold</value>
@@ -763,7 +697,7 @@
     <value>btCancel</value>
   </data>
   <data name="&gt;&gt;tbChuyenNganh.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>18</value>
   </data>
   <data name="label15.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -775,16 +709,16 @@
     <value>NoControl</value>
   </data>
   <data name="label15.Location" type="System.Drawing.Point, System.Drawing">
-    <value>26, 578</value>
+    <value>13, 490</value>
   </data>
   <data name="label15.Size" type="System.Drawing.Size, System.Drawing">
-    <value>69, 28</value>
+    <value>120, 28</value>
   </data>
   <data name="label15.TabIndex" type="System.Int32, mscorlib">
     <value>20</value>
   </data>
   <data name="label15.Text" xml:space="preserve">
-    <value>Bonus</value>
+    <value>Bonus/Fine:</value>
   </data>
   <data name="&gt;&gt;label15.Name" xml:space="preserve">
     <value>label15</value>
@@ -796,7 +730,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label15.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>13</value>
   </data>
   <data name="lbChucVu.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -829,7 +763,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lbChucVu.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>14</value>
   </data>
   <data name="pickerBirthday.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Semibold, 10.2pt, style=Bold</value>
@@ -853,7 +787,7 @@
     <value>btCancel</value>
   </data>
   <data name="&gt;&gt;pickerBirthday.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>19</value>
   </data>
   <data name="label4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -886,7 +820,7 @@
     <value>btCancel</value>
   </data>
   <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>20</value>
   </data>
   <data name="radioButton2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -919,7 +853,7 @@
     <value>btCancel</value>
   </data>
   <data name="&gt;&gt;radioButton2.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>21</value>
   </data>
   <data name="radioButton1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -952,7 +886,7 @@
     <value>btCancel</value>
   </data>
   <data name="&gt;&gt;radioButton1.ZOrder" xml:space="preserve">
-    <value>21</value>
+    <value>22</value>
   </data>
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -985,7 +919,7 @@
     <value>btCancel</value>
   </data>
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>22</value>
+    <value>23</value>
   </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1018,7 +952,7 @@
     <value>btCancel</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>23</value>
+    <value>24</value>
   </data>
   <data name="tbName.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Semibold, 10.2pt, style=Bold</value>
@@ -1045,37 +979,61 @@
     <value>btCancel</value>
   </data>
   <data name="&gt;&gt;tbName.ZOrder" xml:space="preserve">
-    <value>24</value>
+    <value>25</value>
   </data>
   <metadata name="guna2Elipse1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <data name="btUpdateSalary.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="guna2Button2.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Semibold, 12pt, style=Bold</value>
   </data>
-  <data name="btUpdateSalary.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="guna2Button2.Location" type="System.Drawing.Point, System.Drawing">
     <value>32, 519</value>
   </data>
-  <data name="btUpdateSalary.Size" type="System.Drawing.Size, System.Drawing">
-    <value>164, 54</value>
+  <data name="guna2Button2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 54</value>
   </data>
-  <data name="btUpdateSalary.TabIndex" type="System.Int32, mscorlib">
-    <value>30</value>
+  <data name="guna2Button2.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
   </data>
-  <data name="btUpdateSalary.Text" xml:space="preserve">
-    <value>Update Salary</value>
+  <data name="guna2Button2.Text" xml:space="preserve">
+    <value>Print Salary</value>
   </data>
-  <data name="&gt;&gt;btUpdateSalary.Name" xml:space="preserve">
-    <value>btUpdateSalary</value>
+  <data name="&gt;&gt;guna2Button2.Name" xml:space="preserve">
+    <value>guna2Button2</value>
   </data>
-  <data name="&gt;&gt;btUpdateSalary.Type" xml:space="preserve">
+  <data name="&gt;&gt;guna2Button2.Type" xml:space="preserve">
     <value>Guna.UI2.WinForms.Guna2Button, Guna.UI2, Version=2.0.3.2, Culture=neutral, PublicKeyToken=4015e4865bda28a4</value>
   </data>
-  <data name="&gt;&gt;btUpdateSalary.Parent" xml:space="preserve">
+  <data name="&gt;&gt;guna2Button2.Parent" xml:space="preserve">
     <value>btCancel</value>
   </data>
-  <data name="&gt;&gt;btUpdateSalary.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;guna2Button2.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="btPrintSalary.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9pt</value>
+  </data>
+  <data name="btPrintSalary.Location" type="System.Drawing.Point, System.Drawing">
+    <value>132, 627</value>
+  </data>
+  <data name="btPrintSalary.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 45</value>
+  </data>
+  <data name="btPrintSalary.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;btPrintSalary.Name" xml:space="preserve">
+    <value>btPrintSalary</value>
+  </data>
+  <data name="&gt;&gt;btPrintSalary.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2Button, Guna.UI2, Version=2.0.3.2, Culture=neutral, PublicKeyToken=4015e4865bda28a4</value>
+  </data>
+  <data name="&gt;&gt;btPrintSalary.Parent" xml:space="preserve">
+    <value>btCancel</value>
+  </data>
+  <data name="&gt;&gt;btPrintSalary.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="btDelete.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Semibold, 12pt, style=Bold</value>
@@ -1102,7 +1060,7 @@
     <value>btCancel</value>
   </data>
   <data name="&gt;&gt;btDelete.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="guna2Button1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI Semibold, 12pt, style=Bold</value>
@@ -1129,7 +1087,7 @@
     <value>btCancel</value>
   </data>
   <data name="&gt;&gt;guna2Button1.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="btCancel.Location" type="System.Drawing.Point, System.Drawing">
     <value>313, 99</value>
@@ -1150,7 +1108,124 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btCancel.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>15</value>
+  </data>
+  <data name="lbBonus.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbBonus.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 16.2pt, style=Bold</value>
+  </data>
+  <data name="lbBonus.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lbBonus.Location" type="System.Drawing.Point, System.Drawing">
+    <value>142, 471</value>
+  </data>
+  <data name="lbBonus.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 6, 6, 6</value>
+  </data>
+  <data name="lbBonus.Size" type="System.Drawing.Size, System.Drawing">
+    <value>151, 47</value>
+  </data>
+  <data name="lbBonus.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="&gt;&gt;lbBonus.Name" xml:space="preserve">
+    <value>lbBonus</value>
+  </data>
+  <data name="&gt;&gt;lbBonus.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2TextBox, Guna.UI2, Version=2.0.3.2, Culture=neutral, PublicKeyToken=4015e4865bda28a4</value>
+  </data>
+  <data name="&gt;&gt;lbBonus.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lbBonus.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="lbSalary.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbSalary.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 16.2pt, style=Bold</value>
+  </data>
+  <data name="lbSalary.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lbSalary.Location" type="System.Drawing.Point, System.Drawing">
+    <value>142, 402</value>
+  </data>
+  <data name="lbSalary.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>6, 6, 6, 6</value>
+  </data>
+  <data name="lbSalary.Size" type="System.Drawing.Size, System.Drawing">
+    <value>151, 47</value>
+  </data>
+  <data name="lbSalary.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="&gt;&gt;lbSalary.Name" xml:space="preserve">
+    <value>lbSalary</value>
+  </data>
+  <data name="&gt;&gt;lbSalary.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2TextBox, Guna.UI2, Version=2.0.3.2, Culture=neutral, PublicKeyToken=4015e4865bda28a4</value>
+  </data>
+  <data name="&gt;&gt;lbSalary.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lbSalary.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="btUpSalary.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 12pt, style=Bold</value>
+  </data>
+  <data name="btUpSalary.Location" type="System.Drawing.Point, System.Drawing">
+    <value>119, 554</value>
+  </data>
+  <data name="btUpSalary.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 53</value>
+  </data>
+  <data name="btUpSalary.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="btUpSalary.Text" xml:space="preserve">
+    <value>Update Salary</value>
+  </data>
+  <data name="&gt;&gt;btUpSalary.Name" xml:space="preserve">
+    <value>btUpSalary</value>
+  </data>
+  <data name="&gt;&gt;btUpSalary.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2Button, Guna.UI2, Version=2.0.3.2, Culture=neutral, PublicKeyToken=4015e4865bda28a4</value>
+  </data>
+  <data name="&gt;&gt;btUpSalary.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btUpSalary.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="btChangePicture.Location" type="System.Drawing.Point, System.Drawing">
+    <value>244, 52</value>
+  </data>
+  <data name="btChangePicture.Size" type="System.Drawing.Size, System.Drawing">
+    <value>49, 47</value>
+  </data>
+  <data name="btChangePicture.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="btChangePicture.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="&gt;&gt;btChangePicture.Name" xml:space="preserve">
+    <value>btChangePicture</value>
+  </data>
+  <data name="&gt;&gt;btChangePicture.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2CirclePictureBox, Guna.UI2, Version=2.0.3.2, Culture=neutral, PublicKeyToken=4015e4865bda28a4</value>
+  </data>
+  <data name="&gt;&gt;btChangePicture.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btChangePicture.ZOrder" xml:space="preserve">
+    <value>7</value>
   </data>
   <data name="picturboxAvatar.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -1177,30 +1252,108 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;picturboxAvatar.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>8</value>
   </data>
-  <data name="btChangePicture.Location" type="System.Drawing.Point, System.Drawing">
-    <value>244, 52</value>
+  <data name="label13.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
   </data>
-  <data name="btChangePicture.Size" type="System.Drawing.Size, System.Drawing">
-    <value>49, 47</value>
+  <data name="label13.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 23</value>
   </data>
-  <data name="btChangePicture.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>Zoom</value>
+  <data name="label13.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
-  <data name="btChangePicture.TabIndex" type="System.Int32, mscorlib">
-    <value>23</value>
+  <data name="&gt;&gt;label13.Name" xml:space="preserve">
+    <value>label13</value>
   </data>
-  <data name="&gt;&gt;btChangePicture.Name" xml:space="preserve">
-    <value>btChangePicture</value>
+  <data name="&gt;&gt;label13.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btChangePicture.Type" xml:space="preserve">
-    <value>Guna.UI2.WinForms.Guna2CirclePictureBox, Guna.UI2, Version=2.0.3.2, Culture=neutral, PublicKeyToken=4015e4865bda28a4</value>
-  </data>
-  <data name="&gt;&gt;btChangePicture.Parent" xml:space="preserve">
+  <data name="&gt;&gt;label13.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;btChangePicture.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;label13.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="btDetail.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 12pt, style=Bold</value>
+  </data>
+  <data name="btDetail.Location" type="System.Drawing.Point, System.Drawing">
+    <value>119, 618</value>
+  </data>
+  <data name="btDetail.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 54</value>
+  </data>
+  <data name="btDetail.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="btDetail.Text" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="&gt;&gt;btDetail.Name" xml:space="preserve">
+    <value>btDetail</value>
+  </data>
+  <data name="&gt;&gt;btDetail.Type" xml:space="preserve">
+    <value>Guna.UI2.WinForms.Guna2Button, Guna.UI2, Version=2.0.3.2, Culture=neutral, PublicKeyToken=4015e4865bda28a4</value>
+  </data>
+  <data name="&gt;&gt;btDetail.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btDetail.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="label14.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="label14.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 23</value>
+  </data>
+  <data name="label14.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;label14.Name" xml:space="preserve">
+    <value>label14</value>
+  </data>
+  <data name="&gt;&gt;label14.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label14.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label14.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="label17.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label17.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 12pt, style=Bold</value>
+  </data>
+  <data name="label17.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label17.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 632</value>
+  </data>
+  <data name="label17.Size" type="System.Drawing.Size, System.Drawing">
+    <value>81, 28</value>
+  </data>
+  <data name="label17.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="label17.Text" xml:space="preserve">
+    <value>Pay off:</value>
+  </data>
+  <data name="&gt;&gt;label17.Name" xml:space="preserve">
+    <value>label17</value>
+  </data>
+  <data name="&gt;&gt;label17.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label17.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label17.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

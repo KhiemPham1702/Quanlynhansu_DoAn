@@ -18,8 +18,7 @@ namespace ban_2.Form_selection
         {
             InitializeComponent();
         }
-
-        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-MJVETF2\SQLEXPRESS;Initial Catalog=Quanlynhansu;Integrated Security=True;");
+        SqlConnection con = new connect().Con;
         SqlCommand cmd = new SqlCommand();
         SqlDataAdapter da = new SqlDataAdapter();
 
@@ -66,17 +65,26 @@ namespace ban_2.Form_selection
 
         private void dataGridViewNV_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dataGridViewNV.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+            try
             {
-                NV_info_form form = new NV_info_form(dataGridViewNV.Rows[e.RowIndex].Cells[0].Value.ToString());
-                form.FormClosing += new FormClosingEventHandler(this.Form_Closing);
-                form.Show();
-            }      
+                if (dataGridViewNV.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+                {
+                    NV_info_form form = new NV_info_form(dataGridViewNV.Rows[e.RowIndex].Cells[0].Value.ToString());
+                    form.FormClosing += new FormClosingEventHandler(this.Form_Closing);
+                    form.Show();
+                }
+            }
+            catch
+            {
+
+            }
         }
 
         private void Form_Closing(object sender, FormClosingEventArgs e)
         {
             ketnoicsdl();
         }
+
+
     }
 }

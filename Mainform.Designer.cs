@@ -30,8 +30,10 @@ namespace ban_2
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.guna2GradientButton2 = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.btInfo = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.guna2GradientButton1 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btUser_Mana = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btChart = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btAbout = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -44,21 +46,23 @@ namespace ban_2
             this.panel2 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.guna2VSeparator1 = new Guna.UI2.WinForms.Guna2VSeparator();
-            this.btSetting = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.lbNameProfile = new System.Windows.Forms.Label();
-            this.pictureBoxAvatarMain = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.lbTitle = new System.Windows.Forms.Label();
             this.panelMain = new Guna.UI2.WinForms.Guna2Panel();
             this.menuSetting = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
+            this.btnChat = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.btSetting = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.pictureBoxAvatarMain = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.profilleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loginOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.menuSetting.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btSetting)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAvatarMain)).BeginInit();
-            this.menuSetting.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -73,19 +77,12 @@ namespace ban_2
             this.panel1.Size = new System.Drawing.Size(268, 794);
             this.panel1.TabIndex = 0;
             // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.Image = global::ban_2.Properties.Resources.logo_02;
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(39, 15);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(189, 123);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox1.TabIndex = 11;
-            this.guna2PictureBox1.TabStop = false;
-            // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.btnChat);
+            this.panel3.Controls.Add(this.guna2GradientButton2);
+            this.panel3.Controls.Add(this.btInfo);
+            this.panel3.Controls.Add(this.guna2GradientButton1);
             this.panel3.Controls.Add(this.btUser_Mana);
             this.panel3.Controls.Add(this.btChart);
             this.panel3.Controls.Add(this.btAbout);
@@ -94,10 +91,93 @@ namespace ban_2
             this.panel3.Controls.Add(this.btSalary);
             this.panel3.Controls.Add(this.btEmployee);
             this.panel3.Controls.Add(this.btHome);
-            this.panel3.Location = new System.Drawing.Point(12, 205);
+            this.panel3.Location = new System.Drawing.Point(12, 154);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(256, 589);
+            this.panel3.Size = new System.Drawing.Size(256, 640);
             this.panel3.TabIndex = 10;
+            // 
+            // guna2GradientButton2
+            // 
+            this.guna2GradientButton2.Animated = true;
+            this.guna2GradientButton2.AutoRoundedCorners = true;
+            this.guna2GradientButton2.BorderRadius = 25;
+            this.guna2GradientButton2.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.guna2GradientButton2.CustomizableEdges.BottomRight = false;
+            this.guna2GradientButton2.CustomizableEdges.TopRight = false;
+            this.guna2GradientButton2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2GradientButton2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2GradientButton2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2GradientButton2.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2GradientButton2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2GradientButton2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2GradientButton2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(52)))), ((int)(((byte)(88)))));
+            this.guna2GradientButton2.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(52)))), ((int)(((byte)(88)))));
+            this.guna2GradientButton2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2GradientButton2.ForeColor = System.Drawing.Color.Gainsboro;
+            this.guna2GradientButton2.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(84)))), ((int)(((byte)(122)))));
+            this.guna2GradientButton2.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(52)))), ((int)(((byte)(88)))));
+            this.guna2GradientButton2.HoverState.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2GradientButton2.Location = new System.Drawing.Point(0, 371);
+            this.guna2GradientButton2.Name = "guna2GradientButton2";
+            this.guna2GradientButton2.Size = new System.Drawing.Size(256, 53);
+            this.guna2GradientButton2.TabIndex = 19;
+            this.guna2GradientButton2.Text = "Pay Off";
+            this.guna2GradientButton2.Click += new System.EventHandler(this.guna2GradientButton2_Click);
+            // 
+            // btInfo
+            // 
+            this.btInfo.Animated = true;
+            this.btInfo.AutoRoundedCorners = true;
+            this.btInfo.BorderRadius = 25;
+            this.btInfo.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btInfo.CustomizableEdges.BottomRight = false;
+            this.btInfo.CustomizableEdges.TopRight = false;
+            this.btInfo.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btInfo.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btInfo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btInfo.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btInfo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btInfo.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(52)))), ((int)(((byte)(88)))));
+            this.btInfo.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(52)))), ((int)(((byte)(88)))));
+            this.btInfo.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btInfo.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btInfo.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(84)))), ((int)(((byte)(122)))));
+            this.btInfo.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(52)))), ((int)(((byte)(88)))));
+            this.btInfo.HoverState.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btInfo.Location = new System.Drawing.Point(27, 576);
+            this.btInfo.Name = "btInfo";
+            this.btInfo.Size = new System.Drawing.Size(226, 53);
+            this.btInfo.TabIndex = 18;
+            this.btInfo.Text = "Infomation";
+            this.btInfo.Click += new System.EventHandler(this.btInfo_Click);
+            // 
+            // guna2GradientButton1
+            // 
+            this.guna2GradientButton1.Animated = true;
+            this.guna2GradientButton1.AutoRoundedCorners = true;
+            this.guna2GradientButton1.BorderRadius = 25;
+            this.guna2GradientButton1.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.guna2GradientButton1.CustomizableEdges.BottomRight = false;
+            this.guna2GradientButton1.CustomizableEdges.TopRight = false;
+            this.guna2GradientButton1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2GradientButton1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2GradientButton1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2GradientButton1.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2GradientButton1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2GradientButton1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2GradientButton1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(52)))), ((int)(((byte)(88)))));
+            this.guna2GradientButton1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(52)))), ((int)(((byte)(88)))));
+            this.guna2GradientButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2GradientButton1.ForeColor = System.Drawing.Color.Gainsboro;
+            this.guna2GradientButton1.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(84)))), ((int)(((byte)(122)))));
+            this.guna2GradientButton1.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(52)))), ((int)(((byte)(88)))));
+            this.guna2GradientButton1.HoverState.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2GradientButton1.Location = new System.Drawing.Point(0, 318);
+            this.guna2GradientButton1.Name = "guna2GradientButton1";
+            this.guna2GradientButton1.Size = new System.Drawing.Size(256, 53);
+            this.guna2GradientButton1.TabIndex = 17;
+            this.guna2GradientButton1.Text = "Furlough";
+            this.guna2GradientButton1.Click += new System.EventHandler(this.guna2GradientButton1_Click);
             // 
             // btUser_Mana
             // 
@@ -175,9 +255,9 @@ namespace ban_2
             this.btAbout.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(84)))), ((int)(((byte)(122)))));
             this.btAbout.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(52)))), ((int)(((byte)(88)))));
             this.btAbout.HoverState.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btAbout.Location = new System.Drawing.Point(43, 488);
+            this.btAbout.Location = new System.Drawing.Point(27, 515);
             this.btAbout.Name = "btAbout";
-            this.btAbout.Size = new System.Drawing.Size(208, 53);
+            this.btAbout.Size = new System.Drawing.Size(229, 53);
             this.btAbout.TabIndex = 14;
             this.btAbout.Text = "About us";
             this.btAbout.Click += new System.EventHandler(this.btAbout_Click);
@@ -187,11 +267,11 @@ namespace ban_2
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label2.Location = new System.Drawing.Point(-5, 368);
+            this.label2.Location = new System.Drawing.Point(3, 481);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 25);
+            this.label2.Size = new System.Drawing.Size(119, 25);
             this.label2.TabIndex = 12;
-            this.label2.Text = "HELP";
+            this.label2.Text = "Introduction";
             // 
             // btDepartment
             // 
@@ -313,9 +393,9 @@ namespace ban_2
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label1.Location = new System.Drawing.Point(12, 162);
+            this.label1.Location = new System.Drawing.Point(7, 126);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(130, 25);
+            this.label1.Size = new System.Drawing.Size(125, 25);
             this.label1.TabIndex = 1;
             this.label1.Text = "Management";
             // 
@@ -341,7 +421,7 @@ namespace ban_2
             this.label3.ForeColor = System.Drawing.Color.Gray;
             this.label3.Location = new System.Drawing.Point(32, 21);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(176, 32);
+            this.label3.Size = new System.Drawing.Size(163, 31);
             this.label3.TabIndex = 6;
             this.label3.Text = "Your Profile  /";
             // 
@@ -352,19 +432,6 @@ namespace ban_2
             this.guna2VSeparator1.Size = new System.Drawing.Size(15, 40);
             this.guna2VSeparator1.TabIndex = 5;
             // 
-            // btSetting
-            // 
-            this.btSetting.Image = global::ban_2.Properties.Resources.PikPng_com_settings_icon_png_859703;
-            this.btSetting.ImageRotate = 0F;
-            this.btSetting.Location = new System.Drawing.Point(972, 15);
-            this.btSetting.Name = "btSetting";
-            this.btSetting.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.btSetting.Size = new System.Drawing.Size(40, 40);
-            this.btSetting.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btSetting.TabIndex = 4;
-            this.btSetting.TabStop = false;
-            this.btSetting.Click += new System.EventHandler(this.btSetting_Click);
-            // 
             // lbNameProfile
             // 
             this.lbNameProfile.AutoSize = true;
@@ -372,22 +439,9 @@ namespace ban_2
             this.lbNameProfile.ForeColor = System.Drawing.Color.Black;
             this.lbNameProfile.Location = new System.Drawing.Point(684, 21);
             this.lbNameProfile.Name = "lbNameProfile";
-            this.lbNameProfile.Size = new System.Drawing.Size(151, 32);
+            this.lbNameProfile.Size = new System.Drawing.Size(141, 31);
             this.lbNameProfile.TabIndex = 3;
             this.lbNameProfile.Text = "Your Profile";
-            // 
-            // pictureBoxAvatarMain
-            // 
-            this.pictureBoxAvatarMain.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBoxAvatarMain.Image = global::ban_2.Properties.Resources.jing_fm_account_clipart_1952632;
-            this.pictureBoxAvatarMain.ImageRotate = 0F;
-            this.pictureBoxAvatarMain.Location = new System.Drawing.Point(618, 13);
-            this.pictureBoxAvatarMain.Name = "pictureBoxAvatarMain";
-            this.pictureBoxAvatarMain.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.pictureBoxAvatarMain.Size = new System.Drawing.Size(55, 50);
-            this.pictureBoxAvatarMain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxAvatarMain.TabIndex = 2;
-            this.pictureBoxAvatarMain.TabStop = false;
             // 
             // lbTitle
             // 
@@ -396,7 +450,7 @@ namespace ban_2
             this.lbTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(84)))), ((int)(((byte)(122)))));
             this.lbTitle.Location = new System.Drawing.Point(208, 21);
             this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(83, 32);
+            this.lbTitle.Size = new System.Drawing.Size(79, 31);
             this.lbTitle.TabIndex = 0;
             this.lbTitle.Text = "Home";
             // 
@@ -426,6 +480,71 @@ namespace ban_2
             this.menuSetting.RenderStyle.SeparatorColor = System.Drawing.Color.Gainsboro;
             this.menuSetting.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             this.menuSetting.Size = new System.Drawing.Size(144, 60);
+            // 
+            // btnChat
+            // 
+            this.btnChat.Animated = true;
+            this.btnChat.AutoRoundedCorners = true;
+            this.btnChat.BorderRadius = 25;
+            this.btnChat.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btnChat.CustomizableEdges.BottomRight = false;
+            this.btnChat.CustomizableEdges.TopRight = false;
+            this.btnChat.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnChat.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnChat.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnChat.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnChat.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnChat.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnChat.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(52)))), ((int)(((byte)(88)))));
+            this.btnChat.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(52)))), ((int)(((byte)(88)))));
+            this.btnChat.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnChat.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnChat.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(84)))), ((int)(((byte)(122)))));
+            this.btnChat.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(52)))), ((int)(((byte)(88)))));
+            this.btnChat.HoverState.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChat.Location = new System.Drawing.Point(0, 424);
+            this.btnChat.Name = "btnChat";
+            this.btnChat.Size = new System.Drawing.Size(256, 53);
+            this.btnChat.TabIndex = 20;
+            this.btnChat.Text = "Chat";
+            this.btnChat.Click += new System.EventHandler(this.btnChat_Click);
+            // 
+            // btSetting
+            // 
+            this.btSetting.Image = global::ban_2.Properties.Resources.PikPng_com_settings_icon_png_859703;
+            this.btSetting.ImageRotate = 0F;
+            this.btSetting.Location = new System.Drawing.Point(972, 15);
+            this.btSetting.Name = "btSetting";
+            this.btSetting.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.btSetting.Size = new System.Drawing.Size(40, 40);
+            this.btSetting.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btSetting.TabIndex = 4;
+            this.btSetting.TabStop = false;
+            this.btSetting.Click += new System.EventHandler(this.btSetting_Click);
+            // 
+            // pictureBoxAvatarMain
+            // 
+            this.pictureBoxAvatarMain.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxAvatarMain.Image = global::ban_2.Properties.Resources.jing_fm_account_clipart_1952632;
+            this.pictureBoxAvatarMain.ImageRotate = 0F;
+            this.pictureBoxAvatarMain.Location = new System.Drawing.Point(618, 13);
+            this.pictureBoxAvatarMain.Name = "pictureBoxAvatarMain";
+            this.pictureBoxAvatarMain.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.pictureBoxAvatarMain.Size = new System.Drawing.Size(55, 50);
+            this.pictureBoxAvatarMain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxAvatarMain.TabIndex = 2;
+            this.pictureBoxAvatarMain.TabStop = false;
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.Image = global::ban_2.Properties.Resources.logo_02;
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(39, 3);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(189, 123);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox1.TabIndex = 11;
+            this.guna2PictureBox1.TabStop = false;
             // 
             // profilleToolStripMenuItem
             // 
@@ -460,14 +579,14 @@ namespace ban_2
             this.Load += new System.EventHandler(this.Mainform_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.menuSetting.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btSetting)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAvatarMain)).EndInit();
-            this.menuSetting.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -487,7 +606,6 @@ namespace ban_2
         private Guna.UI2.WinForms.Guna2GradientButton btSalary;
         private Guna.UI2.WinForms.Guna2GradientButton btEmployee;
         private Guna.UI2.WinForms.Guna2GradientButton btHome;
-        private Guna.UI2.WinForms.Guna2GradientButton btAbout;
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2ContextMenuStrip menuSetting;
@@ -497,6 +615,11 @@ namespace ban_2
         private Guna.UI2.WinForms.Guna2GradientButton btUser_Mana;
         public Guna.UI2.WinForms.Guna2CirclePictureBox pictureBoxAvatarMain;
         private System.Windows.Forms.Label label3;
+        private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton1;
+        private Guna.UI2.WinForms.Guna2GradientButton btInfo;
+        private Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton2;
+        private Guna.UI2.WinForms.Guna2GradientButton btAbout;
+        private Guna.UI2.WinForms.Guna2GradientButton btnChat;
     }
 }
 

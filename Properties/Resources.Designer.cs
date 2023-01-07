@@ -19,7 +19,7 @@ namespace ban_2.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -66,6 +66,16 @@ namespace ban_2.Properties {
         internal static System.Drawing.Bitmap _111039_key_icon {
             get {
                 object obj = ResourceManager.GetObject("111039_key_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _20521565 {
+            get {
+                object obj = ResourceManager.GetObject("20521565", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,6 +143,16 @@ namespace ban_2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap attach_paperclip_symbol_icon_icons_com_73094 {
+            get {
+                object obj = ResourceManager.GetObject("attach-paperclip-symbol_icon-icons.com_73094", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap b51bf99a00e587db05f7bf9b365c1ab5 {
             get {
                 object obj = ResourceManager.GetObject("b51bf99a00e587db05f7bf9b365c1ab5", resourceCulture);
@@ -163,6 +183,16 @@ namespace ban_2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap contact {
+            get {
+                object obj = ResourceManager.GetObject("contact", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Education_Pencil_1_copy_2 {
             get {
                 object obj = ResourceManager.GetObject("Education_Pencil_1 copy 2", resourceCulture);
@@ -176,6 +206,16 @@ namespace ban_2.Properties {
         internal static System.Drawing.Bitmap Education_Pencil_1_copy_21 {
             get {
                 object obj = ResourceManager.GetObject("Education_Pencil_1 copy 21", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap emoji_smile_102022 {
+            get {
+                object obj = ResourceManager.GetObject("emoji-smile_102022", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -276,6 +316,16 @@ namespace ban_2.Properties {
         internal static System.Drawing.Bitmap kindpng_2271313 {
             get {
                 object obj = ResourceManager.GetObject("kindpng_2271313", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Live_chat_welcome_message {
+            get {
+                object obj = ResourceManager.GetObject("Live-chat-welcome-message", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

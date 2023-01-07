@@ -15,7 +15,7 @@ namespace ban_2.Form_selection
     public partial class Home : UserControl
     {
 
-        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-MJVETF2\SQLEXPRESS;Initial Catalog=Quanlynhansu;Integrated Security=True;");
+        SqlConnection con = new connect().con;
         SqlCommand cmd = new SqlCommand();
         SqlDataAdapter da = new SqlDataAdapter();
 
@@ -31,13 +31,13 @@ namespace ban_2.Form_selection
             Sum_salary();
             lbDay.Text = DateTime.Now.ToLongDateString();
             timer1.Start();
-            
+
         }
 
         private void load_NV()
         {
             con.Open();
-            string sql = "SELECT TOP(2) NHANVIEN.MANV, AVATAR FROM NHANVIEN INNER JOIN BANGLUONG ON NHANVIEN.MANV = BANGLUONG.MANV ORDER BY LUONGPHEP DESC";
+            string sql = "SELECT TOP(2) NHANVIEN.MANV, AVATAR FROM NHANVIEN INNER JOIN BANGLUONG ON NHANVIEN.MANV = BANGLUONG.MANV ORDER BY LUONGCOBAN DESC";
             cmd = new SqlCommand(sql, con);
             cmd.CommandType = CommandType.Text;
             da = new SqlDataAdapter(cmd);
@@ -52,13 +52,15 @@ namespace ban_2.Form_selection
             {
                 byte[] b = (byte[])dt.Rows[0][1];
                 pb1.Image = ByteArrayToImage(b);
+            }
+            catch { }
+
+            try
+            {
                 byte[] c = (byte[])dt.Rows[1][1];
                 pb2.Image = ByteArrayToImage(c);
             }
-            catch
-            {
-
-            }
+            catch { }
         }
 
         void Sum_salary()
@@ -113,6 +115,11 @@ namespace ban_2.Form_selection
         }
 
         private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbName1_Click(object sender, EventArgs e)
         {
 
         }
