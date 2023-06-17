@@ -59,9 +59,9 @@ namespace ban_2.Form_selection
             {
 
             }
-        }
+        
 
-            }
+            
         }
 
         private void ketnoicsdl(String sql)
@@ -259,7 +259,7 @@ namespace ban_2.Form_selection
                     }
                 }
             }
-            catch { }
+            
         }
     }
 }

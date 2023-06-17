@@ -30,9 +30,9 @@ namespace ban_2.Form_selection
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.label4 = new System.Windows.Forms.Label();
             this.lbSumSalary = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -443,20 +443,20 @@ namespace ban_2.Form_selection
             // 
             // chartView
             // 
-            chartArea4.Name = "ChartArea1";
-            this.chartView.ChartAreas.Add(chartArea4);
+            chartArea3.Name = "ChartArea1";
+            this.chartView.ChartAreas.Add(chartArea3);
             this.chartView.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend4.Name = "Legend1";
-            this.chartView.Legends.Add(legend4);
+            legend3.Name = "Legend1";
+            this.chartView.Legends.Add(legend3);
             this.chartView.Location = new System.Drawing.Point(0, 0);
             this.chartView.Name = "chartView";
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series4.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series4.IsVisibleInLegend = false;
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.chartView.Series.Add(series4);
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series3.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series3.IsVisibleInLegend = false;
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.chartView.Series.Add(series3);
             this.chartView.Size = new System.Drawing.Size(565, 202);
             this.chartView.TabIndex = 1;
             this.chartView.Text = "chart1";

@@ -78,9 +78,8 @@ namespace ban_2.Form_selection
             {
 
             }
-        }
-
-            }
+       
+            
         }
 
         private void Form_Closing(object sender, FormClosingEventArgs e)
