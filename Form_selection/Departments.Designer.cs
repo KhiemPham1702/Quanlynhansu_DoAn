@@ -163,7 +163,7 @@
             this.MANV.MinimumWidth = 6;
             this.MANV.Name = "MANV";
             this.MANV.ReadOnly = true;
-            this.MANV.Width = 59;
+            this.MANV.Width = 57;
             // 
             // HOTEN
             // 

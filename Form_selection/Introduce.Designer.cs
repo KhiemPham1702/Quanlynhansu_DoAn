@@ -53,6 +53,7 @@
             this.label1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label1.Size = new System.Drawing.Size(985, 516);
             this.label1.TabIndex = 38;
+            this.label1.Text = resources.GetString("label1.Text");
             // 
             // Introduce
             // 

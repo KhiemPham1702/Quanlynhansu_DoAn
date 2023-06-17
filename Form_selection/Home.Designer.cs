@@ -112,7 +112,7 @@ namespace ban_2.Form_selection
             this.lbSumSalary.ForeColor = System.Drawing.Color.White;
             this.lbSumSalary.Location = new System.Drawing.Point(27, 51);
             this.lbSumSalary.Name = "lbSumSalary";
-            this.lbSumSalary.Size = new System.Drawing.Size(162, 45);
+            this.lbSumSalary.Size = new System.Drawing.Size(204, 57);
             this.lbSumSalary.TabIndex = 6;
             this.lbSumSalary.Text = "199.000$";
             // 
@@ -443,20 +443,20 @@ namespace ban_2.Form_selection
             // 
             // chartView
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chartView.ChartAreas.Add(chartArea1);
+            chartArea4.Name = "ChartArea1";
+            this.chartView.ChartAreas.Add(chartArea4);
             this.chartView.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend1.Name = "Legend1";
-            this.chartView.Legends.Add(legend1);
+            legend4.Name = "Legend1";
+            this.chartView.Legends.Add(legend4);
             this.chartView.Location = new System.Drawing.Point(0, 0);
             this.chartView.Name = "chartView";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series1.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series1.IsVisibleInLegend = false;
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chartView.Series.Add(series1);
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series4.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series4.IsVisibleInLegend = false;
+            series4.Legend = "Legend1";
+            series4.Name = "Series1";
+            this.chartView.Series.Add(series4);
             this.chartView.Size = new System.Drawing.Size(565, 202);
             this.chartView.TabIndex = 1;
             this.chartView.Text = "chart1";

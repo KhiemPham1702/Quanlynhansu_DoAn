@@ -50,6 +50,7 @@ namespace ban_2
                 
                 this.Close();
                 FE.ketnoicsdl();
+                this.Close();
             }
         }
         private void Add_Furrlough_Load(object sender, EventArgs e)

@@ -25,7 +25,7 @@ namespace ban_2.Form_selection
         public void ketnoicsdl()
         {
             con.Open();
-            string sql = "select NHANVIEN.MANV, HOTEN, TENCV, MALUONG, LUONGCOBAN,LUONGPHEP,HESOLUONG  from CHUCVU inner join NHANVIEN on CHUCVU.MACV = NHANVIEN.MACV inner join BANGLUONG on NHANVIEN.MANV = BANGLUONG.MANV WHERE THANG = '" + picker.Value.Month + "'AND NAM = '" + picker.Value.Year + "'";
+            string sql = "select NHANVIEN.MANV, HOTEN, TENCV, MALUONG, LUONGCOBAN,LUONGPHEP,HESOLUONG  from CHUCVU inner join NHANVIEN on CHUCVU.MACV = NHANVIEN.MACV inner join BANGLUONG on NHANVIEN.MANV = BANGLUONG.MANV";
             cmd = new SqlCommand(sql, con);
             cmd.CommandType = CommandType.Text;
             da = new SqlDataAdapter(cmd);
@@ -33,8 +33,6 @@ namespace ban_2.Form_selection
             da.Fill(dt);
             con.Close();
             dataGridViewNV.DataSource = dt;
-
-
         }
 
         private void tbTimL_TextChanged(object sender, EventArgs e)

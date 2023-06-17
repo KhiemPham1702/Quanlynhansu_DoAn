@@ -61,6 +61,9 @@ namespace ban_2.Form_selection
             }
         }
 
+            }
+        }
+
         private void ketnoicsdl(String sql)
         {
             if (con.State != ConnectionState.Open)
@@ -256,6 +259,7 @@ namespace ban_2.Form_selection
                     }
                 }
             }
+            catch { }
         }
     }
 }

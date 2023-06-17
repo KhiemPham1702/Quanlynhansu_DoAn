@@ -44,7 +44,7 @@ namespace ban_2.Form_selection
             DataTable dt = new DataTable();
             da.Fill(dt);
             con.Close();
-            dataGridViewNP.DataSource = dt;
+            dataGridViewNP.DataSource = dt; 
         }
 
         public void ketnoicsdlbang2()

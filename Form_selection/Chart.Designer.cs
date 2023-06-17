@@ -71,7 +71,7 @@ namespace ban_2.Form_selection
             "Bar",
             "Pie",
             "Doughnut"});
-            this.cbbStyle.Location = new System.Drawing.Point(804, 30);
+            this.cbbStyle.Location = new System.Drawing.Point(804, 28);
             this.cbbStyle.Name = "cbbStyle";
             this.cbbStyle.Size = new System.Drawing.Size(225, 36);
             this.cbbStyle.TabIndex = 17;

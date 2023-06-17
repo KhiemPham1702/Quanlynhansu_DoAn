@@ -42,6 +42,7 @@ namespace ban_2
 
         private void tbAddID_Click(object sender, EventArgs e)
         {
+          
             if (kt())
             {
                 try

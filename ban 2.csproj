@@ -198,6 +198,12 @@
     <Compile Include="Form_selection\Departments.Designer.cs">
       <DependentUpon>Departments.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_selection\Introduce.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Form_selection\Introduce.Designer.cs">
+      <DependentUpon>Introduce.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_selection\User_M.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -233,6 +239,7 @@
     <Compile Include="NV_info_form.Designer.cs">
       <DependentUpon>NV_info_form.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReportExtensionMethod.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReportExtensionMethod.cs" />
@@ -278,14 +285,26 @@
     <EmbeddedResource Include="Form_selection\Employee.resx">
       <DependentUpon>Employee.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form_selection\Furlough.resx">
+      <DependentUpon>Furlough.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_selection\Furlough_Employee.resx">
+      <DependentUpon>Furlough_Employee.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_selection\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_selection\PayOff_NV.resx">
+      <DependentUpon>PayOff_NV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_selection\Profile.resx">
       <DependentUpon>Profile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_selection\Salary.resx">
       <DependentUpon>Salary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_selection\Introduce.resx">
+      <DependentUpon>Introduce.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_selection\User_M.resx">
       <DependentUpon>User_M.cs</DependentUpon>
@@ -314,6 +333,10 @@
       <DependentUpon>Update_Salary.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Tamplate\Maubaocao.doc" />
+    <None Include="Tamplate\PHIEULUONG.docx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

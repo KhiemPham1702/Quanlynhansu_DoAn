@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Aspose.Words;
+using Aspose.Words.Tables;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -287,7 +289,7 @@ namespace ban_2
                 picturboxAvatar.Image = Image.FromFile(open.FileName);
                 path = open.FileName;
             }
-
+            
             byte[] b = ImageToByteArray(picturboxAvatar.Image);
             con.Open();
             cmd = new SqlCommand("UPDATE NHANVIEN SET AVATAR = @HINH WHERE MANV = @TEN", con);
