@@ -315,6 +315,12 @@
     <Compile Include="Form_selection\Introduce.Designer.cs">
       <DependentUpon>Introduce.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_selection\Notification.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Form_selection\Notification.Designer.cs">
+      <DependentUpon>Notification.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_selection\PayOff_NV.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -452,6 +458,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_selection\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_selection\Notification.resx">
+      <DependentUpon>Notification.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_selection\PayOff_NV.resx">
       <DependentUpon>PayOff_NV.cs</DependentUpon>
@@ -646,6 +655,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\20521565.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\charm_bell.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-park-outline_setting-two.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\file.png" />
