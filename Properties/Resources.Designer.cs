@@ -143,6 +143,16 @@ namespace ban_2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap arrow_67_64 {
+            get {
+                object obj = ResourceManager.GetObject("arrow-67-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap attach_paperclip_symbol_icon_icons_com_73094 {
             get {
                 object obj = ResourceManager.GetObject("attach-paperclip-symbol_icon-icons.com_73094", resourceCulture);
@@ -183,9 +193,29 @@ namespace ban_2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap chat1 {
+            get {
+                object obj = ResourceManager.GetObject("chat1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap contact {
             get {
                 object obj = ResourceManager.GetObject("contact", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap document_64 {
+            get {
+                object obj = ResourceManager.GetObject("document-64", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -233,6 +263,16 @@ namespace ban_2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap eye_2_48 {
+            get {
+                object obj = ResourceManager.GetObject("eye-2-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap f1 {
             get {
                 object obj = ResourceManager.GetObject("f1", resourceCulture);
@@ -273,6 +313,36 @@ namespace ban_2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap file {
+            get {
+                object obj = ResourceManager.GetObject("file", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap haha {
+            get {
+                object obj = ResourceManager.GetObject("haha", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap happy_64 {
+            get {
+                object obj = ResourceManager.GetObject("happy-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap hrm_courses_min_1 {
             get {
                 object obj = ResourceManager.GetObject("hrm-courses-min-1", resourceCulture);
@@ -303,6 +373,26 @@ namespace ban_2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap info_5_64 {
+            get {
+                object obj = ResourceManager.GetObject("info-5-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap info_5_64__1_ {
+            get {
+                object obj = ResourceManager.GetObject("info-5-64 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap jing_fm_account_clipart_1952632 {
             get {
                 object obj = ResourceManager.GetObject("jing.fm-account-clipart-1952632", resourceCulture);
@@ -316,6 +406,16 @@ namespace ban_2.Properties {
         internal static System.Drawing.Bitmap kindpng_2271313 {
             get {
                 object obj = ResourceManager.GetObject("kindpng_2271313", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap like {
+            get {
+                object obj = ResourceManager.GetObject("like", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -383,6 +483,16 @@ namespace ban_2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap love {
+            get {
+                object obj = ResourceManager.GetObject("love", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap nd2m6os0tmc9env4gc8jh3er0j {
             get {
                 object obj = ResourceManager.GetObject("nd2m6os0tmc9env4gc8jh3er0j", resourceCulture);
@@ -423,6 +533,16 @@ namespace ban_2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap photo_64 {
+            get {
+                object obj = ResourceManager.GetObject("photo-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap PikPng_com_settings_icon_png_859703 {
             get {
                 object obj = ResourceManager.GetObject("PikPng.com_settings-icon-png_859703", resourceCulture);
@@ -456,6 +576,16 @@ namespace ban_2.Properties {
         internal static System.Drawing.Bitmap pngwing_com__1_ {
             get {
                 object obj = ResourceManager.GetObject("pngwing.com (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap search_48 {
+            get {
+                object obj = ResourceManager.GetObject("search-48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

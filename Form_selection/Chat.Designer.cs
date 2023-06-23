@@ -36,12 +36,9 @@
             this.pnlAction = new System.Windows.Forms.Panel();
             this.txtText = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnSend = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.guna2CircleButton2 = new Guna.UI2.WinForms.Guna2CircleButton();
+            this.btnSendFile = new Guna.UI2.WinForms.Guna2CircleButton();
             this.btnEmotion = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.btnStart = new Guna.UI2.WinForms.Guna2Button();
-            this.btnConnect = new Guna.UI2.WinForms.Guna2Button();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
+            this.pnlInformation = new Guna.UI2.WinForms.Guna2Panel();
             this.panel1.SuspendLayout();
             this.pnlAction.SuspendLayout();
             this.SuspendLayout();
@@ -97,10 +94,9 @@
             // 
             // pnlChat
             // 
-            this.pnlChat.AutoScroll = true;
-            this.pnlChat.Location = new System.Drawing.Point(335, 69);
+            this.pnlChat.Location = new System.Drawing.Point(335, 0);
             this.pnlChat.Name = "pnlChat";
-            this.pnlChat.Size = new System.Drawing.Size(697, 572);
+            this.pnlChat.Size = new System.Drawing.Size(697, 641);
             this.pnlChat.TabIndex = 1;
             // 
             // pnlAction
@@ -108,7 +104,7 @@
             this.pnlAction.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.pnlAction.Controls.Add(this.txtText);
             this.pnlAction.Controls.Add(this.btnSend);
-            this.pnlAction.Controls.Add(this.guna2CircleButton2);
+            this.pnlAction.Controls.Add(this.btnSendFile);
             this.pnlAction.Controls.Add(this.btnEmotion);
             this.pnlAction.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlAction.Location = new System.Drawing.Point(335, 644);
@@ -156,22 +152,23 @@
             this.btnSend.TabIndex = 55;
             this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
             // 
-            // guna2CircleButton2
+            // btnSendFile
             // 
-            this.guna2CircleButton2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2CircleButton2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2CircleButton2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2CircleButton2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2CircleButton2.FillColor = System.Drawing.Color.Transparent;
-            this.guna2CircleButton2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2CircleButton2.ForeColor = System.Drawing.Color.White;
-            this.guna2CircleButton2.Image = global::ban_2.Properties.Resources.attach_paperclip_symbol_icon_icons_com_73094;
-            this.guna2CircleButton2.ImageSize = new System.Drawing.Size(25, 25);
-            this.guna2CircleButton2.Location = new System.Drawing.Point(580, 22);
-            this.guna2CircleButton2.Name = "guna2CircleButton2";
-            this.guna2CircleButton2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CircleButton2.Size = new System.Drawing.Size(39, 36);
-            this.guna2CircleButton2.TabIndex = 54;
+            this.btnSendFile.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnSendFile.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnSendFile.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnSendFile.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnSendFile.FillColor = System.Drawing.Color.Transparent;
+            this.btnSendFile.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnSendFile.ForeColor = System.Drawing.Color.White;
+            this.btnSendFile.Image = global::ban_2.Properties.Resources.attach_paperclip_symbol_icon_icons_com_73094;
+            this.btnSendFile.ImageSize = new System.Drawing.Size(25, 25);
+            this.btnSendFile.Location = new System.Drawing.Point(580, 22);
+            this.btnSendFile.Name = "btnSendFile";
+            this.btnSendFile.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.btnSendFile.Size = new System.Drawing.Size(39, 36);
+            this.btnSendFile.TabIndex = 54;
+            this.btnSendFile.Click += new System.EventHandler(this.btnSendFile_Click);
             // 
             // btnEmotion
             // 
@@ -191,62 +188,28 @@
             this.btnEmotion.Size = new System.Drawing.Size(46, 36);
             this.btnEmotion.TabIndex = 0;
             // 
-            // btnStart
+            // pnlInformation
             // 
-            this.btnStart.AutoRoundedCorners = true;
-            this.btnStart.BorderRadius = 21;
-            this.btnStart.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnStart.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnStart.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnStart.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnStart.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(84)))), ((int)(((byte)(122)))));
-            this.btnStart.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnStart.ForeColor = System.Drawing.Color.White;
-            this.btnStart.Location = new System.Drawing.Point(469, 13);
-            this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(180, 45);
-            this.btnStart.TabIndex = 3;
-            this.btnStart.Text = "Start";
-            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
-            // 
-            // btnConnect
-            // 
-            this.btnConnect.AutoRoundedCorners = true;
-            this.btnConnect.BorderRadius = 21;
-            this.btnConnect.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnConnect.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnConnect.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnConnect.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnConnect.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(84)))), ((int)(((byte)(122)))));
-            this.btnConnect.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnConnect.ForeColor = System.Drawing.Color.White;
-            this.btnConnect.Location = new System.Drawing.Point(694, 13);
-            this.btnConnect.Name = "btnConnect";
-            this.btnConnect.Size = new System.Drawing.Size(180, 45);
-            this.btnConnect.TabIndex = 4;
-            this.btnConnect.Text = "Connect";
-            this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
-            // 
-            // backgroundWorker1
-            // 
-            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
-            // 
-            // backgroundWorker2
-            // 
-            this.backgroundWorker2.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker2_DoWork);
+            this.pnlInformation.BorderColor = System.Drawing.Color.Gray;
+            this.pnlInformation.CustomBorderColor = System.Drawing.Color.Gray;
+            this.pnlInformation.CustomBorderThickness = new System.Windows.Forms.Padding(2, 2, 0, 0);
+            this.pnlInformation.Location = new System.Drawing.Point(611, 0);
+            this.pnlInformation.Name = "pnlInformation";
+            this.pnlInformation.Size = new System.Drawing.Size(421, 720);
+            this.pnlInformation.TabIndex = 2;
             // 
             // Chat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.btnConnect);
-            this.Controls.Add(this.btnStart);
+            this.Controls.Add(this.pnlInformation);
             this.Controls.Add(this.pnlAction);
             this.Controls.Add(this.pnlChat);
             this.Controls.Add(this.panel1);
             this.Name = "Chat";
             this.Size = new System.Drawing.Size(1032, 720);
+            this.Load += new System.EventHandler(this.Chat_Load);
             this.panel1.ResumeLayout(false);
             this.pnlAction.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -261,13 +224,10 @@
         private System.Windows.Forms.Panel pnlConservations;
         private System.Windows.Forms.Panel pnlAction;
         private Guna.UI2.WinForms.Guna2CircleButton btnSend;
-        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton2;
+        private Guna.UI2.WinForms.Guna2CircleButton btnSendFile;
         private Guna.UI2.WinForms.Guna2CircleButton btnEmotion;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
-        private Guna.UI2.WinForms.Guna2Button btnStart;
-        private Guna.UI2.WinForms.Guna2Button btnConnect;
         private Guna.UI2.WinForms.Guna2TextBox txtText;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.ComponentModel.BackgroundWorker backgroundWorker2;
+        private Guna.UI2.WinForms.Guna2Panel pnlInformation;
     }
 }

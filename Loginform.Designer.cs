@@ -34,7 +34,6 @@ namespace ban_2
             this.panelLogin = new Guna.UI2.WinForms.Guna2Panel();
             this.lblForgotPass = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2ProgressBar1 = new Guna.UI2.WinForms.Guna2ProgressBar();
             this.label9 = new System.Windows.Forms.Label();
             this.lbSignUpChange = new System.Windows.Forms.Label();
@@ -42,8 +41,6 @@ namespace ban_2
             this.buttonLogin = new Guna.UI2.WinForms.Guna2Button();
             this.label6 = new System.Windows.Forms.Label();
             this.tgShowPass = new Guna.UI2.WinForms.Guna2ToggleSwitch();
-            this.textLoginUserPass = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtEmail = new Guna.UI2.WinForms.Guna2TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -51,18 +48,12 @@ namespace ban_2
             this.cbP = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.tgShowPassSU = new Guna.UI2.WinForms.Guna2ToggleSwitch();
-            this.textSignUpUserPass = new Guna.UI2.WinForms.Guna2TextBox();
-            this.textConfirmPass = new Guna.UI2.WinForms.Guna2TextBox();
             this.lbLoginChange = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.tbPhone = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2ProgressBar2 = new Guna.UI2.WinForms.Guna2ProgressBar();
             this.buttonSignUp = new Guna.UI2.WinForms.Guna2Button();
-            this.tbEmail = new Guna.UI2.WinForms.Guna2TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.ptbExit = new Guna.UI2.WinForms.Guna2PictureBox();
             this.pnlForgotPass1 = new Guna.UI2.WinForms.Guna2Panel();
             this.lblFPLogin = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -70,7 +61,6 @@ namespace ban_2
             this.label13 = new System.Windows.Forms.Label();
             this.guna2ProgressBar3 = new Guna.UI2.WinForms.Guna2ProgressBar();
             this.btnSend = new Guna.UI2.WinForms.Guna2Button();
-            this.txtForgotPassEmail = new Guna.UI2.WinForms.Guna2TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.pnlVerify = new Guna.UI2.WinForms.Guna2Panel();
             this.lblResendCode = new System.Windows.Forms.Label();
@@ -86,22 +76,32 @@ namespace ban_2
             this.guna2ProgressBar4 = new Guna.UI2.WinForms.Guna2ProgressBar();
             this.btnConfirm = new Guna.UI2.WinForms.Guna2Button();
             this.pnlNewPass = new Guna.UI2.WinForms.Guna2Panel();
-            this.txtNewPass = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtConfirmNewPass = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblNewPassLogin = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.guna2ProgressBar5 = new Guna.UI2.WinForms.Guna2ProgressBar();
             this.btnSave = new Guna.UI2.WinForms.Guna2Button();
+            this.txtNewPass = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtConfirmNewPass = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtForgotPassEmail = new Guna.UI2.WinForms.Guna2TextBox();
+            this.textSignUpUserPass = new Guna.UI2.WinForms.Guna2TextBox();
+            this.textConfirmPass = new Guna.UI2.WinForms.Guna2TextBox();
+            this.tbPhone = new Guna.UI2.WinForms.Guna2TextBox();
+            this.tbEmail = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.ptbExit = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.textLoginUserPass = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtEmail = new Guna.UI2.WinForms.Guna2TextBox();
             this.panelLogin.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.panelSignUp.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbExit)).BeginInit();
             this.pnlForgotPass1.SuspendLayout();
             this.pnlVerify.SuspendLayout();
             this.pnlNewPass.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbExit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Elipse1
@@ -154,18 +154,6 @@ namespace ban_2
             this.label3.Size = new System.Drawing.Size(138, 30);
             this.label3.TabIndex = 0;
             this.label3.Text = "Get started.";
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox1.Image = global::ban_2.Properties.Resources.logo_02;
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(83, 24);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(196, 116);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox1.TabIndex = 13;
-            this.guna2PictureBox1.TabStop = false;
             // 
             // guna2ProgressBar1
             // 
@@ -259,52 +247,6 @@ namespace ban_2
             this.tgShowPass.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
             this.tgShowPass.UncheckedState.InnerColor = System.Drawing.Color.White;
             this.tgShowPass.CheckedChanged += new System.EventHandler(this.tgShowPass_CheckedChanged);
-            // 
-            // textLoginUserPass
-            // 
-            this.textLoginUserPass.BorderRadius = 10;
-            this.textLoginUserPass.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textLoginUserPass.DefaultText = "";
-            this.textLoginUserPass.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.textLoginUserPass.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.textLoginUserPass.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.textLoginUserPass.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.textLoginUserPass.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(9)))), ((int)(((byte)(50)))));
-            this.textLoginUserPass.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textLoginUserPass.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textLoginUserPass.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textLoginUserPass.IconLeft = global::ban_2.Properties.Resources.pngaaa_com_2613466;
-            this.textLoginUserPass.Location = new System.Drawing.Point(33, 305);
-            this.textLoginUserPass.Name = "textLoginUserPass";
-            this.textLoginUserPass.PasswordChar = '•';
-            this.textLoginUserPass.PlaceholderText = "Password";
-            this.textLoginUserPass.SelectedText = "";
-            this.textLoginUserPass.Size = new System.Drawing.Size(285, 36);
-            this.textLoginUserPass.TabIndex = 6;
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.BorderRadius = 10;
-            this.txtEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtEmail.DefaultText = "";
-            this.txtEmail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtEmail.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtEmail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtEmail.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtEmail.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(9)))), ((int)(((byte)(50)))));
-            this.txtEmail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtEmail.IconLeft = global::ban_2.Properties.Resources.nd2m6os0tmc9env4gc8jh3er0j;
-            this.txtEmail.Location = new System.Drawing.Point(33, 253);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.PasswordChar = '\0';
-            this.txtEmail.PlaceholderText = "Email";
-            this.txtEmail.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtEmail.SelectedText = "";
-            this.txtEmail.Size = new System.Drawing.Size(285, 36);
-            this.txtEmail.TabIndex = 5;
-            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
             // label4
             // 
@@ -416,50 +358,6 @@ namespace ban_2
             this.tgShowPassSU.UncheckedState.InnerColor = System.Drawing.Color.White;
             this.tgShowPassSU.CheckedChanged += new System.EventHandler(this.tgShowPassSU_CheckedChanged);
             // 
-            // textSignUpUserPass
-            // 
-            this.textSignUpUserPass.BorderRadius = 10;
-            this.textSignUpUserPass.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textSignUpUserPass.DefaultText = "";
-            this.textSignUpUserPass.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.textSignUpUserPass.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.textSignUpUserPass.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.textSignUpUserPass.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.textSignUpUserPass.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(9)))), ((int)(((byte)(50)))));
-            this.textSignUpUserPass.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textSignUpUserPass.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textSignUpUserPass.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textSignUpUserPass.IconLeft = global::ban_2.Properties.Resources.pngaaa_com_2613466;
-            this.textSignUpUserPass.Location = new System.Drawing.Point(30, 257);
-            this.textSignUpUserPass.Name = "textSignUpUserPass";
-            this.textSignUpUserPass.PasswordChar = '•';
-            this.textSignUpUserPass.PlaceholderText = "Password";
-            this.textSignUpUserPass.SelectedText = "";
-            this.textSignUpUserPass.Size = new System.Drawing.Size(311, 36);
-            this.textSignUpUserPass.TabIndex = 24;
-            // 
-            // textConfirmPass
-            // 
-            this.textConfirmPass.BorderRadius = 10;
-            this.textConfirmPass.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textConfirmPass.DefaultText = "";
-            this.textConfirmPass.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.textConfirmPass.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.textConfirmPass.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.textConfirmPass.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.textConfirmPass.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(9)))), ((int)(((byte)(50)))));
-            this.textConfirmPass.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textConfirmPass.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textConfirmPass.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textConfirmPass.IconLeft = global::ban_2.Properties.Resources.pngaaa_com_2613466;
-            this.textConfirmPass.Location = new System.Drawing.Point(31, 312);
-            this.textConfirmPass.Name = "textConfirmPass";
-            this.textConfirmPass.PasswordChar = '•';
-            this.textConfirmPass.PlaceholderText = "Confirm Password";
-            this.textConfirmPass.SelectedText = "";
-            this.textConfirmPass.Size = new System.Drawing.Size(311, 36);
-            this.textConfirmPass.TabIndex = 23;
-            // 
             // lbLoginChange
             // 
             this.lbLoginChange.AutoSize = true;
@@ -486,29 +384,6 @@ namespace ban_2
             this.label5.TabIndex = 21;
             this.label5.Text = "Already have an account ?";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // tbPhone
-            // 
-            this.tbPhone.BorderRadius = 10;
-            this.tbPhone.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbPhone.DefaultText = "";
-            this.tbPhone.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tbPhone.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tbPhone.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbPhone.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbPhone.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(9)))), ((int)(((byte)(50)))));
-            this.tbPhone.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbPhone.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbPhone.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbPhone.IconLeft = global::ban_2.Properties.Resources.phone_2_64;
-            this.tbPhone.Location = new System.Drawing.Point(31, 203);
-            this.tbPhone.Name = "tbPhone";
-            this.tbPhone.PasswordChar = '\0';
-            this.tbPhone.PlaceholderText = "Phone";
-            this.tbPhone.SelectedText = "";
-            this.tbPhone.Size = new System.Drawing.Size(311, 36);
-            this.tbPhone.TabIndex = 19;
-            this.tbPhone.TextChanged += new System.EventHandler(this.txbValue_TextChanged);
             // 
             // guna2ProgressBar2
             // 
@@ -537,28 +412,6 @@ namespace ban_2
             this.buttonSignUp.Text = "Sign Up";
             this.buttonSignUp.Click += new System.EventHandler(this.buttonSignUp_Click);
             // 
-            // tbEmail
-            // 
-            this.tbEmail.BorderRadius = 10;
-            this.tbEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbEmail.DefaultText = "";
-            this.tbEmail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tbEmail.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tbEmail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbEmail.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbEmail.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(9)))), ((int)(((byte)(50)))));
-            this.tbEmail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbEmail.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbEmail.IconLeft = global::ban_2.Properties.Resources._6ak2vv6kr512hip8ndktntij5p;
-            this.tbEmail.Location = new System.Drawing.Point(30, 147);
-            this.tbEmail.Name = "tbEmail";
-            this.tbEmail.PasswordChar = '\0';
-            this.tbEmail.PlaceholderText = "Email";
-            this.tbEmail.SelectedText = "";
-            this.tbEmail.Size = new System.Drawing.Size(311, 36);
-            this.tbEmail.TabIndex = 14;
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -582,30 +435,6 @@ namespace ban_2
             this.label10.Size = new System.Drawing.Size(273, 30);
             this.label10.TabIndex = 10;
             this.label10.Text = "Manage your employees.\r\n";
-            // 
-            // guna2PictureBox2
-            // 
-            this.guna2PictureBox2.Image = global::ban_2.Properties.Resources.SeekPng_com_power_button_png_413813__1_;
-            this.guna2PictureBox2.ImageRotate = 0F;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(910, 12);
-            this.guna2PictureBox2.Name = "guna2PictureBox2";
-            this.guna2PictureBox2.Size = new System.Drawing.Size(28, 28);
-            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox2.TabIndex = 13;
-            this.guna2PictureBox2.TabStop = false;
-            this.guna2PictureBox2.Click += new System.EventHandler(this.guna2PictureBox2_Click);
-            // 
-            // ptbExit
-            // 
-            this.ptbExit.BackColor = System.Drawing.Color.Transparent;
-            this.ptbExit.Image = global::ban_2.Properties.Resources._2133353;
-            this.ptbExit.ImageRotate = 0F;
-            this.ptbExit.Location = new System.Drawing.Point(379, -17);
-            this.ptbExit.Name = "ptbExit";
-            this.ptbExit.Size = new System.Drawing.Size(526, 515);
-            this.ptbExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbExit.TabIndex = 0;
-            this.ptbExit.TabStop = false;
             // 
             // pnlForgotPass1
             // 
@@ -703,29 +532,6 @@ namespace ban_2
             this.btnSend.TabIndex = 9;
             this.btnSend.Text = "Send";
             this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
-            // 
-            // txtForgotPassEmail
-            // 
-            this.txtForgotPassEmail.BorderRadius = 10;
-            this.txtForgotPassEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtForgotPassEmail.DefaultText = "";
-            this.txtForgotPassEmail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtForgotPassEmail.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtForgotPassEmail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtForgotPassEmail.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtForgotPassEmail.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(9)))), ((int)(((byte)(50)))));
-            this.txtForgotPassEmail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtForgotPassEmail.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtForgotPassEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtForgotPassEmail.IconLeft = global::ban_2.Properties.Resources.nd2m6os0tmc9env4gc8jh3er0j;
-            this.txtForgotPassEmail.Location = new System.Drawing.Point(32, 187);
-            this.txtForgotPassEmail.Name = "txtForgotPassEmail";
-            this.txtForgotPassEmail.PasswordChar = '\0';
-            this.txtForgotPassEmail.PlaceholderText = "Email";
-            this.txtForgotPassEmail.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtForgotPassEmail.SelectedText = "";
-            this.txtForgotPassEmail.Size = new System.Drawing.Size(285, 36);
-            this.txtForgotPassEmail.TabIndex = 5;
             // 
             // label18
             // 
@@ -967,50 +773,6 @@ namespace ban_2
             this.pnlNewPass.TabIndex = 17;
             this.pnlNewPass.Visible = false;
             // 
-            // txtNewPass
-            // 
-            this.txtNewPass.BorderRadius = 10;
-            this.txtNewPass.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtNewPass.DefaultText = "";
-            this.txtNewPass.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtNewPass.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtNewPass.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtNewPass.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtNewPass.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(9)))), ((int)(((byte)(50)))));
-            this.txtNewPass.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNewPass.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.txtNewPass.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNewPass.IconLeft = global::ban_2.Properties.Resources.pngaaa_com_2613466;
-            this.txtNewPass.Location = new System.Drawing.Point(30, 147);
-            this.txtNewPass.Name = "txtNewPass";
-            this.txtNewPass.PasswordChar = '•';
-            this.txtNewPass.PlaceholderText = "New password";
-            this.txtNewPass.SelectedText = "";
-            this.txtNewPass.Size = new System.Drawing.Size(311, 36);
-            this.txtNewPass.TabIndex = 28;
-            // 
-            // txtConfirmNewPass
-            // 
-            this.txtConfirmNewPass.BorderRadius = 10;
-            this.txtConfirmNewPass.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtConfirmNewPass.DefaultText = "";
-            this.txtConfirmNewPass.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtConfirmNewPass.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtConfirmNewPass.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtConfirmNewPass.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtConfirmNewPass.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(9)))), ((int)(((byte)(50)))));
-            this.txtConfirmNewPass.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtConfirmNewPass.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.txtConfirmNewPass.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtConfirmNewPass.IconLeft = global::ban_2.Properties.Resources.pngaaa_com_2613466;
-            this.txtConfirmNewPass.Location = new System.Drawing.Point(32, 202);
-            this.txtConfirmNewPass.Name = "txtConfirmNewPass";
-            this.txtConfirmNewPass.PasswordChar = '•';
-            this.txtConfirmNewPass.PlaceholderText = "Confirm new password";
-            this.txtConfirmNewPass.SelectedText = "";
-            this.txtConfirmNewPass.Size = new System.Drawing.Size(311, 36);
-            this.txtConfirmNewPass.TabIndex = 27;
-            // 
             // lblNewPassLogin
             // 
             this.lblNewPassLogin.AutoSize = true;
@@ -1089,6 +851,244 @@ namespace ban_2
             this.btnSave.Text = "Save";
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // txtNewPass
+            // 
+            this.txtNewPass.BorderRadius = 10;
+            this.txtNewPass.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtNewPass.DefaultText = "";
+            this.txtNewPass.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtNewPass.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtNewPass.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtNewPass.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtNewPass.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(9)))), ((int)(((byte)(50)))));
+            this.txtNewPass.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtNewPass.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.txtNewPass.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtNewPass.IconLeft = global::ban_2.Properties.Resources.pngaaa_com_2613466;
+            this.txtNewPass.Location = new System.Drawing.Point(30, 147);
+            this.txtNewPass.Name = "txtNewPass";
+            this.txtNewPass.PasswordChar = '•';
+            this.txtNewPass.PlaceholderText = "New password";
+            this.txtNewPass.SelectedText = "";
+            this.txtNewPass.Size = new System.Drawing.Size(311, 36);
+            this.txtNewPass.TabIndex = 28;
+            // 
+            // txtConfirmNewPass
+            // 
+            this.txtConfirmNewPass.BorderRadius = 10;
+            this.txtConfirmNewPass.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtConfirmNewPass.DefaultText = "";
+            this.txtConfirmNewPass.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtConfirmNewPass.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtConfirmNewPass.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtConfirmNewPass.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtConfirmNewPass.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(9)))), ((int)(((byte)(50)))));
+            this.txtConfirmNewPass.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtConfirmNewPass.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.txtConfirmNewPass.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtConfirmNewPass.IconLeft = global::ban_2.Properties.Resources.pngaaa_com_2613466;
+            this.txtConfirmNewPass.Location = new System.Drawing.Point(32, 202);
+            this.txtConfirmNewPass.Name = "txtConfirmNewPass";
+            this.txtConfirmNewPass.PasswordChar = '•';
+            this.txtConfirmNewPass.PlaceholderText = "Confirm new password";
+            this.txtConfirmNewPass.SelectedText = "";
+            this.txtConfirmNewPass.Size = new System.Drawing.Size(311, 36);
+            this.txtConfirmNewPass.TabIndex = 27;
+            // 
+            // txtForgotPassEmail
+            // 
+            this.txtForgotPassEmail.BorderRadius = 10;
+            this.txtForgotPassEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtForgotPassEmail.DefaultText = "";
+            this.txtForgotPassEmail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtForgotPassEmail.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtForgotPassEmail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtForgotPassEmail.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtForgotPassEmail.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(9)))), ((int)(((byte)(50)))));
+            this.txtForgotPassEmail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtForgotPassEmail.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtForgotPassEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtForgotPassEmail.IconLeft = global::ban_2.Properties.Resources.nd2m6os0tmc9env4gc8jh3er0j;
+            this.txtForgotPassEmail.Location = new System.Drawing.Point(32, 187);
+            this.txtForgotPassEmail.Name = "txtForgotPassEmail";
+            this.txtForgotPassEmail.PasswordChar = '\0';
+            this.txtForgotPassEmail.PlaceholderText = "Email";
+            this.txtForgotPassEmail.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtForgotPassEmail.SelectedText = "";
+            this.txtForgotPassEmail.Size = new System.Drawing.Size(285, 36);
+            this.txtForgotPassEmail.TabIndex = 5;
+            // 
+            // textSignUpUserPass
+            // 
+            this.textSignUpUserPass.BorderRadius = 10;
+            this.textSignUpUserPass.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textSignUpUserPass.DefaultText = "";
+            this.textSignUpUserPass.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.textSignUpUserPass.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.textSignUpUserPass.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textSignUpUserPass.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textSignUpUserPass.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(9)))), ((int)(((byte)(50)))));
+            this.textSignUpUserPass.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textSignUpUserPass.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textSignUpUserPass.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textSignUpUserPass.IconLeft = global::ban_2.Properties.Resources.pngaaa_com_2613466;
+            this.textSignUpUserPass.Location = new System.Drawing.Point(30, 257);
+            this.textSignUpUserPass.Name = "textSignUpUserPass";
+            this.textSignUpUserPass.PasswordChar = '•';
+            this.textSignUpUserPass.PlaceholderText = "Password";
+            this.textSignUpUserPass.SelectedText = "";
+            this.textSignUpUserPass.Size = new System.Drawing.Size(311, 36);
+            this.textSignUpUserPass.TabIndex = 24;
+            // 
+            // textConfirmPass
+            // 
+            this.textConfirmPass.BorderRadius = 10;
+            this.textConfirmPass.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textConfirmPass.DefaultText = "";
+            this.textConfirmPass.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.textConfirmPass.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.textConfirmPass.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textConfirmPass.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textConfirmPass.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(9)))), ((int)(((byte)(50)))));
+            this.textConfirmPass.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textConfirmPass.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textConfirmPass.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textConfirmPass.IconLeft = global::ban_2.Properties.Resources.pngaaa_com_2613466;
+            this.textConfirmPass.Location = new System.Drawing.Point(31, 312);
+            this.textConfirmPass.Name = "textConfirmPass";
+            this.textConfirmPass.PasswordChar = '•';
+            this.textConfirmPass.PlaceholderText = "Confirm Password";
+            this.textConfirmPass.SelectedText = "";
+            this.textConfirmPass.Size = new System.Drawing.Size(311, 36);
+            this.textConfirmPass.TabIndex = 23;
+            // 
+            // tbPhone
+            // 
+            this.tbPhone.BorderRadius = 10;
+            this.tbPhone.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbPhone.DefaultText = "";
+            this.tbPhone.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbPhone.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbPhone.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbPhone.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbPhone.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(9)))), ((int)(((byte)(50)))));
+            this.tbPhone.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbPhone.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPhone.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbPhone.IconLeft = global::ban_2.Properties.Resources.phone_2_64;
+            this.tbPhone.Location = new System.Drawing.Point(31, 203);
+            this.tbPhone.Name = "tbPhone";
+            this.tbPhone.PasswordChar = '\0';
+            this.tbPhone.PlaceholderText = "Phone";
+            this.tbPhone.SelectedText = "";
+            this.tbPhone.Size = new System.Drawing.Size(311, 36);
+            this.tbPhone.TabIndex = 19;
+            this.tbPhone.TextChanged += new System.EventHandler(this.txbValue_TextChanged);
+            // 
+            // tbEmail
+            // 
+            this.tbEmail.BorderRadius = 10;
+            this.tbEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbEmail.DefaultText = "";
+            this.tbEmail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbEmail.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbEmail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbEmail.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbEmail.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(9)))), ((int)(((byte)(50)))));
+            this.tbEmail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbEmail.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbEmail.IconLeft = global::ban_2.Properties.Resources._6ak2vv6kr512hip8ndktntij5p;
+            this.tbEmail.Location = new System.Drawing.Point(30, 147);
+            this.tbEmail.Name = "tbEmail";
+            this.tbEmail.PasswordChar = '\0';
+            this.tbEmail.PlaceholderText = "Email";
+            this.tbEmail.SelectedText = "";
+            this.tbEmail.Size = new System.Drawing.Size(311, 36);
+            this.tbEmail.TabIndex = 14;
+            // 
+            // guna2PictureBox2
+            // 
+            this.guna2PictureBox2.Image = global::ban_2.Properties.Resources.SeekPng_com_power_button_png_413813__1_;
+            this.guna2PictureBox2.ImageRotate = 0F;
+            this.guna2PictureBox2.Location = new System.Drawing.Point(910, 12);
+            this.guna2PictureBox2.Name = "guna2PictureBox2";
+            this.guna2PictureBox2.Size = new System.Drawing.Size(28, 28);
+            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox2.TabIndex = 13;
+            this.guna2PictureBox2.TabStop = false;
+            this.guna2PictureBox2.Click += new System.EventHandler(this.guna2PictureBox2_Click);
+            // 
+            // ptbExit
+            // 
+            this.ptbExit.BackColor = System.Drawing.Color.Transparent;
+            this.ptbExit.Image = global::ban_2.Properties.Resources._2133353;
+            this.ptbExit.ImageRotate = 0F;
+            this.ptbExit.Location = new System.Drawing.Point(379, -17);
+            this.ptbExit.Name = "ptbExit";
+            this.ptbExit.Size = new System.Drawing.Size(526, 515);
+            this.ptbExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbExit.TabIndex = 0;
+            this.ptbExit.TabStop = false;
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox1.Image = global::ban_2.Properties.Resources.logo_02;
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(83, 24);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(196, 116);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox1.TabIndex = 13;
+            this.guna2PictureBox1.TabStop = false;
+            // 
+            // textLoginUserPass
+            // 
+            this.textLoginUserPass.BorderRadius = 10;
+            this.textLoginUserPass.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textLoginUserPass.DefaultText = "";
+            this.textLoginUserPass.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.textLoginUserPass.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.textLoginUserPass.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textLoginUserPass.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textLoginUserPass.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(9)))), ((int)(((byte)(50)))));
+            this.textLoginUserPass.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textLoginUserPass.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textLoginUserPass.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textLoginUserPass.IconLeft = global::ban_2.Properties.Resources.pngaaa_com_2613466;
+            this.textLoginUserPass.Location = new System.Drawing.Point(33, 305);
+            this.textLoginUserPass.Name = "textLoginUserPass";
+            this.textLoginUserPass.PasswordChar = '•';
+            this.textLoginUserPass.PlaceholderText = "Password";
+            this.textLoginUserPass.SelectedText = "";
+            this.textLoginUserPass.Size = new System.Drawing.Size(285, 36);
+            this.textLoginUserPass.TabIndex = 6;
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.BorderRadius = 10;
+            this.txtEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtEmail.DefaultText = "";
+            this.txtEmail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtEmail.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtEmail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtEmail.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtEmail.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(9)))), ((int)(((byte)(50)))));
+            this.txtEmail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtEmail.IconLeft = global::ban_2.Properties.Resources.nd2m6os0tmc9env4gc8jh3er0j;
+            this.txtEmail.Location = new System.Drawing.Point(33, 253);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.PasswordChar = '\0';
+            this.txtEmail.PlaceholderText = "Email";
+            this.txtEmail.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtEmail.SelectedText = "";
+            this.txtEmail.Size = new System.Drawing.Size(285, 36);
+            this.txtEmail.TabIndex = 5;
+            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
+            // 
             // Loginform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1113,17 +1113,17 @@ namespace ban_2
             this.Move += new System.EventHandler(this.Loginform_Move);
             this.panelLogin.ResumeLayout(false);
             this.panelLogin.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.panelSignUp.ResumeLayout(false);
             this.panelSignUp.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbExit)).EndInit();
             this.pnlForgotPass1.ResumeLayout(false);
             this.pnlForgotPass1.PerformLayout();
             this.pnlVerify.ResumeLayout(false);
             this.pnlVerify.PerformLayout();
             this.pnlNewPass.ResumeLayout(false);
             this.pnlNewPass.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbExit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

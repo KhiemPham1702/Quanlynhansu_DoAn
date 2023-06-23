@@ -1,5 +1,6 @@
 ﻿using ban_2.Components;
 using ban_2.Models;
+using Microsoft.AspNetCore.SignalR.Client;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,33 +25,28 @@ namespace ban_2.Form_selection
         SqlConnection con = new connect().con;
         SqlCommand cmd = new SqlCommand();
         SqlDataAdapter da = new SqlDataAdapter();
-        private TcpClient Client;
-        public StreamReader STR;
-        public StreamWriter STW;
-        public string receive;
-        public string TextToSend;
-        public string LocalAddress;
+
         public ChatContent ChatContent;
         public ChatWelcome ChatWelcome;
+
+        HubConnection hubConnection;
         public Chat(String email)
         {
             Email = email;
             InitializeComponent();
+            Helper.PnlInfo = pnlInformation;
+            Helper.PnlInfo.Visible = false;
             LoadConversations();
             LoadChatPanel();
-            LoadIP();
+            hubConnection = new HubConnectionBuilder()
+                                .WithUrl("https://localhost:7205/chat")
+                                .Build();
         }
 
-        private void LoadIP()
+        private async Task HubConnection_Closed(Exception arg)
         {
-            IPAddress[] localIP = Dns.GetHostAddresses(Dns.GetHostName());
-            foreach (var ip in localIP)
-            {
-                if (ip.AddressFamily == AddressFamily.InterNetwork)
-                {
-                    LocalAddress = ip.ToString();
-                }
-            }
+            await Task.Delay(new Random().Next(0, 5) * 1000);
+            await hubConnection.StartAsync();
         }
 
         public void LoadChatPanel()
@@ -84,8 +80,11 @@ namespace ban_2.Form_selection
                 ChatMessage message = new ChatMessage
                 {
                     MessageID = (int)reader["MessageID"],
+                    TypeMessage = (int)reader["TypeMessage"],
                     FromEmail = (string)reader["FromEmail"],
                     ToEmail = (string)reader["ToEmail"],
+                    EmotionFrom = (string)reader["EmotionFrom"],
+                    EmotionTo = (string)reader["EmotionTo"],
                     MessageText = (string)reader["MessageText"],
                     Timestamp = (DateTime)reader["Timestamp"]
                 };
@@ -131,34 +130,144 @@ namespace ban_2.Form_selection
             return Cons;
         }
 
-       
 
-        private void btnStart_Click(object sender, EventArgs e)
-        {
-            TcpListener tcpListener = new TcpListener(IPAddress.Any, 80);
-            tcpListener.Start();
-            Client = tcpListener.AcceptTcpClient();
-            STR = new StreamReader(Client.GetStream());
-            STW = new StreamWriter(Client.GetStream());
-            STW.AutoFlush = true;
-            backgroundWorker1.RunWorkerAsync();
-            backgroundWorker2.WorkerSupportsCancellation = true;
-        }
-
-        private void btnConnect_Click(object sender, EventArgs e)
+        private async void btnSend_Click(object sender, EventArgs e)
         {
           
-            Client = new TcpClient();
-            Client.Connect(LocalAddress, 80);
-            IPEndPoint iPEnd = new IPEndPoint(IPAddress.Parse(LocalAddress), 80);
+            if(!string.IsNullOrEmpty(txtText.Text))
+            {
+                await hubConnection.InvokeAsync("SendMessage", Helper.CurrentUser.Email , txtText.Text);
+            }
+            txtText.Text = "";
+        }
+
+        private async void Chat_Load(object sender, EventArgs e)
+        {
+            hubConnection.On<string, string>("ReceiveMessage" , (email, mes) => {
+                if(email == Helper.CurrentUser.Email)
+                {
+                    this.pnlChat.Invoke(new MethodInvoker(delegate ()
+                    {
+                        var item = new ChatMessage()
+                        {
+                            FromEmail = Helper.CurrentUser.Email,
+                            ToEmail = Helper.ToEmailChatUser,
+                            TypeMessage = 1,
+                            EmotionFrom = "normal",
+                            EmotionTo = "normal",
+                            MessageText = mes,
+                            MessageID = -1,
+                            Timestamp = DateTime.Now,
+                        };
+                        string query = @"INSERT into MESSAGE (FromEmail, TypeMessage, EmotionFrom, EmotionTo, ToEmail, MessageText, Timestamp ) VALUES( @FromEmail , @TypeMessage ,  @EmotionFrom , @EmotionTo , @ToEmail , @MessageText , @Timestamp ) ";
+                        var parameters = new object[] { item.FromEmail, item.TypeMessage, item.EmotionFrom, item.EmotionTo, item.ToEmail, item.MessageText, item.Timestamp };
+                        var res = DataProvider.Instance.ExecuteNonQuery(query, parameters);
+                        ChatContent.AddMessage(item);
+                    }));
+                }
+                else if (email == Helper.ToEmailChatUser)
+                {
+                    this.pnlChat.Invoke(new MethodInvoker(delegate ()
+                    {
+                        var item = new ChatMessage()
+                        {
+                            FromEmail = email,
+                            ToEmail = "",
+                            TypeMessage = 1,
+                            EmotionFrom = "normal",
+                            EmotionTo = "normal",
+                            MessageText = mes,
+                            MessageID = -1,
+                            Timestamp = DateTime.Now,
+                        };
+
+                        ChatContent.AddMessage(item);
+                    }));
+                }
+            });
+            hubConnection.On<string, string>("ReceiveUrlFile", (email, mes) => {
+                if (email == Helper.CurrentUser.Email)
+                {
+                    this.pnlChat.Invoke(new MethodInvoker(delegate ()
+                    {
+                        var item = new ChatMessage()
+                        {
+                            FromEmail = Helper.CurrentUser.Email,
+                            ToEmail = Helper.ToEmailChatUser,
+                            TypeMessage = 2,
+                            EmotionFrom = "normal",
+                            EmotionTo = "normal",
+                            MessageText = mes,
+                            MessageID = -1,
+                            Timestamp = DateTime.Now,
+                        };
+                        string query = @"INSERT into MESSAGE (FromEmail, TypeMessage, EmotionFrom, EmotionTo, ToEmail, MessageText, Timestamp ) VALUES( @FromEmail , @TypeMessage ,  @EmotionFrom , @EmotionTo , @ToEmail , @MessageText , @Timestamp ) ";
+                        var parameters = new object[] { item.FromEmail, item.TypeMessage, item.EmotionFrom, item.EmotionTo, item.ToEmail, item.MessageText, item.Timestamp };
+                        var res = DataProvider.Instance.ExecuteNonQuery(query, parameters);
+                        ChatContent.AddMessage(item);
+                    }));
+                }
+                else if (email == Helper.ToEmailChatUser)
+                {
+                    this.pnlChat.Invoke(new MethodInvoker(delegate ()
+                    {
+                        var item = new ChatMessage()
+                        {
+                            FromEmail = email,
+                            ToEmail = "",
+                            TypeMessage = 2,
+                            MessageText = mes,
+                            EmotionFrom = "normal",
+                            EmotionTo = "normal",
+                            MessageID = -1,
+                            Timestamp = DateTime.Now,
+                        };
+
+                        ChatContent.AddMessage(item);
+                    }));
+                }
+            });
+            hubConnection.On<string, string, int>("ReceiveEmotion", (email, mes , id) => {
+                try
+                {
+                    this.pnlChat.Invoke(new MethodInvoker(delegate ()
+                    {
+                        
+                        ChatContent.UpdateEmotionMessage(id, mes , email);
+                        
+                    }));
+                }
+                catch (Exception ex)
+                {
+
+                }
+            });
+            hubConnection.On<string, string, string>("ReceiveBackground", (fromEmail, toEmail, url) => {
+                try
+                {
+                    this.pnlChat.Invoke(new MethodInvoker(delegate ()
+                    {
+                        if(Helper.CurrentUser.Email == fromEmail)
+                        {
+                            ChatContent.ChangeBackground(url);
+                            ChatContent.UpdateBackgroundToSql(url, fromEmail, toEmail);
+                        }
+                        else if(Helper.CurrentUser.Email == toEmail)
+                        {
+                            ChatContent.ChangeBackground(url);
+                            ChatContent.UpdateBackgroundToSql(url, toEmail, fromEmail);
+                        }
+                    }));
+                }
+                catch (Exception ex)
+                {
+
+                }
+            });
             try
             {
-                STW = new StreamWriter(Client.GetStream());
-                STR = new StreamReader(Client.GetStream());
-                
-                STW.AutoFlush = true;
-                backgroundWorker1.RunWorkerAsync();
-                backgroundWorker2.WorkerSupportsCancellation = true;
+                await hubConnection.StartAsync();
+               
             }
             catch (Exception ex)
             {
@@ -166,76 +275,24 @@ namespace ban_2.Form_selection
             }
         }
 
-        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        private async void btnSendFile_Click(object sender, EventArgs e)
         {
-            if (Client == null) return;
-            while (Client.Connected)
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "All files (*.*)|*.*";
+            openFileDialog.Title = "Chọn tập tin để gửi";
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                try
+                DialogResult result = MessageBox.Show("Do you want to send this file?", "Send", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+                if(result == DialogResult.OK)
                 {
-                    receive = STR.ReadLine();
-                  
-                    this.pnlChat.Invoke(new MethodInvoker(delegate ()
-                    {
-                        var item = new ChatMessage()
-                        {
-                            FromEmail = Helper.CurrentUser.Email,
-                            ToEmail = Helper.ToEmailChatUser,
-                            MessageText = receive,
-                            MessageID = -1,
-                            Timestamp = DateTime.Now,
-                        };
-                        ChatContent.AddMessage(item, 2);
-                    }));
-                    receive = "";
+                    string filePath = openFileDialog.FileName;
+
+                    await hubConnection.InvokeAsync("SendUrlFile", Helper.CurrentUser.Email, filePath);
                 }
-                catch
-                {
-
-                }
+                
             }
-        }
-
-        private void backgroundWorker2_DoWork(object sender, DoWorkEventArgs e)
-        {
-            if (Client == null) return;
-            if (Client.Connected)
-            {
-                STW.WriteLine(TextToSend);
-               
-                this.pnlChat.Invoke(new MethodInvoker(delegate ()
-                {
-                    var item = new ChatMessage()
-                    {
-                        FromEmail = Helper.CurrentUser.Email,
-                        ToEmail = Helper.ToEmailChatUser,
-                        MessageText = TextToSend,
-                        MessageID = -1,
-                        Timestamp = DateTime.Now,
-                    };
-                    string query = @"INSERT into MESSAGE (FromEmail, ToEmail, MessageText, Timestamp ) VALUES( @FromEmail , @ToEmail , @MessageText , @Timestamp ) ";
-                    var parameters = new object[] { item.FromEmail, item.ToEmail, item.MessageText, item.Timestamp };
-                    var res = DataProvider.Instance.ExecuteNonQuery(query, parameters);
-                    ChatContent.AddMessage(item, 1);
-                }));
-            }
-            else
-            {
-                MessageBox.Show("Failed");
-            }
-            backgroundWorker2.CancelAsync();
-            
-        }
-
-        private void btnSend_Click(object sender, EventArgs e)
-        {
-          
-            if(!string.IsNullOrEmpty(txtText.Text))
-            {
-                TextToSend = txtText.Text;
-                backgroundWorker2.RunWorkerAsync();
-            }
-            txtText.Text = "";
         }
     }
 }

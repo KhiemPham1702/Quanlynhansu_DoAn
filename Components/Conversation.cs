@@ -44,10 +44,7 @@ namespace ban_2.Components
 
         private void Conversation_Click(object sender, EventArgs e)
         {
-            this.BackColor = Helper.ConsClicked;
-            ChatControl.IsInit = false;
-            ChatControl.LoadChatPanel();
-            if(Helper.CurrentUser.Email == ChatConservation.LastMessage.FromEmail)
+            if (Helper.CurrentUser.Email == ChatConservation.LastMessage.FromEmail)
             {
                 Helper.ToEmailChatUser = ChatConservation.LastMessage.ToEmail;
             }
@@ -55,6 +52,11 @@ namespace ban_2.Components
             {
                 Helper.ToEmailChatUser = ChatConservation.LastMessage.FromEmail;
             }
+            this.BackColor = Helper.ConsClicked;
+            ChatControl.IsInit = false;
+            ChatControl.LoadChatPanel();
+           
+            //Helper.ChatServerController = new ChatServer();
         }
 
         private void Conversation_Load(object sender, EventArgs e)
