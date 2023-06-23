@@ -25,7 +25,7 @@ namespace ban_2.Form_selection
         public void ketnoicsdl()
         {
             con.Open();
-            string sql = "select MANV, HOTEN, GIOITINH, CCCD, NGAYSINH, DIACHI, HOCVAN, SDT, TENPHONGBAN, TENCV from CHUCVU inner join NHANVIEN on CHUCVU.MACV = NHANVIEN.MACV inner join PHONGBAN on NHANVIEN.MAPB = PHONGBAN.MAPB  ";
+            string sql = "select MANV, HOTEN, GIOITINH, CCCD, NGAYSINH, DIACHI, HOCVAN, SDT, TENPHONGBAN, TENCV from CHUCVU inner join NHANVIEN on CHUCVU.MACV = NHANVIEN.MACV inner join PHONGBAN on NHANVIEN.MAPB = PHONGBAN.MAPB";
             cmd = new SqlCommand(sql, con);
             cmd.CommandType = CommandType.Text;
             da = new SqlDataAdapter(cmd);

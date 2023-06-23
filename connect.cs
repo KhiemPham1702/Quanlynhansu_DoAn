@@ -17,7 +17,7 @@ public class connect
 
     public connect()
     {
-        this.con = new SqlConnection(@"Data Source=LAPTOP-DSO9KCIT\SQLEXPRESS;Initial Catalog=Quanlynhansu;Integrated Security=True;");
+        this.con = new SqlConnection(@"Data Source=DESKTOP-MJVETF2\SQLEXPRESS;Initial Catalog=Quanlynhansu;Integrated Security=True;");
     }
 
     public SqlConnection Con { get => con; set => con = value; }

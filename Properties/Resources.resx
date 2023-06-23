@@ -127,9 +127,6 @@
   <data name="phone-2-64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\phone-2-64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="attach-paperclip-symbol_icon-icons.com_73094" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\attach-paperclip-symbol_icon-icons.com_73094.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="111039_key_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\111039_key_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -163,17 +160,17 @@
   <data name="contact" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\contact.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pngwing.com (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pngwing.com (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="20521565" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\20521565.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="kindpng_2271313" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\kindpng_2271313.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="pngwing.com (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pngwing.com (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="SeekPng.com_power-button-png_413813 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SeekPng.com_power-button-png_413813 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="emoji-smile_102022" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\emoji-smile_102022.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="SeekPng.com_power-button-png_413813" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SeekPng.com_power-button-png_413813.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -181,8 +178,8 @@
   <data name="pngaaa.com-2613466" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pngaaa.com-2613466.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="nd2m6os0tmc9env4gc8jh3er0j" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\nd2m6os0tmc9env4gc8jh3er0j.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="emoji-smile_102022" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\emoji-smile_102022.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="SeekPng1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SeekPng.com_power-button-png_4138131.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -202,6 +199,9 @@
   <data name="Live-chat-welcome-message" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Live-chat-welcome-message.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="attach-paperclip-symbol_icon-icons.com_73094" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\attach-paperclip-symbol_icon-icons.com_73094.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="f1 (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\f1 (2).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -220,6 +220,9 @@
   <data name="[CITYPNG1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\[CITYPNG.COM]Gray Search Icon Button Transparent PNG - 512x5121.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="charm_bell" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\charm_bell.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="f1 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\f1 (1).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -234,6 +237,9 @@
   </data>
   <data name="logout-64 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logout-64 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="nd2m6os0tmc9env4gc8jh3er0j" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\nd2m6os0tmc9env4gc8jh3er0j.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Education_Pencil_1 copy 2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Education_Pencil_1 copy 2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -253,7 +259,7 @@
   <data name="[CITYPNG.COM]Gray Search Icon Button Transparent PNG - 512x512 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\[CITYPNG.COM]Gray Search Icon Button Transparent PNG - 512x512 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="20521565" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\20521565.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icon-park-outline_setting-two" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon-park-outline_setting-two.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

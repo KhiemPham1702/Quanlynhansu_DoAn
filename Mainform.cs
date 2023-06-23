@@ -26,20 +26,26 @@ namespace ban_2
         SqlCommand cmd = new SqlCommand();
         SqlDataAdapter da = new SqlDataAdapter();
 
+        string maNV = "ALL";
+        bool thongbao = false;
+
+
         void find_NV()
         {
             if (permission == 0) lbNameProfile.Text = "ADMIN";
             else
             {
                 con.Open();
-                string sql = "select HOTEN from CHUCVU inner join NHANVIEN on CHUCVU.MACV = NHANVIEN.MACV inner join PHONGBAN on NHANVIEN.MAPB = PHONGBAN.MAPB WHERE EMAIL = '" + email + "'";
+                string sql = "select HOTEN, MANV from CHUCVU inner join NHANVIEN on CHUCVU.MACV = NHANVIEN.MACV inner join PHONGBAN on NHANVIEN.MAPB = PHONGBAN.MAPB WHERE EMAIL = '" + email + "'";
                 cmd = new SqlCommand(sql, con);
                 cmd.CommandType = CommandType.Text;
                 da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 con.Close();
-
+                Console.WriteLine(dt.Rows[0]["MANV"].ToString());
+                maNV = dt.Rows[0]["MANV"].ToString();
+                Console.WriteLine(maNV);
                 lbNameProfile.Text = dt.Rows[0][0].ToString();
             }
         }
@@ -103,6 +109,31 @@ namespace ban_2
             panelMain.Controls.Add(currentChildForm);
         }
 
+        private void ketnoicsdl(String sql)
+        {
+            if (con.State != ConnectionState.Open)
+            {
+                con.Open();
+            }
+            cmd = new SqlCommand(sql, con);
+            cmd.CommandType = CommandType.Text;
+            da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            DataRow[] dataRows = dt.Select();
+            foreach (DataRow row in dataRows)
+            {
+                if (row["TRANGTHAI"].ToString() == "0") thongbao = true;
+                string a = "Thông báo chung: ";
+                if (row["MANV"].ToString() != "ALL") a = "Thông báo của bạn: ";
+                ToolStripMenuItem menuItem = new ToolStripMenuItem(row["NOIDUNG"].ToString());
+                menuItem.Text = a + row["NOIDUNG"].ToString();
+                menuItem.ToolTipText = row["NOIDUNG"].ToString() + " - " + row["THOIGIAN"].ToString();
+                menuTB.Items.Add(menuItem);
+            }
+            con.Close();
+        }
+
         private void Mainform_Load(object sender, EventArgs e)
         {
             if (permission == 0) profilleToolStripMenuItem.Visible = false;
@@ -118,11 +149,14 @@ namespace ban_2
                 btEmployee.Visible = false;
                 btSalary.Visible = false;
                 guna2GradientButton2.Visible = true;
-            }
-
+                btTB.Visible = false;
+            }           
+            
             OpenChildForm(new Home());
             lbNameProfile.Text = "";
             find_NV();
+            ketnoicsdl("select MANV, NOIDUNG, TRANGTHAI, THOIGIAN from THONGBAO where MANV = '" + maNV + "' or HOTEN = 'Thông báo chung'");
+            if (thongbao == true) backTB.Visible = true;           
 
             try
             {
@@ -176,7 +210,10 @@ namespace ban_2
 
         void add_TT_user()
         {
-           
+            if (con.State != ConnectionState.Open)
+            {
+                con.Open();
+            }
             string sql = "INSERT INTO QL_USER VALUES('" + user_name + "', '" + now + "', '" + DateTime.Now.ToString() + "')";
             cmd = new SqlCommand(sql, con);
             cmd.ExecuteNonQuery();
@@ -225,6 +262,35 @@ namespace ban_2
         private void btnChat_Click(object sender, EventArgs e)
         {
             OpenChildForm(new Chat(email));
+        }
+
+        private void btTB_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new Notification());
+        }
+
+        private void update(String sql)
+        {
+            if (con.State != ConnectionState.Open)
+            {
+                con.Open();
+            }
+            cmd = new SqlCommand(sql, con);
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+
+        private void btChuong_Click(object sender, EventArgs e)
+        {
+            backTB.Visible = false;
+            update("UPDATE THONGBAO SET TRANGTHAI = '1' WHERE MANV = '" + maNV + "' or MANV = 'ALL'");
+            menuTB.Show(this, this.PointToClient(MousePosition));
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            ketnoicsdl("select MANV, NOIDUNG, TRANGTHAI, THOIGIAN from THONGBAO where MANV = '" + maNV + "' or HOTEN = 'Thông báo chung'");
+            if (thongbao == true) backTB.Visible = true;
         }
     }
 }

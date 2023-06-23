@@ -20,7 +20,7 @@ namespace ban_2
 
         private DataProvider() { }
 
-        private string connectionSTR = "Data Source=LAPTOP-DSO9KCIT\\SQLEXPRESS;Initial Catalog=Quanlynhansu;Integrated Security=True;";
+        private string connectionSTR = @"Data Source=DESKTOP-MJVETF2\SQLEXPRESS;Initial Catalog=Quanlynhansu;Integrated Security=True;";
 
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {
