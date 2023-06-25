@@ -54,6 +54,7 @@ namespace ban_2
             this.btCancel.Size = new System.Drawing.Size(229, 50);
             this.btCancel.TabIndex = 38;
             this.btCancel.Text = "Cancel";
+            this.btCancel.Click += new System.EventHandler(this.btCancel_Click);
             // 
             // btAdd
             // 

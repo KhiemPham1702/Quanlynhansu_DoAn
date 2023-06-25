@@ -15,7 +15,7 @@ namespace ban_2
     {
         string user_name;
 
-        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-MJVETF2\SQLEXPRESS;Initial Catalog=Quanlynhansu;Integrated Security=True;");
+        SqlConnection con = new connect().Con;
         SqlCommand cmd = new SqlCommand();
         SqlDataAdapter da = new SqlDataAdapter();
 
@@ -51,10 +51,11 @@ namespace ban_2
 
         private void btChange_Click(object sender, EventArgs e)
         {
-            if(tbPassOld.Text == "" || tbNewPass.Text == "" || tbConfirmPass.Text == "")
+            if (tbPassOld.Text == "" || tbNewPass.Text == "" || tbConfirmPass.Text == "")
             {
-                MessageBox.Show("Mời nhập đầy đủ thông tin", "Đổi mật khẩu thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            } else if(tbNewPass.Text == tbConfirmPass.Text)
+                MessageBox.Show("Please fill out all the information", "Failed to change password", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (tbNewPass.Text == tbConfirmPass.Text)
             {
                 if (kt())
                 {
@@ -63,14 +64,14 @@ namespace ban_2
                     cmd = new SqlCommand(sql, con);
                     cmd.ExecuteNonQuery();
                     con.Close();
-                    MessageBox.Show("Đổi mật khẩu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Change Password Successfully", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 }
-                else MessageBox.Show("Mật khẩu sai", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);                
+                else MessageBox.Show("Incorrect password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                MessageBox.Show("Mật khẩu mới không trùng khớp, mời nhập lại", "Đăng ký thất bại", MessageBoxButtons.OK, MessageBoxIcon.Error);                
+                MessageBox.Show("New password does not match, please re-enter", "Registration Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             tbPassOld.Text = tbNewPass.Text = tbConfirmPass.Text = "";
             tbPassOld.Focus();

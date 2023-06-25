@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ban_2.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,28 +19,31 @@ namespace ban_2.Form_selection
         string user_name;
         int per;
         string path;
+        Mainform mainform;
+
 
         public Profile()
         {
             InitializeComponent();
         }
 
-        public Profile(string a, string b, int c)
+        public Profile(string a, string b, int c, Mainform main)
         {
             InitializeComponent();
             email = a;
             user_name = b;
             per = c;
+            this.mainform = main;
         }
 
-        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-MJVETF2\SQLEXPRESS;Initial Catalog=Quanlynhansu;Integrated Security=True;");
+        SqlConnection con = new connect().Con;
         SqlCommand cmd = new SqlCommand();
         SqlDataAdapter da = new SqlDataAdapter();
 
         void ketnoicsdl()
         {
             con.Open();
-            string sql = "select MANV, HOTEN, GIOITINH, NGAYSINH, DIACHI, HOCVAN, SDT, TENCV, TENPHONGBAN, CCCD from CHUCVU inner join NHANVIEN on CHUCVU.MACV = NHANVIEN.MACV inner join PHONGBAN on NHANVIEN.MAPB = PHONGBAN.MAPB WHERE EMAIL = '" + email +"'";
+            string sql = "select MANV, HOTEN, GIOITINH, NGAYSINH, DIACHI, HOCVAN, SDT, TENCV, TENPHONGBAN, CCCD from CHUCVU inner join NHANVIEN on CHUCVU.MACV = NHANVIEN.MACV inner join PHONGBAN on NHANVIEN.MAPB = PHONGBAN.MAPB WHERE EMAIL = '" + email + "'";
             cmd = new SqlCommand(sql, con);
             cmd.CommandType = CommandType.Text;
             da = new SqlDataAdapter(cmd);
@@ -63,7 +67,7 @@ namespace ban_2.Form_selection
         void ketnoicsdl2()
         {
             con.Open();
-            string sql = "select USERNAME, USERPASS, AVATAR FROM ACC_USER WHERE USERNAME = '" + user_name +"'";
+            string sql = "select EMAIL, USERPASS, AVATAR FROM ACC_USER WHERE EMAIL = '" + Helper.CurrentUser.Email + "'";
             cmd = new SqlCommand(sql, con);
             cmd.CommandType = CommandType.Text;
             da = new SqlDataAdapter(cmd);
@@ -73,19 +77,29 @@ namespace ban_2.Form_selection
 
             tbUserName.Text = dt.Rows[0][0].ToString();
             tbPass.Text = dt.Rows[0][1].ToString();
-            byte[] b = (byte[])dt.Rows[0][2];
-            picturboxAvatar.Image = ByteArrayToImage(b);
-        }      
+
+            try
+            {
+                byte[] b = (byte[])dt.Rows[0][2];
+                picturboxAvatar.Image = ByteArrayToImage(b);
+            }
+            catch
+            {
+
+            }
+        }
+
 
         private void btChange_Click(object sender, EventArgs e)
         {
-            if(tbPass.PasswordChar == '\0')
+            if (tbPass.PasswordChar == '\0')
             {
                 tbPass.PasswordChar = '●';
-            } else
+            }
+            else
             {
                 tbPass.PasswordChar = '\0';
-            }   
+            }
         }
 
         private void btChangePass_Click(object sender, EventArgs e)
@@ -110,19 +124,22 @@ namespace ban_2.Form_selection
         private void btChangePicture_Click(object sender, EventArgs e)
         {
             OpenFileDialog open = new OpenFileDialog();
-            if(open.ShowDialog() == DialogResult.OK)
+            if (open.ShowDialog() == DialogResult.OK)
             {
                 picturboxAvatar.Image = Image.FromFile(open.FileName);
                 path = open.FileName;
-            }
 
-            byte[] b = ImageToByteArray(picturboxAvatar.Image);
-            con.Open();
-            cmd = new SqlCommand("UPDATE ACC_USER SET AVATAR = @HINH WHERE USERNAME = @TEN", con);
-            cmd.Parameters.Add(new SqlParameter("@TEN", user_name));
-            cmd.Parameters.Add(new SqlParameter("@HINH", b));
-            cmd.ExecuteNonQuery();
-            con.Close();
+                byte[] b = ImageToByteArray(picturboxAvatar.Image);
+                con.Open();
+                cmd = new SqlCommand("UPDATE ACC_USER SET AVATAR = @HINH WHERE USERNAME = @TEN", con);
+                cmd.Parameters.Add(new SqlParameter("@TEN", user_name));
+                cmd.Parameters.Add(new SqlParameter("@HINH", b));
+                cmd.ExecuteNonQuery();
+                con.Close();
+
+                mainform.reset(picturboxAvatar.Image);
+            }
+            
         }
 
         byte[] ImageToByteArray(Image image)
