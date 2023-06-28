@@ -36,6 +36,7 @@ namespace ban_2.Form_selection
             InitializeComponent();
             Helper.PnlInfo = pnlInformation;
             Helper.PnlInfo.Visible = false;
+            Helper.ChatControl = this;
             LoadConversations();
             LoadChatPanel();
             hubConnection = new HubConnectionBuilder()
@@ -54,9 +55,15 @@ namespace ban_2.Form_selection
             pnlChat.Controls.Clear();
             if (!IsInit)
             {
-                pnlAction.Visible = true;
-                ChatContent = new ChatContent(ChatMessages, Email);
-                pnlChat.Controls.Add(ChatContent);
+                this.pnlChat.Invoke(new MethodInvoker(delegate ()
+                {
+                    pnlAction.Visible = true;
+                    ChatContent = new ChatContent();
+                    pnlChat.Controls.Add(ChatContent);
+                    ChatContent.ScrollToPosition(ChatContent.ChatMessages[ChatContent.ChatMessages.Count - 1]);
+                }));
+               
+                
             }
             else
             {
@@ -65,11 +72,19 @@ namespace ban_2.Form_selection
             }
         }
 
-        private void LoadConversations()
+        public void LoadConversations()
         {
-           ChatMessages = new List<ChatMessage>();
+            ChatMessages = new List<ChatMessage>();
             string query = "SELECT * FROM MESSAGE WHERE FromEmail = @Email OR ToEmail = @Email";
-            con.Open();
+            try
+            {
+                con.Open();
+            }
+            catch (Exception ex)
+            {
+                con.Close();
+                con.Open();
+            }
             SqlCommand command = new SqlCommand(query, con);
             command.Parameters.AddWithValue("@Email", Email);
             SqlDataReader reader = command.ExecuteReader();
@@ -111,7 +126,14 @@ namespace ban_2.Form_selection
             var Cons = new ChatConservation();
             var email = Email == item.FromEmail ? item.ToEmail : item.FromEmail;
             string query = "SELECT NHANVIEN.HOTEN, ACC_USER.AVATAR FROM NHANVIEN INNER JOIN ACC_USER ON NHANVIEN.EMAIL = ACC_USER.EMAIL WHERE NHANVIEN.EMAIL = @Email";
-            con.Open();
+            try
+            {
+                con.Open();
+            }catch (Exception ex)
+            {
+                con.Close();
+                con.Open();
+            }
             SqlCommand command = new SqlCommand(query, con);
             command.Parameters.AddWithValue("@Email", email);
             SqlDataReader reader = command.ExecuteReader();
@@ -136,17 +158,18 @@ namespace ban_2.Form_selection
           
             if(!string.IsNullOrEmpty(txtText.Text))
             {
-                await hubConnection.InvokeAsync("SendMessage", Helper.CurrentUser.Email , txtText.Text);
+                await hubConnection.InvokeAsync("SendMessage", Helper.CurrentUser.Email , Helper.ToEmailChatUser, txtText.Text);
             }
             txtText.Text = "";
+           
         }
 
         private async void Chat_Load(object sender, EventArgs e)
         {
-            hubConnection.On<string, string>("ReceiveMessage" , (email, mes) => {
-                if(email == Helper.CurrentUser.Email)
+            hubConnection.On<string, string , string>("ReceiveMessage" , (fromEmail, toEmail, mes) => {
+                this.pnlChat.Invoke(new MethodInvoker(delegate ()
                 {
-                    this.pnlChat.Invoke(new MethodInvoker(delegate ()
+                  if(Helper.CurrentUser.Email == fromEmail && Helper.ToEmailChatUser == toEmail)
                     {
                         var item = new ChatMessage()
                         {
@@ -162,33 +185,24 @@ namespace ban_2.Form_selection
                         string query = @"INSERT into MESSAGE (FromEmail, TypeMessage, EmotionFrom, EmotionTo, ToEmail, MessageText, Timestamp ) VALUES( @FromEmail , @TypeMessage ,  @EmotionFrom , @EmotionTo , @ToEmail , @MessageText , @Timestamp ) ";
                         var parameters = new object[] { item.FromEmail, item.TypeMessage, item.EmotionFrom, item.EmotionTo, item.ToEmail, item.MessageText, item.Timestamp };
                         var res = DataProvider.Instance.ExecuteNonQuery(query, parameters);
-                        ChatContent.AddMessage(item);
-                    }));
-                }
-                else if (email == Helper.ToEmailChatUser)
-                {
-                    this.pnlChat.Invoke(new MethodInvoker(delegate ()
+                        ChatContent.AddMessage();
+                        LoadConversations();
+                    }
+                  else if(Helper.CurrentUser.Email == toEmail && Helper.ToEmailChatUser == fromEmail)
+                  {
+                        ChatContent.AddMessage();
+                        LoadConversations();
+                   }
+                    else
                     {
-                        var item = new ChatMessage()
-                        {
-                            FromEmail = email,
-                            ToEmail = "",
-                            TypeMessage = 1,
-                            EmotionFrom = "normal",
-                            EmotionTo = "normal",
-                            MessageText = mes,
-                            MessageID = -1,
-                            Timestamp = DateTime.Now,
-                        };
-
-                        ChatContent.AddMessage(item);
-                    }));
-                }
+                        LoadConversations();
+                    }
+                }));
             });
-            hubConnection.On<string, string>("ReceiveUrlFile", (email, mes) => {
-                if (email == Helper.CurrentUser.Email)
+            hubConnection.On<string, string, string>("ReceiveUrlFile", (fromEmail, toEmail, mes) => {
+                this.pnlChat.Invoke(new MethodInvoker(delegate ()
                 {
-                    this.pnlChat.Invoke(new MethodInvoker(delegate ()
+                    if (Helper.CurrentUser.Email == fromEmail && Helper.ToEmailChatUser == toEmail)
                     {
                         var item = new ChatMessage()
                         {
@@ -204,28 +218,20 @@ namespace ban_2.Form_selection
                         string query = @"INSERT into MESSAGE (FromEmail, TypeMessage, EmotionFrom, EmotionTo, ToEmail, MessageText, Timestamp ) VALUES( @FromEmail , @TypeMessage ,  @EmotionFrom , @EmotionTo , @ToEmail , @MessageText , @Timestamp ) ";
                         var parameters = new object[] { item.FromEmail, item.TypeMessage, item.EmotionFrom, item.EmotionTo, item.ToEmail, item.MessageText, item.Timestamp };
                         var res = DataProvider.Instance.ExecuteNonQuery(query, parameters);
-                        ChatContent.AddMessage(item);
-                    }));
-                }
-                else if (email == Helper.ToEmailChatUser)
-                {
-                    this.pnlChat.Invoke(new MethodInvoker(delegate ()
+                        ChatContent.AddMessage();
+                        LoadConversations();
+                    }
+                    else if (Helper.CurrentUser.Email == toEmail && Helper.ToEmailChatUser == fromEmail)
                     {
-                        var item = new ChatMessage()
-                        {
-                            FromEmail = email,
-                            ToEmail = "",
-                            TypeMessage = 2,
-                            MessageText = mes,
-                            EmotionFrom = "normal",
-                            EmotionTo = "normal",
-                            MessageID = -1,
-                            Timestamp = DateTime.Now,
-                        };
-
-                        ChatContent.AddMessage(item);
-                    }));
-                }
+                        ChatContent.AddMessage();
+                        LoadConversations();
+                    }
+                    else
+                    {
+                        LoadConversations();
+                    }
+                }));
+               
             });
             hubConnection.On<string, string, int>("ReceiveEmotion", (email, mes , id) => {
                 try
@@ -251,11 +257,11 @@ namespace ban_2.Form_selection
                         {
                             ChatContent.ChangeBackground(url);
                             ChatContent.UpdateBackgroundToSql(url, fromEmail, toEmail);
+                            ChatContent.UpdateBackgroundToSql(url, toEmail, fromEmail);
                         }
                         else if(Helper.CurrentUser.Email == toEmail)
                         {
-                            ChatContent.ChangeBackground(url);
-                            ChatContent.UpdateBackgroundToSql(url, toEmail, fromEmail);
+                            ChatContent.ChangeBackground(url);                          
                         }
                     }));
                 }
@@ -289,10 +295,48 @@ namespace ban_2.Form_selection
                 {
                     string filePath = openFileDialog.FileName;
 
-                    await hubConnection.InvokeAsync("SendUrlFile", Helper.CurrentUser.Email, filePath);
+                    await hubConnection.InvokeAsync("SendUrlFile", Helper.CurrentUser.Email,Helper.ToEmailChatUser, filePath);
                 }
                 
             }
+        }
+
+        private void tbTimNHANVIEN_TextChanged(object sender, EventArgs e)
+        {
+            var ListStaffs = new List<Staff>();
+           
+            if (string.IsNullOrEmpty(tbTimNHANVIEN.Text))
+            {
+                con.Close();
+                LoadConversations();
+            }
+            else
+            {
+                string sql = $"SELECT NHANVIEN.HOTEN, ACC_USER.AVATAR, NHANVIEN.EMAIL FROM NHANVIEN INNER JOIN ACC_USER ON NHANVIEN.EMAIL = ACC_USER.EMAIL WHERE NHANVIEN.HOTEN LIKE '%' + @SearchString + '%'";
+                var parameters = new object[] { tbTimNHANVIEN.Text };
+                var data = DataProvider.Instance.ExecuteQuery(sql, parameters);
+                for(int i = 0; i<data.Rows.Count; i++)
+                {
+                    var st = new Staff()
+                    {
+                        AVATAR = (byte[])data.Rows[i]["AVATAR"],
+                        EMAIL = (string)data.Rows[i]["EMAIL"],
+                        HOTEN = (string)data.Rows[i]["HOTEN"],
+                    };
+                    if(st.EMAIL != Helper.CurrentUser.Email)
+                    {
+                        ListStaffs.Add(st);
+                    }
+                    
+                }
+
+                pnlConservations.Controls.Clear();
+                foreach(var st in ListStaffs)
+                {
+                    pnlConservations.Controls.Add(new UCItemSearchColleague(st , this));
+                }
+            }
+           
         }
     }
 }

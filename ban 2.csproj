@@ -253,6 +253,12 @@
     <Compile Include="Components\SeperatorDate.Designer.cs">
       <DependentUpon>SeperatorDate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Components\SpDateForSearch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\SpDateForSearch.Designer.cs">
+      <DependentUpon>SpDateForSearch.cs</DependentUpon>
+    </Compile>
     <Compile Include="Components\UCBGItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -265,11 +271,41 @@
     <Compile Include="Components\UCChangeBG.Designer.cs">
       <DependentUpon>UCChangeBG.cs</DependentUpon>
     </Compile>
+    <Compile Include="Components\UCFileItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\UCFileItem.Designer.cs">
+      <DependentUpon>UCFileItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\UCFindMess.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\UCFindMess.Designer.cs">
+      <DependentUpon>UCFindMess.cs</DependentUpon>
+    </Compile>
     <Compile Include="Components\UCInfoChat.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Components\UCInfoChat.Designer.cs">
       <DependentUpon>UCInfoChat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\UCItemSearchColleague.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\UCItemSearchColleague.Designer.cs">
+      <DependentUpon>UCItemSearchColleague.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\UCSeachMessItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\UCSeachMessItem.Designer.cs">
+      <DependentUpon>UCSeachMessItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\UCViewFile.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\UCViewFile.Designer.cs">
+      <DependentUpon>UCViewFile.cs</DependentUpon>
     </Compile>
     <Compile Include="connect.cs" />
     <Compile Include="DataProvider.cs" />
@@ -380,6 +416,7 @@
     <Compile Include="Models\Data.cs" />
     <Compile Include="Models\Helper.cs" />
     <Compile Include="Models\Message.cs" />
+    <Compile Include="Models\Staff.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="NhanVien.cs" />
     <Compile Include="NV_info_form.cs">
@@ -426,14 +463,32 @@
     <EmbeddedResource Include="Components\SeperatorDate.resx">
       <DependentUpon>SeperatorDate.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Components\SpDateForSearch.resx">
+      <DependentUpon>SpDateForSearch.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Components\UCBGItem.resx">
       <DependentUpon>UCBGItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Components\UCChangeBG.resx">
       <DependentUpon>UCChangeBG.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Components\UCFileItem.resx">
+      <DependentUpon>UCFileItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\UCFindMess.resx">
+      <DependentUpon>UCFindMess.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Components\UCInfoChat.resx">
       <DependentUpon>UCInfoChat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\UCItemSearchColleague.resx">
+      <DependentUpon>UCItemSearchColleague.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\UCSeachMessItem.resx">
+      <DependentUpon>UCSeachMessItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\UCViewFile.resx">
+      <DependentUpon>UCViewFile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_selection\About.resx">
       <DependentUpon>About.cs</DependentUpon>

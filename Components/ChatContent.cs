@@ -16,20 +16,63 @@ namespace ban_2.Components
     public partial class ChatContent : UserControl
     {
         public List<ChatMessage> ChatMessages { get; set; }
-        public string Email { get; set; }
         public int YLocation { get; set; }
         public List<DateTime> DateTimes { get; set; }
         public EmotionDialog EmotionDialog { get; set; }
-        public ChatContent(List<ChatMessage> chatMessages , string email)
+        public ChatContent( )
         {
-            ChatMessages = chatMessages;
-          
-            Email = email;
             YLocation = 10;
+            LoadMessages();
             InitializeComponent();
+            LoadName();
             LoadBackground();
             LoadChat();
 
+        }
+
+        public void LoadMessages()
+        {
+            ChatMessages = new List<ChatMessage>();
+            string sql = $"SELECT * FROM MESSAGE WHERE (( FromEmail = @FromEmail AND ToEmail = @ToEmail ) OR ( FromEmail = @To AND ToEmail = @From )) ";
+            var parameters = new object[] { Helper.CurrentUser.Email, Helper.ToEmailChatUser, Helper.ToEmailChatUser, Helper.CurrentUser.Email };
+            var data = DataProvider.Instance.ExecuteQuery(sql, parameters);
+            for (int i = 0; i < data.Rows.Count; i++)
+            {
+                ChatMessage message = new ChatMessage
+                {
+                    MessageID = (int)data.Rows[i]["MessageID"],
+                    TypeMessage = (int)data.Rows[i]["TypeMessage"],
+                    FromEmail = (string)data.Rows[i]["FromEmail"],
+                    ToEmail = (string)data.Rows[i]["ToEmail"],
+                    EmotionFrom = (string)data.Rows[i]["EmotionFrom"],
+                    EmotionTo = (string)data.Rows[i]["EmotionTo"],
+                    MessageText = (string)data.Rows[i]["MessageText"],
+                    Timestamp = (DateTime)data.Rows[i]["Timestamp"]
+                };
+                ChatMessages.Add(message);
+            }
+            var item = ChatMessages.FirstOrDefault();
+        }
+
+        public void ScrollToPosition(ChatMessage mess)
+        {
+            for (int i = pnlChat.Controls.Count - 1; i >= 0; i--)
+            {
+                Control control = pnlChat.Controls[i];
+                if (control.Tag != null && control.Tag.ToString() == "Container" + mess.MessageID)
+                {
+                    pnlChat.ScrollControlIntoView(control);
+                    break;
+                }
+            }
+            
+        }
+        private void LoadName()
+        {
+            string sql = $"SELECT * FROM NHANVIEN WHERE EMAIL = @EMAIL";
+            var parameters = new object[] { Helper.ToEmailChatUser };
+            var data = DataProvider.Instance.ExecuteQuery(sql, parameters);
+            lblName.Text = (string)data.Rows[0]["HOTEN"];
         }
 
         private void LoadBackground()
@@ -38,7 +81,10 @@ namespace ban_2.Components
             string sql = $"SELECT * FROM Conversations WHERE FromEmail = @FromEmail AND ToEmail = @ToEmail";
             var parameters = new object[] { Helper.CurrentUser.Email, Helper.ToEmailChatUser };
             var data = DataProvider.Instance.ExecuteQuery(sql, parameters);
-            url = (string)data.Rows[0]["Background"];
+            if(data.Rows.Count> 0)
+            {
+                url = (string)data.Rows[0]["Background"];
+            }
             ChangeBackground(url);
         }
         public void UpdateBackgroundToSql(string url, string fromEmail, string toEmail)
@@ -47,10 +93,11 @@ namespace ban_2.Components
             var parameters = new object[] { url, fromEmail, toEmail };
             DataProvider.Instance.ExecuteNonQuery(updateQuery, parameters);
         }
-        public void AddMessage(ChatMessage item)
+        public void AddMessage()
         {
-            ChatMessages.Add(item);
-            LoadChat();           
+            LoadMessages();
+            LoadChat();
+            ScrollToPosition(ChatMessages[ChatMessages.Count - 1]);
         }
         public void ChangeBackground(string url)
         {
@@ -80,6 +127,7 @@ namespace ban_2.Components
         public void UpdateEmotionMessage(int id , string emotion , string email)
         {
             var item = ChatMessages.Find(e => e.MessageID == id);
+            if (item == null) return;
             var index = ChatMessages.IndexOf(item); 
             if (Helper.CurrentUser.Email == email)
             {
@@ -187,7 +235,7 @@ namespace ban_2.Components
         }
         private void addIconToFollowItem(ChatMessage item)
         {
-            removeIconFromFollowItem(item);
+            removeIconToFollowItem(item);
             for (int i = pnlChat.Controls.Count - 1; i >= 0; i--)
             {
                 Control control = pnlChat.Controls[i];
@@ -212,25 +260,28 @@ namespace ban_2.Components
             DateTimes = new List<DateTime>();
             foreach (var item in ChatMessages)
             {
-                var date = new DateTime(item.Timestamp.Year, item.Timestamp.Month, item.Timestamp.Day);
-                bool exists = DateTimes.Contains(date);
-                if (!exists)
+                if ((item.FromEmail == Helper.CurrentUser.Email && item.ToEmail == Helper.ToEmailChatUser) || (item.FromEmail == Helper.ToEmailChatUser && item.ToEmail == Helper.CurrentUser.Email))
                 {
-                    DateTimes.Add(date);
-                    var seperator = new SeperatorDate(date);
-                    seperator.Location = new Point(0, YLocation + 30);
-                    YLocation = YLocation + 30 + seperator.Height;
-                    pnlChat.Controls.Add(seperator);
+                    var date = new DateTime(item.Timestamp.Year, item.Timestamp.Month, item.Timestamp.Day);
+                    bool exists = DateTimes.Contains(date);
+                    if (!exists)
+                    {
+                        DateTimes.Add(date);
+                        var seperator = new SeperatorDate(date);
+                        seperator.Location = new Point(0, YLocation + 30);
+                        YLocation = YLocation + 30 + seperator.Height;
+                        pnlChat.Controls.Add(seperator);
 
+                    }
                 }
-                if (item.FromEmail == Email)
+                if (item.FromEmail == Helper.CurrentUser.Email && item.ToEmail == Helper.ToEmailChatUser)
                 {
-                    if(item.TypeMessage == 1)
+                    if (item.TypeMessage == 1)
                     {
                         var textContainer = createFromMessageTypeText(item);
                         textContainer.Tag = "Container" + item.MessageID;
                         pnlChat.Controls.Add(textContainer);
-                        if(item.EmotionFrom != "normal")
+                        if (item.EmotionFrom != "normal")
                         {
                             addIconTextBoxFromHandlerEvent(textContainer as Guna.UI2.WinForms.Guna2TextBox, item);
                         }
@@ -240,7 +291,7 @@ namespace ban_2.Components
                         }
                         pnlChat.Controls.Add(createFromButtonEmotion(textContainer, item));
                     }
-                    else if(item.TypeMessage == 2)
+                    else if (item.TypeMessage == 2)
                     {
                         var textContainer = createFromMessageTypeButton(item);
                         textContainer.Tag = "Container" + item.MessageID;
@@ -256,9 +307,9 @@ namespace ban_2.Components
                         pnlChat.Controls.Add(createFromButtonEmotion(textContainer, item));
                     }
                 }
-                else if (item.FromEmail == Helper.ToEmailChatUser)
+                else if (item.FromEmail == Helper.ToEmailChatUser && item.ToEmail == Helper.CurrentUser.Email)
                 {
-                    if(item.TypeMessage == 1 )
+                    if (item.TypeMessage == 1)
                     {
                         var textContainer = createToMessageTypeText(item);
                         textContainer.Tag = "Container" + item.MessageID;
@@ -286,14 +337,13 @@ namespace ban_2.Components
                         {
                             addIconButtonToHandlerEvent(textContainer as Guna.UI2.WinForms.Guna2Button, item);
                         }
-                        pnlChat.Controls.Add(createToButtonEmotion(textContainer ,item));
+                        pnlChat.Controls.Add(createToButtonEmotion(textContainer, item));
                     }
 
                 }
-                
 
             }
-            pnlChat.AutoScrollPosition = new Point(0, pnlChat.VerticalScroll.Maximum);
+
         }
         private Control createFromButtonEmotion(Control textContainer, ChatMessage item)
         {

@@ -30,11 +30,11 @@
         {
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnViewFile = new Guna.UI2.WinForms.Guna2Button();
-            this.btnChangeBG = new Guna.UI2.WinForms.Guna2Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnInfo = new Guna.UI2.WinForms.Guna2CircleButton();
             this.lblName = new System.Windows.Forms.Label();
+            this.btnViewFile = new Guna.UI2.WinForms.Guna2Button();
+            this.btnChangeBG = new Guna.UI2.WinForms.Guna2Button();
             this.guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
             this.picturboxAvatar = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2Panel1.SuspendLayout();
@@ -66,51 +66,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(415, 131);
             this.panel1.TabIndex = 19;
-            // 
-            // btnViewFile
-            // 
-            this.btnViewFile.BackColor = System.Drawing.Color.Transparent;
-            this.btnViewFile.BorderRadius = 10;
-            this.btnViewFile.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnViewFile.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnViewFile.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnViewFile.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnViewFile.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnViewFile.FillColor = System.Drawing.Color.Transparent;
-            this.btnViewFile.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.btnViewFile.ForeColor = System.Drawing.Color.Black;
-            this.btnViewFile.Image = global::ban_2.Properties.Resources.document_64;
-            this.btnViewFile.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.btnViewFile.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnViewFile.Location = new System.Drawing.Point(0, 62);
-            this.btnViewFile.Name = "btnViewFile";
-            this.btnViewFile.Size = new System.Drawing.Size(415, 62);
-            this.btnViewFile.TabIndex = 15;
-            this.btnViewFile.Text = "View files, images";
-            this.btnViewFile.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // btnChangeBG
-            // 
-            this.btnChangeBG.BackColor = System.Drawing.Color.Transparent;
-            this.btnChangeBG.BorderRadius = 10;
-            this.btnChangeBG.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnChangeBG.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnChangeBG.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnChangeBG.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnChangeBG.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnChangeBG.FillColor = System.Drawing.Color.Transparent;
-            this.btnChangeBG.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.btnChangeBG.ForeColor = System.Drawing.Color.Black;
-            this.btnChangeBG.Image = global::ban_2.Properties.Resources.photo_64;
-            this.btnChangeBG.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.btnChangeBG.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnChangeBG.Location = new System.Drawing.Point(0, 0);
-            this.btnChangeBG.Name = "btnChangeBG";
-            this.btnChangeBG.Size = new System.Drawing.Size(415, 62);
-            this.btnChangeBG.TabIndex = 14;
-            this.btnChangeBG.Text = "Change Background";
-            this.btnChangeBG.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnChangeBG.Click += new System.EventHandler(this.btnChangeBG_Click);
             // 
             // label1
             // 
@@ -149,6 +104,52 @@
             this.lblName.Text = "Nguyễn Văn A";
             this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnViewFile
+            // 
+            this.btnViewFile.BackColor = System.Drawing.Color.Transparent;
+            this.btnViewFile.BorderRadius = 10;
+            this.btnViewFile.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnViewFile.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnViewFile.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnViewFile.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnViewFile.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnViewFile.FillColor = System.Drawing.Color.Transparent;
+            this.btnViewFile.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.btnViewFile.ForeColor = System.Drawing.Color.Black;
+            this.btnViewFile.Image = global::ban_2.Properties.Resources.document_64;
+            this.btnViewFile.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnViewFile.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnViewFile.Location = new System.Drawing.Point(0, 62);
+            this.btnViewFile.Name = "btnViewFile";
+            this.btnViewFile.Size = new System.Drawing.Size(415, 62);
+            this.btnViewFile.TabIndex = 15;
+            this.btnViewFile.Text = "View files, images";
+            this.btnViewFile.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnViewFile.Click += new System.EventHandler(this.btnViewFile_Click);
+            // 
+            // btnChangeBG
+            // 
+            this.btnChangeBG.BackColor = System.Drawing.Color.Transparent;
+            this.btnChangeBG.BorderRadius = 10;
+            this.btnChangeBG.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnChangeBG.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnChangeBG.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnChangeBG.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnChangeBG.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnChangeBG.FillColor = System.Drawing.Color.Transparent;
+            this.btnChangeBG.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.btnChangeBG.ForeColor = System.Drawing.Color.Black;
+            this.btnChangeBG.Image = global::ban_2.Properties.Resources.photo_64;
+            this.btnChangeBG.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnChangeBG.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnChangeBG.Location = new System.Drawing.Point(0, 0);
+            this.btnChangeBG.Name = "btnChangeBG";
+            this.btnChangeBG.Size = new System.Drawing.Size(415, 62);
+            this.btnChangeBG.TabIndex = 14;
+            this.btnChangeBG.Text = "Change Background";
+            this.btnChangeBG.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnChangeBG.Click += new System.EventHandler(this.btnChangeBG_Click);
+            // 
             // guna2CircleButton1
             // 
             this.guna2CircleButton1.BackColor = System.Drawing.Color.Transparent;
@@ -165,6 +166,7 @@
             this.guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CircleButton1.Size = new System.Drawing.Size(50, 50);
             this.guna2CircleButton1.TabIndex = 17;
+            this.guna2CircleButton1.Click += new System.EventHandler(this.guna2CircleButton1_Click);
             // 
             // picturboxAvatar
             // 

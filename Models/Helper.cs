@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.SignalR.Client;
+﻿using ban_2.Form_selection;
+using Microsoft.AspNetCore.SignalR.Client;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -24,5 +25,6 @@ namespace ban_2.Models
         public static string ToEmailChatUser;
 
         public static Guna.UI2.WinForms.Guna2Panel PnlInfo;
+        public static Chat ChatControl;
     }
 }

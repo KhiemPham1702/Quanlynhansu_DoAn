@@ -30,15 +30,15 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
-            this.pnlConservations = new System.Windows.Forms.Panel();
             this.tbTimNHANVIEN = new Guna.UI2.WinForms.Guna2TextBox();
             this.pnlChat = new System.Windows.Forms.Panel();
             this.pnlAction = new System.Windows.Forms.Panel();
             this.txtText = new Guna.UI2.WinForms.Guna2TextBox();
+            this.pnlInformation = new Guna.UI2.WinForms.Guna2Panel();
             this.btnSend = new Guna.UI2.WinForms.Guna2CircleButton();
             this.btnSendFile = new Guna.UI2.WinForms.Guna2CircleButton();
             this.btnEmotion = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.pnlInformation = new Guna.UI2.WinForms.Guna2Panel();
+            this.pnlConservations = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             this.pnlAction.SuspendLayout();
             this.SuspendLayout();
@@ -46,8 +46,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.guna2Separator1);
             this.panel1.Controls.Add(this.pnlConservations);
+            this.panel1.Controls.Add(this.guna2Separator1);
             this.panel1.Controls.Add(this.tbTimNHANVIEN);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -64,16 +64,10 @@
             this.guna2Separator1.Size = new System.Drawing.Size(1, 720);
             this.guna2Separator1.TabIndex = 7;
             // 
-            // pnlConservations
-            // 
-            this.pnlConservations.Location = new System.Drawing.Point(0, 103);
-            this.pnlConservations.Name = "pnlConservations";
-            this.pnlConservations.Size = new System.Drawing.Size(329, 617);
-            this.pnlConservations.TabIndex = 6;
-            // 
             // tbTimNHANVIEN
             // 
-            this.tbTimNHANVIEN.BorderRadius = 5;
+            this.tbTimNHANVIEN.AutoRoundedCorners = true;
+            this.tbTimNHANVIEN.BorderRadius = 26;
             this.tbTimNHANVIEN.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tbTimNHANVIEN.DefaultText = "";
             this.tbTimNHANVIEN.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -83,14 +77,15 @@
             this.tbTimNHANVIEN.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbTimNHANVIEN.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold);
             this.tbTimNHANVIEN.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbTimNHANVIEN.Location = new System.Drawing.Point(9, 20);
+            this.tbTimNHANVIEN.Location = new System.Drawing.Point(19, 21);
             this.tbTimNHANVIEN.Margin = new System.Windows.Forms.Padding(4);
             this.tbTimNHANVIEN.Name = "tbTimNHANVIEN";
             this.tbTimNHANVIEN.PasswordChar = '\0';
             this.tbTimNHANVIEN.PlaceholderText = "Search colleagues";
             this.tbTimNHANVIEN.SelectedText = "";
-            this.tbTimNHANVIEN.Size = new System.Drawing.Size(319, 54);
+            this.tbTimNHANVIEN.Size = new System.Drawing.Size(294, 54);
             this.tbTimNHANVIEN.TabIndex = 5;
+            this.tbTimNHANVIEN.TextChanged += new System.EventHandler(this.tbTimNHANVIEN_TextChanged);
             // 
             // pnlChat
             // 
@@ -101,7 +96,7 @@
             // 
             // pnlAction
             // 
-            this.pnlAction.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.pnlAction.BackColor = System.Drawing.Color.White;
             this.pnlAction.Controls.Add(this.txtText);
             this.pnlAction.Controls.Add(this.btnSend);
             this.pnlAction.Controls.Add(this.btnSendFile);
@@ -114,7 +109,9 @@
             // 
             // txtText
             // 
-            this.txtText.BorderRadius = 5;
+            this.txtText.AutoRoundedCorners = true;
+            this.txtText.BorderColor = System.Drawing.Color.MistyRose;
+            this.txtText.BorderRadius = 24;
             this.txtText.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtText.DefaultText = "";
             this.txtText.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -133,6 +130,16 @@
             this.txtText.SelectedText = "";
             this.txtText.Size = new System.Drawing.Size(431, 50);
             this.txtText.TabIndex = 56;
+            // 
+            // pnlInformation
+            // 
+            this.pnlInformation.BorderColor = System.Drawing.Color.Gray;
+            this.pnlInformation.CustomBorderColor = System.Drawing.Color.Gray;
+            this.pnlInformation.CustomBorderThickness = new System.Windows.Forms.Padding(2, 2, 0, 0);
+            this.pnlInformation.Location = new System.Drawing.Point(611, 0);
+            this.pnlInformation.Name = "pnlInformation";
+            this.pnlInformation.Size = new System.Drawing.Size(421, 720);
+            this.pnlInformation.TabIndex = 2;
             // 
             // btnSend
             // 
@@ -188,15 +195,12 @@
             this.btnEmotion.Size = new System.Drawing.Size(46, 36);
             this.btnEmotion.TabIndex = 0;
             // 
-            // pnlInformation
+            // pnlConservations
             // 
-            this.pnlInformation.BorderColor = System.Drawing.Color.Gray;
-            this.pnlInformation.CustomBorderColor = System.Drawing.Color.Gray;
-            this.pnlInformation.CustomBorderThickness = new System.Windows.Forms.Padding(2, 2, 0, 0);
-            this.pnlInformation.Location = new System.Drawing.Point(611, 0);
-            this.pnlInformation.Name = "pnlInformation";
-            this.pnlInformation.Size = new System.Drawing.Size(421, 720);
-            this.pnlInformation.TabIndex = 2;
+            this.pnlConservations.Location = new System.Drawing.Point(0, 101);
+            this.pnlConservations.Name = "pnlConservations";
+            this.pnlConservations.Size = new System.Drawing.Size(329, 619);
+            this.pnlConservations.TabIndex = 8;
             // 
             // Chat
             // 
@@ -221,7 +225,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel pnlChat;
         private Guna.UI2.WinForms.Guna2TextBox tbTimNHANVIEN;
-        private System.Windows.Forms.Panel pnlConservations;
         private System.Windows.Forms.Panel pnlAction;
         private Guna.UI2.WinForms.Guna2CircleButton btnSend;
         private Guna.UI2.WinForms.Guna2CircleButton btnSendFile;
@@ -229,5 +232,6 @@
         private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
         private Guna.UI2.WinForms.Guna2TextBox txtText;
         private Guna.UI2.WinForms.Guna2Panel pnlInformation;
+        private System.Windows.Forms.FlowLayoutPanel pnlConservations;
     }
 }

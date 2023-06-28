@@ -1,4 +1,5 @@
 ﻿using ban_2.Form_selection;
+using ban_2.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -261,6 +262,7 @@ namespace ban_2
 
         private void btnChat_Click(object sender, EventArgs e)
         {
+            Helper.ToEmailChatUser = null;
             OpenChildForm(new Chat(email));
         }
 

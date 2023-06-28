@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,7 +18,7 @@ namespace ban_2.Components
         public ChatConservation ChatConservation { get; set; }
         public Chat ChatControl { get; set; }
         public string Email { get; set; }
-        public Conversation(ChatConservation chatConservation , Chat chat)
+        public Conversation(ChatConservation chatConservation , Chat chat )
         {
             ChatConservation = chatConservation;
             ChatControl = chat;
@@ -29,7 +30,14 @@ namespace ban_2.Components
         {
             this.BackColor = Helper.ConsDefault;
             picturboxAvatar.Image = ChatConservation.ByteArrayToImage();
-            lblLastMessage.Text = GetWhoChat() + ChatConservation.LastMessage.MessageText;
+            if(ChatConservation.LastMessage.TypeMessage == 2)
+            {
+                lblLastMessage.Text = GetWhoChat() + Path.GetFileName(ChatConservation.LastMessage.MessageText);
+            }
+            else
+            {
+                lblLastMessage.Text = GetWhoChat() + ChatConservation.LastMessage.MessageText;
+            }
             lblName.Text = ChatConservation.ToName;
         }
 
@@ -52,7 +60,7 @@ namespace ban_2.Components
             {
                 Helper.ToEmailChatUser = ChatConservation.LastMessage.FromEmail;
             }
-            this.BackColor = Helper.ConsClicked;
+            ChatControl.LoadConversations();
             ChatControl.IsInit = false;
             ChatControl.LoadChatPanel();
            
@@ -61,7 +69,10 @@ namespace ban_2.Components
 
         private void Conversation_Load(object sender, EventArgs e)
         {
-
+            if(Helper.ToEmailChatUser == ChatConservation.LastMessage.FromEmail || Helper.ToEmailChatUser == ChatConservation.LastMessage.ToEmail)
+            {
+                this.BackColor = Helper.ConsClicked;
+            }
         }
 
         private void Conversation_MouseHover(object sender, EventArgs e)
