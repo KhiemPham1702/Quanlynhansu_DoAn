@@ -71,8 +71,10 @@ namespace ban_2.Form_selection
 
         private void Notification_Load(object sender, EventArgs e)
         {
+            
             ketnoicsdl(sqltc);
             ketnoicsdl2(sqltc2);
+            dataGridView1.Rows.Clear();
         }
 
         private void btSend_Click(object sender, EventArgs e)
@@ -81,32 +83,45 @@ namespace ban_2.Form_selection
             {
                 try
                 {
-                    
-
                     string maNV = "";
                     DataRow[] rows = data.Select("HOTEN = '" + cbbNV.Text + "'");
                     if (rows.Length > 0)
                     {
                         maNV = rows[0]["MaNV"].ToString();
                     }
+                    if (dataGridView1.RowCount == 0 || tgAll.Checked == true)
+                    {                      
+                        int loai;
+                        string all = cbbNV.Text;
+                        if (tgAll.Checked == true)
+                        {
+                            loai = 1;
+                            all = "Thông báo chung";
+                            maNV = "ALL";
+                        }
+                        else loai = 0;
 
-                    int loai;
-                    string all = cbbNV.Text;
-                    if (tgAll.Checked == true)
+                        con.Open();
+                        cmd = con.CreateCommand();
+                        cmd.CommandText = "INSERT INTO THONGBAO (MANV,LOAI,NOIDUNG,THOIGIAN,HOTEN, TRANGTHAI)  VALUES ('" + maNV + "','" + loai + "', N'" + tbND.Text + "','" + DateTime.Now.ToString() + "',N'" + all + "','" + 0 + "')";
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+                        
+                    }else
                     {
-                        loai = 1;
-                        all = "Thông báo chung";
-                        maNV = "ALL";
+                        foreach (DataGridViewRow row in dataGridView1.Rows)
+                        {
+                            con.Open();
+                            cmd = con.CreateCommand();
+                            cmd.CommandText = "INSERT INTO THONGBAO (MANV,LOAI,NOIDUNG,THOIGIAN,HOTEN, TRANGTHAI)  VALUES ('" + maNV + "','" + 0 + "', N'" + tbND.Text + "','" + DateTime.Now.ToString() + "',N'" + row.Cells["Column1"].Value.ToString() + "','" + 0 + "')";
+                            cmd.ExecuteNonQuery();
+                            con.Close();
+                        }
+                            
                     }
-                    else loai = 0;
-
-                    con.Open();
-                    cmd = con.CreateCommand();
-                    cmd.CommandText = "INSERT INTO THONGBAO (MANV,LOAI,NOIDUNG,THOIGIAN,HOTEN, TRANGTHAI)  VALUES ('" + maNV + "','" + loai + "', N'" + tbND.Text + "','" + DateTime.Now.ToString() + "',N'" + all + "','" + 0 + "')";
-                    cmd.ExecuteNonQuery();
-                    con.Close();
                     MessageBox.Show("Successfully sended", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     tbND.Text = "";
+                    dataGridView1.Rows.Clear();
                     ketnoicsdl2(sqltc2);
                 }
                 catch
@@ -120,6 +135,26 @@ namespace ban_2.Form_selection
         private void tgAll_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void cbbNV_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedValue = cbbNV.SelectedValue.ToString();
+            dataGridView1.Rows.Add(selectedValue);
+        }
+
+        private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int rowIndex = e.RowIndex;
+            if (rowIndex >= 0)
+            {
+                dataGridView1.Rows.RemoveAt(rowIndex);
+            }
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Rows.Clear();
         }
     }
 }

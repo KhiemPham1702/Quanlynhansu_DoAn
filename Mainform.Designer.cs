@@ -33,6 +33,7 @@ namespace ban_2
             this.panel1 = new System.Windows.Forms.Panel();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btTB = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnChat = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2GradientButton2 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btInfo = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -59,7 +60,6 @@ namespace ban_2
             this.menuSetting = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
             this.profilleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loginOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btTB = new Guna.UI2.WinForms.Guna2GradientButton();
             this.menuTB = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
@@ -115,6 +115,34 @@ namespace ban_2
             this.panel3.Size = new System.Drawing.Size(256, 640);
             this.panel3.TabIndex = 10;
             // 
+            // btTB
+            // 
+            this.btTB.Animated = true;
+            this.btTB.AutoRoundedCorners = true;
+            this.btTB.BorderRadius = 25;
+            this.btTB.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
+            this.btTB.CustomizableEdges.BottomRight = false;
+            this.btTB.CustomizableEdges.TopRight = false;
+            this.btTB.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btTB.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btTB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btTB.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btTB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btTB.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btTB.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(52)))), ((int)(((byte)(88)))));
+            this.btTB.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(52)))), ((int)(((byte)(88)))));
+            this.btTB.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btTB.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btTB.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(84)))), ((int)(((byte)(122)))));
+            this.btTB.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(52)))), ((int)(((byte)(88)))));
+            this.btTB.HoverState.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btTB.Location = new System.Drawing.Point(0, 477);
+            this.btTB.Name = "btTB";
+            this.btTB.Size = new System.Drawing.Size(256, 53);
+            this.btTB.TabIndex = 22;
+            this.btTB.Text = "Notification";
+            this.btTB.Click += new System.EventHandler(this.btTB_Click);
+            // 
             // btnChat
             // 
             this.btnChat.Animated = true;
@@ -169,6 +197,7 @@ namespace ban_2
             this.guna2GradientButton2.Size = new System.Drawing.Size(256, 53);
             this.guna2GradientButton2.TabIndex = 19;
             this.guna2GradientButton2.Text = "Pay Off";
+            this.guna2GradientButton2.Visible = false;
             this.guna2GradientButton2.Click += new System.EventHandler(this.guna2GradientButton2_Click);
             // 
             // btInfo
@@ -601,37 +630,9 @@ namespace ban_2
             this.loginOutToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
             this.loginOutToolStripMenuItem.Image = global::ban_2.Properties.Resources.logout_64__1_;
             this.loginOutToolStripMenuItem.Name = "loginOutToolStripMenuItem";
-            this.loginOutToolStripMenuItem.Size = new System.Drawing.Size(214, 28);
+            this.loginOutToolStripMenuItem.Size = new System.Drawing.Size(143, 28);
             this.loginOutToolStripMenuItem.Text = "Log out";
             this.loginOutToolStripMenuItem.Click += new System.EventHandler(this.loginOutToolStripMenuItem_Click);
-            // 
-            // btTB
-            // 
-            this.btTB.Animated = true;
-            this.btTB.AutoRoundedCorners = true;
-            this.btTB.BorderRadius = 25;
-            this.btTB.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.btTB.CustomizableEdges.BottomRight = false;
-            this.btTB.CustomizableEdges.TopRight = false;
-            this.btTB.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btTB.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btTB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btTB.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btTB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btTB.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btTB.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(52)))), ((int)(((byte)(88)))));
-            this.btTB.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(52)))), ((int)(((byte)(88)))));
-            this.btTB.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btTB.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btTB.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(84)))), ((int)(((byte)(122)))));
-            this.btTB.HoverState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(52)))), ((int)(((byte)(88)))));
-            this.btTB.HoverState.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btTB.Location = new System.Drawing.Point(0, 477);
-            this.btTB.Name = "btTB";
-            this.btTB.Size = new System.Drawing.Size(256, 53);
-            this.btTB.TabIndex = 22;
-            this.btTB.Text = "Notification";
-            this.btTB.Click += new System.EventHandler(this.btTB_Click);
             // 
             // menuTB
             // 

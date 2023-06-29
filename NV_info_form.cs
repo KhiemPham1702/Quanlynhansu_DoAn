@@ -323,7 +323,14 @@ namespace ban_2
             DataTable dt = new DataTable();
             da.Fill(dt);
             con.Close();
-            return float.Parse(dt.Rows[0][0].ToString());
+            try
+            {
+                return float.Parse(dt.Rows[0][0].ToString());
+            }
+            catch
+            {
+                return 1;
+            }
         }
 
         string pick_hsl()

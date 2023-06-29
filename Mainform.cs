@@ -140,6 +140,7 @@ namespace ban_2
             else if (permission == 1)
             {
                 btUser_Mana.Visible = false;
+                guna2GradientButton2.Visible = true;
             }
             else if (permission == 2)
             {
