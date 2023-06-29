@@ -51,7 +51,6 @@ namespace ban_2.Components
                 };
                 ChatMessages.Add(message);
             }
-            var item = ChatMessages.FirstOrDefault();
         }
 
         public void ScrollToPosition(ChatMessage mess)
@@ -96,7 +95,13 @@ namespace ban_2.Components
         public void AddMessage()
         {
             LoadMessages();
-            LoadChat();
+            this.pnlChat.Invoke(new MethodInvoker(delegate ()
+            {
+
+                LoadChat();
+
+            }));
+            
             ScrollToPosition(ChatMessages[ChatMessages.Count - 1]);
         }
         public void ChangeBackground(string url)

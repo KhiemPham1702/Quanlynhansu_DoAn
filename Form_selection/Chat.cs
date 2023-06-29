@@ -52,15 +52,20 @@ namespace ban_2.Form_selection
 
         public void LoadChatPanel()
         {
-            pnlChat.Controls.Clear();
+            
             if (!IsInit)
             {
                 this.pnlChat.Invoke(new MethodInvoker(delegate ()
                 {
+                    pnlChat.Controls.Clear();
                     pnlAction.Visible = true;
                     ChatContent = new ChatContent();
                     pnlChat.Controls.Add(ChatContent);
-                    ChatContent.ScrollToPosition(ChatContent.ChatMessages[ChatContent.ChatMessages.Count - 1]);
+                    if(ChatContent.ChatMessages.Count > 0)
+                    {
+                        ChatContent.ScrollToPosition(ChatContent.ChatMessages[ChatContent.ChatMessages.Count - 1]);
+                    }
+                    
                 }));
                
                 
@@ -110,13 +115,24 @@ namespace ban_2.Form_selection
             reader.Close();
             con.Close();
 
-            var distinctMessages = ChatMessages.GroupBy(m => new[] { m.FromEmail, m.ToEmail }.OrderBy(e => e).First())
-                                      .Select(group => group.OrderByDescending(m => m.Timestamp).First())
-                                      .ToList();
+            //var distinctMessages = ChatMessages.GroupBy(m => new[] { m.FromEmail, m.ToEmail }.First())
+            //                          .Select(group => group.OrderByDescending(m => m.Timestamp).First())
+            //                          .ToList();
+            ChatMessages.Reverse();
+            var distinctMessages = ChatMessages
+          .Where(m => m.FromEmail == Helper.CurrentUser.Email || m.ToEmail == Helper.CurrentUser.Email)
+          .GroupBy(m => new { m.FromEmail, m.ToEmail })
+          .Select(g => g.OrderByDescending(m => m.Timestamp).First())
+          .ToList();
+            var listString = new List<String>();
             pnlConservations.Controls.Clear();
             foreach ( var item in distinctMessages)
             {
-
+                if(listString.Contains(item.FromEmail+item.ToEmail) || listString.Contains(item.ToEmail + item.FromEmail))
+                {
+                    continue;
+                }
+                listString.Add(item.FromEmail+ item.ToEmail);
                 pnlConservations.Controls.Add(new Components.Conversation(CreateConservations(item) , this));
             }
         }
@@ -167,71 +183,87 @@ namespace ban_2.Form_selection
         private async void Chat_Load(object sender, EventArgs e)
         {
             hubConnection.On<string, string , string>("ReceiveMessage" , (fromEmail, toEmail, mes) => {
-                this.pnlChat.Invoke(new MethodInvoker(delegate ()
+                try
                 {
-                  if(Helper.CurrentUser.Email == fromEmail && Helper.ToEmailChatUser == toEmail)
+                    this.pnlChat.Invoke(new MethodInvoker(delegate ()
                     {
-                        var item = new ChatMessage()
+                        if (Helper.CurrentUser.Email == fromEmail && Helper.ToEmailChatUser == toEmail)
                         {
-                            FromEmail = Helper.CurrentUser.Email,
-                            ToEmail = Helper.ToEmailChatUser,
-                            TypeMessage = 1,
-                            EmotionFrom = "normal",
-                            EmotionTo = "normal",
-                            MessageText = mes,
-                            MessageID = -1,
-                            Timestamp = DateTime.Now,
-                        };
-                        string query = @"INSERT into MESSAGE (FromEmail, TypeMessage, EmotionFrom, EmotionTo, ToEmail, MessageText, Timestamp ) VALUES( @FromEmail , @TypeMessage ,  @EmotionFrom , @EmotionTo , @ToEmail , @MessageText , @Timestamp ) ";
-                        var parameters = new object[] { item.FromEmail, item.TypeMessage, item.EmotionFrom, item.EmotionTo, item.ToEmail, item.MessageText, item.Timestamp };
-                        var res = DataProvider.Instance.ExecuteNonQuery(query, parameters);
-                        ChatContent.AddMessage();
-                        LoadConversations();
-                    }
-                  else if(Helper.CurrentUser.Email == toEmail && Helper.ToEmailChatUser == fromEmail)
-                  {
-                        ChatContent.AddMessage();
-                        LoadConversations();
-                   }
-                    else
-                    {
-                        LoadConversations();
-                    }
-                }));
+                            var item = new ChatMessage()
+                            {
+                                FromEmail = Helper.CurrentUser.Email,
+                                ToEmail = Helper.ToEmailChatUser,
+                                TypeMessage = 1,
+                                EmotionFrom = "normal",
+                                EmotionTo = "normal",
+                                MessageText = mes,
+                                MessageID = -1,
+                                Timestamp = DateTime.Now,
+                            };
+                            string query = @"INSERT into MESSAGE (FromEmail, TypeMessage, EmotionFrom, EmotionTo, ToEmail, MessageText, Timestamp ) VALUES( @FromEmail , @TypeMessage ,  @EmotionFrom , @EmotionTo , @ToEmail , @MessageText , @Timestamp ) ";
+                            var parameters = new object[] { item.FromEmail, item.TypeMessage, item.EmotionFrom, item.EmotionTo, item.ToEmail, item.MessageText, item.Timestamp };
+                            var res = DataProvider.Instance.ExecuteNonQuery(query, parameters);
+                            Task.Delay(1000);
+                            LoadChatPanel();
+                            LoadConversations();
+                        }
+                        else if (Helper.CurrentUser.Email == toEmail && Helper.ToEmailChatUser == fromEmail)
+                        {
+                            Task.Delay(1000);
+                            LoadChatPanel();
+                            LoadConversations();
+                        }
+                        else
+                        {
+                            LoadConversations();
+                        }
+                    }));
+                }
+                catch (Exception ex)
+                {
+                   
+                }
             });
             hubConnection.On<string, string, string>("ReceiveUrlFile", (fromEmail, toEmail, mes) => {
-                this.pnlChat.Invoke(new MethodInvoker(delegate ()
+                try
                 {
-                    if (Helper.CurrentUser.Email == fromEmail && Helper.ToEmailChatUser == toEmail)
+                    this.pnlChat.Invoke(new MethodInvoker(delegate ()
                     {
-                        var item = new ChatMessage()
+                        if (Helper.CurrentUser.Email == fromEmail && Helper.ToEmailChatUser == toEmail)
                         {
-                            FromEmail = Helper.CurrentUser.Email,
-                            ToEmail = Helper.ToEmailChatUser,
-                            TypeMessage = 2,
-                            EmotionFrom = "normal",
-                            EmotionTo = "normal",
-                            MessageText = mes,
-                            MessageID = -1,
-                            Timestamp = DateTime.Now,
-                        };
-                        string query = @"INSERT into MESSAGE (FromEmail, TypeMessage, EmotionFrom, EmotionTo, ToEmail, MessageText, Timestamp ) VALUES( @FromEmail , @TypeMessage ,  @EmotionFrom , @EmotionTo , @ToEmail , @MessageText , @Timestamp ) ";
-                        var parameters = new object[] { item.FromEmail, item.TypeMessage, item.EmotionFrom, item.EmotionTo, item.ToEmail, item.MessageText, item.Timestamp };
-                        var res = DataProvider.Instance.ExecuteNonQuery(query, parameters);
-                        ChatContent.AddMessage();
-                        LoadConversations();
-                    }
-                    else if (Helper.CurrentUser.Email == toEmail && Helper.ToEmailChatUser == fromEmail)
-                    {
-                        ChatContent.AddMessage();
-                        LoadConversations();
-                    }
-                    else
-                    {
-                        LoadConversations();
-                    }
-                }));
-               
+                            var item = new ChatMessage()
+                            {
+                                FromEmail = Helper.CurrentUser.Email,
+                                ToEmail = Helper.ToEmailChatUser,
+                                TypeMessage = 2,
+                                EmotionFrom = "normal",
+                                EmotionTo = "normal",
+                                MessageText = mes,
+                                MessageID = -1,
+                                Timestamp = DateTime.Now,
+                            };
+                            string query = @"INSERT into MESSAGE (FromEmail, TypeMessage, EmotionFrom, EmotionTo, ToEmail, MessageText, Timestamp ) VALUES( @FromEmail , @TypeMessage ,  @EmotionFrom , @EmotionTo , @ToEmail , @MessageText , @Timestamp ) ";
+                            var parameters = new object[] { item.FromEmail, item.TypeMessage, item.EmotionFrom, item.EmotionTo, item.ToEmail, item.MessageText, item.Timestamp };
+                            var res = DataProvider.Instance.ExecuteNonQuery(query, parameters);
+                            LoadChatPanel();
+                            LoadConversations();
+                        }
+                        else if (Helper.CurrentUser.Email == toEmail && Helper.ToEmailChatUser == fromEmail)
+                        {
+                            LoadChatPanel();
+                            LoadConversations();
+                        }
+                        else
+                        {
+                            LoadConversations();
+                        }
+                    }));
+
+                }
+                catch (Exception ex)
+                {
+                    
+                }
             });
             hubConnection.On<string, string, int>("ReceiveEmotion", (email, mes , id) => {
                 try
@@ -245,7 +277,7 @@ namespace ban_2.Form_selection
                 }
                 catch (Exception ex)
                 {
-
+                   
                 }
             });
             hubConnection.On<string, string, string>("ReceiveBackground", (fromEmail, toEmail, url) => {
@@ -267,7 +299,7 @@ namespace ban_2.Form_selection
                 }
                 catch (Exception ex)
                 {
-
+                   
                 }
             });
             try

@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlConservations = new System.Windows.Forms.FlowLayoutPanel();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.tbTimNHANVIEN = new Guna.UI2.WinForms.Guna2TextBox();
             this.pnlChat = new System.Windows.Forms.Panel();
             this.pnlAction = new System.Windows.Forms.Panel();
             this.txtText = new Guna.UI2.WinForms.Guna2TextBox();
-            this.pnlInformation = new Guna.UI2.WinForms.Guna2Panel();
             this.btnSend = new Guna.UI2.WinForms.Guna2CircleButton();
             this.btnSendFile = new Guna.UI2.WinForms.Guna2CircleButton();
             this.btnEmotion = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.pnlConservations = new System.Windows.Forms.FlowLayoutPanel();
+            this.pnlInformation = new Guna.UI2.WinForms.Guna2Panel();
             this.panel1.SuspendLayout();
             this.pnlAction.SuspendLayout();
             this.SuspendLayout();
@@ -54,6 +54,14 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(335, 720);
             this.panel1.TabIndex = 0;
+            // 
+            // pnlConservations
+            // 
+            this.pnlConservations.AutoScroll = true;
+            this.pnlConservations.Location = new System.Drawing.Point(0, 101);
+            this.pnlConservations.Name = "pnlConservations";
+            this.pnlConservations.Size = new System.Drawing.Size(329, 619);
+            this.pnlConservations.TabIndex = 8;
             // 
             // guna2Separator1
             // 
@@ -131,16 +139,6 @@
             this.txtText.Size = new System.Drawing.Size(431, 50);
             this.txtText.TabIndex = 56;
             // 
-            // pnlInformation
-            // 
-            this.pnlInformation.BorderColor = System.Drawing.Color.Gray;
-            this.pnlInformation.CustomBorderColor = System.Drawing.Color.Gray;
-            this.pnlInformation.CustomBorderThickness = new System.Windows.Forms.Padding(2, 2, 0, 0);
-            this.pnlInformation.Location = new System.Drawing.Point(611, 0);
-            this.pnlInformation.Name = "pnlInformation";
-            this.pnlInformation.Size = new System.Drawing.Size(421, 720);
-            this.pnlInformation.TabIndex = 2;
-            // 
             // btnSend
             // 
             this.btnSend.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -195,12 +193,15 @@
             this.btnEmotion.Size = new System.Drawing.Size(46, 36);
             this.btnEmotion.TabIndex = 0;
             // 
-            // pnlConservations
+            // pnlInformation
             // 
-            this.pnlConservations.Location = new System.Drawing.Point(0, 101);
-            this.pnlConservations.Name = "pnlConservations";
-            this.pnlConservations.Size = new System.Drawing.Size(329, 619);
-            this.pnlConservations.TabIndex = 8;
+            this.pnlInformation.BorderColor = System.Drawing.Color.Gray;
+            this.pnlInformation.CustomBorderColor = System.Drawing.Color.Gray;
+            this.pnlInformation.CustomBorderThickness = new System.Windows.Forms.Padding(2, 2, 0, 0);
+            this.pnlInformation.Location = new System.Drawing.Point(611, 0);
+            this.pnlInformation.Name = "pnlInformation";
+            this.pnlInformation.Size = new System.Drawing.Size(421, 720);
+            this.pnlInformation.TabIndex = 2;
             // 
             // Chat
             // 
