@@ -66,6 +66,31 @@ namespace ban_2.Components
             }
             
         }
+        public void ScrollToPositionHightLight(ChatMessage mess , string search)
+        {
+            for (int i = pnlChat.Controls.Count - 1; i >= 0; i--)
+            {
+                Control control = pnlChat.Controls[i];
+                if (control.Tag != null && control.Tag.ToString() == "Container" + mess.MessageID)
+                {
+                    pnlChat.ScrollControlIntoView(control);
+                    HightlightMessageTextBox(control as Guna.UI2.WinForms.Guna2TextBox , search);
+                    break;
+                }
+            }
+
+        }
+        public void HightlightMessageTextBox(Guna.UI2.WinForms.Guna2TextBox txt , string search)
+        {
+            int startIndex = txt.Text.IndexOf(search, StringComparison.OrdinalIgnoreCase);
+            if (startIndex >= 0)
+            {
+                txt.Focus();
+                txt.Select(startIndex, search.Length);
+            }
+        }
+
+        
         private void LoadName()
         {
             string sql = $"SELECT * FROM NHANVIEN WHERE EMAIL = @EMAIL";
@@ -501,11 +526,13 @@ namespace ban_2.Components
             txtTo.ForeColor = Color.Black;
             txtTo.Location = new Point(20, YLocation + 20);
             txtTo.Multiline = true;
+            txtTo.WordWrap = true;
             txtTo.AcceptsReturn = true;
-            int lineCount = 4;
-            int lineHeight = TextRenderer.MeasureText("Sample Text", txtTo.Font).Height;
-            txtTo.Height = lineCount * lineHeight + txtTo.Padding.Vertical;
             txtTo.Width = TextRenderer.MeasureText(item.MessageText, txtTo.Font).Width + 50;
+            int lineHeight = TextRenderer.MeasureText("Sample Text", txtTo.Font).Height;
+            int lineCount = txtTo.Width / 250;
+            txtTo.Height = lineCount * lineHeight + 50;
+            txtTo.MaximumSize = new Size(300, int.MaxValue);
             txtTo.Padding = new Padding(10, 0, 0, 0);
             txtTo.ReadOnly = true;
             YLocation = YLocation + 20 + txtTo.Height;
@@ -527,12 +554,15 @@ namespace ban_2.Components
             txtFrom.FillColor = Color.AliceBlue;
             txtFrom.BackColor = Color.Transparent;
             txtFrom.Multiline = true;
+            txtFrom.WordWrap = true;
             txtFrom.ReadOnly = true;
             txtFrom.AcceptsReturn = true;
-            int lineCount = 4;
+            
             int lineHeight = TextRenderer.MeasureText("Sample Text", txtFrom.Font).Height;
-            txtFrom.Height = lineCount * lineHeight + txtFrom.Padding.Vertical;
             txtFrom.Width = TextRenderer.MeasureText(item.MessageText, txtFrom.Font).Width + 50;
+            int lineCount = txtFrom.Width / 250;
+            txtFrom.Height = lineHeight * lineCount + 50;
+            txtFrom.MaximumSize = new Size(300, int.MaxValue);
             txtFrom.Location = new Point(pnlChat.Size.Width - 20 - txtFrom.Width, YLocation + 20);
             txtFrom.Padding = new Padding(10, 0, 0, 0);
           

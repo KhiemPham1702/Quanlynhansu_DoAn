@@ -26,5 +26,6 @@ namespace ban_2.Models
 
         public static Guna.UI2.WinForms.Guna2Panel PnlInfo;
         public static Chat ChatControl;
+        public static List<string> ReceiveNewMess = new List<string>();
     }
 }

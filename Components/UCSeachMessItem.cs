@@ -14,9 +14,11 @@ namespace ban_2.Components
     public partial class UCSeachMessItem : UserControl
     {
         public ChatMessage Message { get; set; }
-        public UCSeachMessItem(ChatMessage chat)
+        public string Search { get; set; }
+        public UCSeachMessItem(ChatMessage chat , string search)
         {
             Message = chat;
+            Search = search;
             InitializeComponent();
             if(Message.FromEmail == Helper.CurrentUser.Email)
             {
@@ -38,7 +40,7 @@ namespace ban_2.Components
         { 
             Helper.ChatControl.ChatContent.Invoke(new MethodInvoker(delegate ()
             {
-                Helper.ChatControl.ChatContent.ScrollToPosition(Message);
+                Helper.ChatControl.ChatContent.ScrollToPositionHightLight(Message , Search);
             }));
             Helper.PnlInfo.Visible = false;
         }

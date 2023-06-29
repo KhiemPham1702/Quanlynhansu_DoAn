@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,6 +25,28 @@ namespace ban_2.Components
             var parameters = new object[] { Helper.ToEmailChatUser };
             var data = DataProvider.Instance.ExecuteQuery(sql, parameters);
             lblName.Text = (string)data.Rows[0]["HOTEN"];
+            try
+            {
+                var imageB = (byte[])data.Rows[0]["AVATAR"];
+                picturboxAvatar.Image = ByteArrayToImage(imageB);
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+        public Image ByteArrayToImage(byte[] avt)
+        {
+            try
+            {
+                MemoryStream m = new MemoryStream(avt);
+                return Image.FromStream(m);
+            }
+            catch (Exception ex)
+            {
+                return Helper.AvatarDefault;
+            }
+
         }
         private void btnInfo_Click(object sender, EventArgs e)
         {

@@ -52,6 +52,10 @@ namespace ban_2.Components
 
         private void Conversation_Click(object sender, EventArgs e)
         {
+            var compare = ChatConservation.LastMessage.FromEmail == Helper.CurrentUser.Email ? ChatConservation.LastMessage.ToEmail : ChatConservation.LastMessage.FromEmail;
+            if (Helper.ReceiveNewMess.Contains(compare)){
+                Helper.ReceiveNewMess.Remove(compare);
+            }
             if (Helper.CurrentUser.Email == ChatConservation.LastMessage.FromEmail)
             {
                 Helper.ToEmailChatUser = ChatConservation.LastMessage.ToEmail;
@@ -73,8 +77,21 @@ namespace ban_2.Components
             {
                 this.BackColor = Helper.ConsClicked;
             }
+            if(Helper.ReceiveNewMess.Count > 0)
+            {
+                var compare = ChatConservation.LastMessage.FromEmail == Helper.CurrentUser.Email ? ChatConservation.LastMessage.ToEmail : ChatConservation.LastMessage.FromEmail;
+                if(Helper.ReceiveNewMess.Contains(compare))
+                {
+                    CreateEffectNewMess();
+                }
+            }
         }
-
+        void CreateEffectNewMess()
+        {
+            lblLastMessage.Font = new Font(lblLastMessage.Font, FontStyle.Bold);
+            lblName.Font = new Font(lblName.Font, FontStyle.Bold);
+            dotNewMess.Visible = true;
+        }
         private void Conversation_MouseHover(object sender, EventArgs e)
         {
             if(this.BackColor == Helper.ConsDefault)
@@ -100,7 +117,7 @@ namespace ban_2.Components
 
         private void lblLastMessage_Click(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

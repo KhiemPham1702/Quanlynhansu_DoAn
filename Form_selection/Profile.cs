@@ -16,7 +16,6 @@ namespace ban_2.Form_selection
     public partial class Profile : UserControl
     {
         string email;
-        string user_name;
         int per;
         string path;
         Mainform mainform;
@@ -27,11 +26,10 @@ namespace ban_2.Form_selection
             InitializeComponent();
         }
 
-        public Profile(string a, string b, int c, Mainform main)
+        public Profile(string a, int c, Mainform main)
         {
             InitializeComponent();
             email = a;
-            user_name = b;
             per = c;
             this.mainform = main;
         }
@@ -104,7 +102,7 @@ namespace ban_2.Form_selection
 
         private void btChangePass_Click(object sender, EventArgs e)
         {
-            Form change = new Change_Pass_form(user_name);
+            Form change = new Change_Pass_form(email);
             change.FormClosing += new FormClosingEventHandler(this.Form_Closing);
             change.Show();
         }
@@ -131,13 +129,17 @@ namespace ban_2.Form_selection
 
                 byte[] b = ImageToByteArray(picturboxAvatar.Image);
                 con.Open();
-                cmd = new SqlCommand("UPDATE ACC_USER SET AVATAR = @HINH WHERE USERNAME = @TEN", con);
-                cmd.Parameters.Add(new SqlParameter("@TEN", user_name));
+                cmd = new SqlCommand("UPDATE ACC_USER SET AVATAR = @HINH WHERE EMAIL = @TEN", con);
+                cmd.Parameters.Add(new SqlParameter("@TEN", email));
                 cmd.Parameters.Add(new SqlParameter("@HINH", b));
                 cmd.ExecuteNonQuery();
                 con.Close();
 
                 mainform.reset(picturboxAvatar.Image);
+
+                string updateQuery = "UPDATE NHANVIEN SET AVATAR = @AVATAR WHERE EMAIL = @EMAIL";
+                var parameters = new object[] { b, email };
+                DataProvider.Instance.ExecuteNonQuery(updateQuery, parameters);
             }
             
         }

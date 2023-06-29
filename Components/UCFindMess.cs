@@ -27,7 +27,7 @@ namespace ban_2.Components
             };
             var ListMessages = new List<ChatMessage>();
             var ListDates = new List<DateTime>();
-            string sql = $"SELECT * FROM MESSAGE WHERE (( FromEmail = @FromEmail AND ToEmail = @ToEmail ) OR ( FromEmail = @To AND ToEmail = @From )) AND MessageText LIKE '%' + @SearchString + '%'";
+            string sql = $"SELECT * FROM MESSAGE WHERE (( FromEmail = @FromEmail AND ToEmail = @ToEmail ) OR ( FromEmail = @To AND ToEmail = @From )) AND MessageText LIKE '%' + @SearchString + '%' AND TypeMessage = 1";
             var parameters = new object[] { Helper.CurrentUser.Email, Helper.ToEmailChatUser, Helper.ToEmailChatUser, Helper.CurrentUser.Email, txtSearch.Text };
             var data = DataProvider.Instance.ExecuteQuery(sql, parameters);
             for (int i = 0; i < data.Rows.Count; i++)
@@ -65,7 +65,7 @@ namespace ban_2.Components
                         flwMess.Controls.Add(seperator);
 
                     }
-                    flwMess.Controls.Add(new UCSeachMessItem(message));
+                    flwMess.Controls.Add(new UCSeachMessItem(message, txtSearch.Text));
                 }
             }
         }

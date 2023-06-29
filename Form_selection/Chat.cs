@@ -211,10 +211,17 @@ namespace ban_2.Form_selection
                         {
                             Task.Delay(1000);
                             LoadChatPanel();
+                            if (!Helper.ReceiveNewMess.Contains(fromEmail)){
+                                Helper.ReceiveNewMess.Add(fromEmail);
+                            }
+                           
                             LoadConversations();
                         }
                         else
                         {
+                            if (!Helper.ReceiveNewMess.Contains(fromEmail)){
+                                Helper.ReceiveNewMess.Add(fromEmail);
+                            }
                             LoadConversations();
                         }
                     }));
