@@ -111,9 +111,15 @@ namespace ban_2.Form_selection
                     {
                         foreach (DataGridViewRow row in dataGridView1.Rows)
                         {
+                            string maNV2 = "";
+                            DataRow[] rows2 = data.Select("HOTEN = '" + row.Cells["Column1"].Value.ToString() + "'");
+                            if (rows2.Length > 0)
+                            {
+                                maNV2 = rows2[0]["MaNV"].ToString();
+                            }
                             con.Open();
                             cmd = con.CreateCommand();
-                            cmd.CommandText = "INSERT INTO THONGBAO (MANV,LOAI,NOIDUNG,THOIGIAN,HOTEN, TRANGTHAI)  VALUES ('" + maNV + "','" + 0 + "', N'" + tbND.Text + "','" + DateTime.Now.ToString() + "',N'" + row.Cells["Column1"].Value.ToString() + "','" + 0 + "')";
+                            cmd.CommandText = "INSERT INTO THONGBAO (MANV,LOAI,NOIDUNG,THOIGIAN,HOTEN, TRANGTHAI)  VALUES ('" + maNV2 + "','" + 0 + "', N'" + tbND.Text + "','" + DateTime.Now.ToString() + "',N'" + row.Cells["Column1"].Value.ToString() + "','" + 0 + "')";
                             cmd.ExecuteNonQuery();
                             con.Close();
                         }
