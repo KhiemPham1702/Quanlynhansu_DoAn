@@ -298,6 +298,9 @@ namespace ban_2
             cmd.ExecuteNonQuery();
             con.Close();
 
+            string updateQuery = "UPDATE ACC_USER SET AVATAR = @AVATAR WHERE EMAIL = @EMAIL";
+            var parameters = new object[] { b, tbEmail.Text };
+            DataProvider.Instance.ExecuteNonQuery(updateQuery, parameters);
         }
 
         byte[] ImageToByteArray(Image image)

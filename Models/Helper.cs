@@ -1,9 +1,12 @@
-﻿using System;
+﻿using ban_2.Form_selection;
+using Microsoft.AspNetCore.SignalR.Client;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ban_2.Models
 {
@@ -20,5 +23,9 @@ namespace ban_2.Models
 
         public static User CurrentUser;
         public static string ToEmailChatUser;
+
+        public static Guna.UI2.WinForms.Guna2Panel PnlInfo;
+        public static Chat ChatControl;
+        public static List<string> ReceiveNewMess = new List<string>();
     }
 }

@@ -122,7 +122,7 @@ namespace ban_2
                         SDT = (string)data.Rows[0]["SDT"],
                         UserPass = (string)data.Rows[0]["UserPass"],
                     };
-                    Mainform fmain = new Mainform(email, txtEmail.Text, permisstion, now);
+                    Mainform fmain = new Mainform(email, permisstion, now);
                     MessageBox.Show("Welcome! Have a good day", "Login Successfuly", MessageBoxButtons.OK, MessageBoxIcon.None);
                     fmain.Show();
                     this.Hide();

@@ -13,7 +13,7 @@ namespace ban_2
 {
     public partial class Change_Pass_form : Form
     {
-        string user_name;
+        string email;
 
         SqlConnection con = new connect().Con;
         SqlCommand cmd = new SqlCommand();
@@ -27,7 +27,7 @@ namespace ban_2
         public Change_Pass_form(string a)
         {
             InitializeComponent();
-            user_name = a;
+            email = a;
         }
 
         private void btCancel_Click(object sender, EventArgs e)
@@ -38,7 +38,7 @@ namespace ban_2
         bool kt()
         {
             con.Open();
-            string sql = "select USERPASS FROM ACC_USER WHERE USERNAME = '" + user_name + "'";
+            string sql = "select USERPASS FROM ACC_USER WHERE EMAIL = '" + email + "'";
             cmd = new SqlCommand(sql, con);
             da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
@@ -60,7 +60,7 @@ namespace ban_2
                 if (kt())
                 {
                     con.Open();
-                    string sql = "UPDATE ACC_USER SET USERPASS = '" + tbConfirmPass.Text + "' WHERE USERNAME = '" + user_name + "'";
+                    string sql = "UPDATE ACC_USER SET USERPASS = '" + tbConfirmPass.Text + "' WHERE EMAIL = '" + email + "'";
                     cmd = new SqlCommand(sql, con);
                     cmd.ExecuteNonQuery();
                     con.Close();

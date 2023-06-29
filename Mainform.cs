@@ -1,4 +1,5 @@
 ﻿using ban_2.Form_selection;
+using ban_2.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,7 +18,6 @@ namespace ban_2
     {
         private UserControl currentChildForm;
         string email;
-        string user_name;
         int permission;
         string now;
         Loginform loginform = new Loginform();
@@ -64,7 +64,7 @@ namespace ban_2
         void add_avartar()
         {
             con.Open();
-            string sql = "select AVATAR FROM ACC_USER WHERE USERNAME = '" + user_name + "'";
+            string sql = "select AVATAR FROM ACC_USER WHERE EMAIL = '" + email + "'";
             cmd = new SqlCommand(sql, con);
             cmd.CommandType = CommandType.Text;
             da = new SqlDataAdapter(cmd);
@@ -88,11 +88,10 @@ namespace ban_2
             InitializeComponent();
         }
 
-        public Mainform(string a, string b, int c, string d)
+        public Mainform(string a, int c, string d)
         {
             InitializeComponent();
             email = a;
-            user_name = b;
             permission = c;
             now = d;
         }
@@ -206,7 +205,7 @@ namespace ban_2
 
         private void profilleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Profile(email, user_name, permission, this));
+            OpenChildForm(new Profile(email,  permission, this));
         }
 
         void add_TT_user()
@@ -215,7 +214,7 @@ namespace ban_2
             {
                 con.Open();
             }
-            string sql = "INSERT INTO QL_USER VALUES('" + user_name + "', '" + now + "', '" + DateTime.Now.ToString() + "')";
+            string sql = "INSERT INTO QL_USER VALUES('" + email + "', '" + now + "', '" + DateTime.Now.ToString() + "')";
             cmd = new SqlCommand(sql, con);
             cmd.ExecuteNonQuery();
             con.Close();
@@ -262,6 +261,7 @@ namespace ban_2
 
         private void btnChat_Click(object sender, EventArgs e)
         {
+            Helper.ToEmailChatUser = null;
             OpenChildForm(new Chat(email));
         }
 

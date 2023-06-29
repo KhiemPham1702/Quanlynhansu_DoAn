@@ -8,7 +8,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Windows;
 
 namespace ban_2
 {
@@ -24,14 +24,17 @@ namespace ban_2
         public BackgroundWorker backgroundWorker2;
         public ChatMessage Message;
 
-        public ChatServer(BackgroundWorker backgroundWorker1, BackgroundWorker backgroundWorker2)
+        public ChatServer()
         {
-            this.backgroundWorker1 = backgroundWorker1;
-            this.backgroundWorker2 = backgroundWorker2;
+            LoadIP();
         }
 
         private void LoadIP()
         {
+            backgroundWorker1 = new BackgroundWorker();
+            backgroundWorker2 = new BackgroundWorker();
+            backgroundWorker1.DoWork += BackgroundWorker1_DoWork;
+            backgroundWorker2.DoWork += BackgroundWorker2_DoWork;
             IPAddress[] localIP = Dns.GetHostAddresses(Dns.GetHostName());
             foreach (var ip in localIP)
             {
@@ -40,23 +43,78 @@ namespace ban_2
                     LocalAddress = ip.ToString();
                 }
             }
-
-           if(Helper.CurrentUser.Email == Message.FromEmail)
+            try
             {
-                LoadSend();
+                Start();
             }
-            else if(Helper.CurrentUser.Email == Message.ToEmail)
-            {
-                LoadReceive();
+            catch { 
+                Connect();
             }
+           
         }
 
-        private void LoadReceive()
+        private void BackgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
-            throw new NotImplementedException();
+            if (Client == null) return;
+            while (Client.Connected)
+            {
+                try
+                {
+                    receive = STR.ReadLine();
+
+                    //this.pnlChat.Invoke(new MethodInvoker(delegate ()
+                    //{
+                    //    var item = new ChatMessage()
+                    //    {
+                    //        FromEmail = Helper.CurrentUser.Email,
+                    //        ToEmail = Helper.ToEmailChatUser,
+                    //        MessageText = receive,
+                    //        MessageID = -1,
+                    //        Timestamp = DateTime.Now,
+                    //    };
+                    //    ChatContent.AddMessage(item, 2);
+                    //}));
+                    MessageBox.Show(receive);
+                    receive = "";
+                }
+                catch
+                {
+
+                }
+            }
         }
 
-        private void LoadSend()
+        private void BackgroundWorker2_DoWork(object sender, DoWorkEventArgs e)
+        {
+            if (Client == null) return;
+            if (Client.Connected)
+            {
+                STW.WriteLine(TextToSend);
+                MessageBox.Show(TextToSend);
+                //this.pnlChat.Invoke(new MethodInvoker(delegate ()
+                //{
+                //    var item = new ChatMessage()
+                //    {
+                //        FromEmail = Helper.CurrentUser.Email,
+                //        ToEmail = Helper.ToEmailChatUser,
+                //        MessageText = TextToSend,
+                //        MessageID = -1,
+                //        Timestamp = DateTime.Now,
+                //    };
+                //    string query = @"INSERT into MESSAGE (FromEmail, ToEmail, MessageText, Timestamp ) VALUES( @FromEmail , @ToEmail , @MessageText , @Timestamp ) ";
+                //    var parameters = new object[] { item.FromEmail, item.ToEmail, item.MessageText, item.Timestamp };
+                //    var res = DataProvider.Instance.ExecuteNonQuery(query, parameters);
+                //    ChatContent.AddMessage(item, 1);
+                //}));
+            }
+            else
+            {
+                MessageBox.Show("Failed");
+            }
+            backgroundWorker2.CancelAsync();
+        }
+
+        void Start()
         {
             TcpListener tcpListener = new TcpListener(IPAddress.Any, 80);
             tcpListener.Start();
@@ -66,6 +124,30 @@ namespace ban_2
             STW.AutoFlush = true;
             backgroundWorker1.RunWorkerAsync();
             backgroundWorker2.WorkerSupportsCancellation = true;
+        }
+        void Connect()
+        {
+            Client = new TcpClient();
+            Client.Connect(LocalAddress, 80);
+            try
+            {
+                STW = new StreamWriter(Client.GetStream());
+                STR = new StreamReader(Client.GetStream());
+
+                STW.AutoFlush = true;
+                backgroundWorker1.RunWorkerAsync();
+                backgroundWorker2.WorkerSupportsCancellation = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        public void SendMessage(string mess)
+        {
+            TextToSend = mess;
+            backgroundWorker2.RunWorkerAsync();
         }
     }
 }

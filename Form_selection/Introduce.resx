@@ -118,6 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="label1.Text" xml:space="preserve">
-    <value>Đây là phần mềm quản lý nhân sự do nhóm sinh viên UIT lớp SE104.M26.KHCL thực hiện. Phần mềm cung cấp các chức năng quản lý cơ bản như quản lý nhân viên, phòng ban, lương, thưởng phạt. Đây là sản phầm đầu tiên sau quá trình được cô Nguyễn Thị Thanh Trúc hướng dẫn, cung cấp tài liệu để học về cách lập trình một phần mềm. Vì là lần đầu thực hiện nên phần mềm còn nhiều thiếu sót, nhóm sẽ tiếp tục cải thiện để hoàn chỉnh hơn !</value>
+    <value>Đây là phần mềm quản lý nhân sự do nhóm sinh viên UIT lớp Ngôn ngữ lập trình C# - CS511.N21.KHCL thực hiện. Phần mềm cung cấp các chức năng quản lý cơ bản như quản lý nhân viên, phòng ban, lương, thưởng phạt, chat, thông báo... Đây là sản phầm đầu tiên sau quá trình được cô Nguyễn Bích Vân hướng dẫn, cung cấp tài liệu để học về cách lập trình một phần mềm. Vì là lần đầu thực hiện nên phần mềm còn nhiều thiếu sót, nhóm sẽ tiếp tục cải thiện để hoàn chỉnh hơn !</value>
   </data>
 </root>
