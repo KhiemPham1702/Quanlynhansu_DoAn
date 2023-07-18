@@ -20,6 +20,7 @@ namespace ban_2
             InitializeComponent();
             departments = a;
         }
+        
 
         SqlConnection con = new connect().Con;
         SqlCommand cmd = new SqlCommand();
